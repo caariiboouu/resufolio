@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <rect width="300" height="200" fill="#f0f0f0"/>
+  <path d="M75 100 L150 25 L225 100 L150 175 Z" fill="#d0d0d0"/>
+  <circle cx="100" cy="75" r="15" fill="#a0a0a0"/>
+  <text x="150" y="110" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#808080">300 x 200</text>
+</svg>
