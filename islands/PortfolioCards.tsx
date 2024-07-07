@@ -32,37 +32,37 @@ function generatePlaceholderSvg(colorVariant: typeof colorVariants[number]) {
 const initialCards: CardData[] = [
     {
         id: 1,
-        title: "Modern Web Application",
+        title: "Interfaces, Interfaces, & Interfaces",
         description:
-            "A responsive web app built with React and Node.js, featuring real-time data updates and a sleek user interface.",
+            "I've been building highly responsive interfaces for a while. Ranging from static brochures from scratch to dynamic frameworks like React, Preact, Angular, React Native and more.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 2,
-        title: "E-commerce Platform",
+        title: "Fluent in Animation",
         description:
-            "A full-featured online store with secure payments, inventory management, and a customizable product catalog.",
+            "Going a bit further beyond simple css animations, I can add motion to vector graphics for web and produce high quality videos.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 3,
-        title: "Mobile Fitness App",
+        title: "Right Side of the Brain",
         description:
-            "An iOS and Android app that helps users track workouts, set goals, and connect with fitness communities.",
+            "I got my start with design creating print collateral and website mockups. This has scaled to production-level digital media.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 4,
-        title: "Data Visualization Dashboard",
+        title: "Sometimes Full Stack",
         description:
-            "An interactive dashboard that transforms complex data sets into clear, actionable insights using D3.js.",
+            "I have some time managing servers, databases, and backend code. Usually within Ubuntu, MySQL, and PHP. Not my specialty but visiting this world from time to time is fun.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 5,
-        title: "AI-Powered Chatbot",
+        title: "Coding with Artificial Intelligence",
         description:
-            "A sophisticated chatbot leveraging natural language processing to provide customer support and engagement.",
+            "AI is quickly becoming a required tool in development. It's too effective not to use. Currently a fan of Claude Sonnet.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
 ];
@@ -100,7 +100,7 @@ function Card(
             <div class="border border-gray-300 rounded-lg p-4 bg-gray-200">
                 <h2 className="text-2xl mb-2">{data.title}</h2>
                 <p className="mb-4">{data.description}</p>
-                <div className="relative overflow-hidden h-50">
+                {/* <div className="relative overflow-hidden h-50">
                     <div
                         className="flex transition-transform duration-300 ease-in-out"
                         style={{
@@ -131,7 +131,7 @@ function Card(
                     >
                         →
                     </button>
-                </div>
+                </div> */}
             </div>
         </div>
     );
