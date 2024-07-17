@@ -23,7 +23,7 @@ export default function App({ Component }: PageProps) {
         <link rel="icon" type="image/x-icon" href="../favicon.ico" />
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body class="bg-[#1bafc6]">
+      <body class="bg-[#E7DECA]">
         <Component />
       </body>
     </html>
