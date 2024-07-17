@@ -34,55 +34,46 @@ const initialCards: CardData[] = [
         id: 1,
         title: "Interfaces, Interfaces, & Interfaces",
         description:
-            "I've been building highly responsive interfaces for a while. Ranging from static brochures from scratch to dynamic frameworks like React, Preact, Angular, React Native and more.",
+            "I got my first exposure to tinkering with websites during an internship at the tender age of 18. A web design firm had me coming in to cut out large quantities of photos in Photoshop. One day they got me set up on Dreamweaver and tasked me with bolding and italicizing website copy to make it more interesting. I continued to work my way through a few companies to the point that I started doing building themes from scratch on CMS systems, using responsive-first frameworks in a time that creating separate mobile variants of websites was a thing. These days I'm building SPA and SSR sites with React, Angular, React Native, Vue, Preact, and continuing to expand the tools I work with.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 2,
         title: "Fluent in Animation",
         description:
-            "Going a bit further beyond simple css animations, I can add motion to vector graphics for web and produce high quality videos.",
+            "One of the more niche skills I've developed while creating websites is getting requests for animation. Be it complex css transforms, detailed SVGs changing state, or producing video designed to be embedded on sites. I've even produced <a href='https://www.youtube.com/watch?v=n2ru5WyMzLk' target='_blank' rel='noopener noreferrer'>motion graphics for advertisement</a>.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 3,
-        title: "Right Side of the Brain",
+        title: "Also Available on Canvas",
         description:
-            "I got my start with design creating print collateral and website mockups. This has scaled to production-level digital media.",
+            "Outside of websites and other digital media, I have time designing and producing print media. I leveraged lossless editing primarily in Photoshop. Many designers in this field use vector applications like Illustrator but I found that being able to play with complex textures in raster allowed for interesting designs when it came to processes like screenprinting",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 4,
         title: "Sometimes Full Stack",
         description:
-            "I have some time managing servers, databases, and backend code. Usually within Ubuntu, MySQL, and PHP. Not my specialty but visiting this world from time to time is fun.",
+            "I manage my own sites, servers, databases, and backend code. I've also done this at scale managing about 30 sites for an agency, all on a stack of servers and software I maintained. Usually Ubuntu, MySQL, and PHP. Visiting this world from time to time is fun and good infrastructure is rewarding to architect.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 5,
-        title: "Coding with Artificial Intelligence",
+        title: "Intelligence alongside AI",
         description:
-            "AI is quickly becoming a required tool in development. It's too effective not to use. Currently a fan of Claude Sonnet.",
+            "AI is quickly becoming a required tool in development. It's too effective not to use. Currently a fan of Claude Sonnet, directly API'd in to VS Code. You can highlight or select snippets and prompt with relative context. It is ridiculous how fast it is. I enjoy that it helps to cover my weak areas in code.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
 ];
 
 function Card(
-    { data, onImageClick, onHeightChange }: {
+    { data, onImageClick }: {
         data: CardData;
         onImageClick: (image: string) => void;
-        onHeightChange: (height: number) => void;
     },
 ) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const cardRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        if (cardRef.current) {
-            onHeightChange(cardRef.current.offsetHeight);
-        }
-    }, [data]);
-
     const nextImage = () => {
         setCurrentImageIndex((prevIndex) =>
             (prevIndex + 1) % data.images.length
@@ -96,42 +87,11 @@ function Card(
     };
 
     return (
-        <div ref={cardRef} className="p-4 my-4">
-            <div class="border border-gray-300 rounded-lg p-4 bg-gray-200">
+        <div className="p-4 my-4">
+            <div class="border border-[#232323] rounded-lg p-4">
                 <h2 className="text-2xl mb-2">{data.title}</h2>
                 <p className="mb-4">{data.description}</p>
-                {/* <div className="relative overflow-hidden h-50">
-                    <div
-                        className="flex transition-transform duration-300 ease-in-out"
-                        style={{
-                            transform: `translateX(-${
-                                currentImageIndex * 100
-                            }%)`,
-                        }}
-                    >
-                        {data.images.map((image, index) => (
-                            <img
-                                key={index}
-                                src={image}
-                                alt={`${data.title} - Image ${index + 1}`}
-                                className="w-full h-50 flex-shrink-0 object-cover cursor-pointer"
-                                onClick={() => onImageClick(image)}
-                            />
-                        ))}
-                    </div>
-                    <button
-                        onClick={prevImage}
-                        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center text-xl cursor-pointer"
-                    >
-                        ←
-                    </button>
-                    <button
-                        onClick={nextImage}
-                        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-8 h-8 flex items-center justify-center text-xl cursor-pointer"
-                    >
-                        →
-                    </button>
-                </div> */}
+                {/* Image carousel code remains commented out */}
             </div>
         </div>
     );
@@ -168,80 +128,7 @@ function Lightbox({ image, onClose }: { image: string; onClose: () => void }) {
 }
 
 export default function PortfolioCards() {
-    const [cards, setCards] = useState<CardData[]>(initialCards);
-    const [cardHeights, setCardHeights] = useState<number[]>([]);
-    const [visibleRange, setVisibleRange] = useState({ start: 0, end: 10 });
     const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-    const containerRef = useRef<HTMLDivElement>(null);
-
-    const BUFFER_REM = 5; // Buffer of 5rem
-    const BUFFER_PX = BUFFER_REM * 16; // Assuming 1rem = 16px
-
-    useEffect(() => {
-        if (!IS_BROWSER) return;
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        loadMoreCards();
-                    }
-                });
-            },
-            { threshold: 0.1 },
-        );
-
-        const lastCard = containerRef.current?.lastElementChild;
-        if (lastCard) observer.observe(lastCard);
-
-        return () => observer.disconnect();
-    }, [cards]);
-
-    const loadMoreCards = () => {
-        const newCards = [...cards];
-        for (let i = 0; i < 5; i++) {
-            const nextCard = initialCards[i % initialCards.length];
-            newCards.push({ ...nextCard, id: cards.length + i + 1 });
-        }
-        setCards(newCards);
-    };
-
-    const handleScroll = () => {
-        if (!containerRef.current) return;
-        const { scrollTop, clientHeight } = containerRef.current;
-
-        let accumulatedHeight = 0;
-        let startIndex = 0;
-        let endIndex = 0;
-
-        // Find the start index
-        for (let i = 0; i < cardHeights.length; i++) {
-            if (accumulatedHeight + cardHeights[i] > scrollTop - BUFFER_PX) {
-                startIndex = i;
-                break;
-            }
-            accumulatedHeight += cardHeights[i];
-        }
-
-        // Find the end index
-        accumulatedHeight = 0;
-        for (let i = 0; i < cardHeights.length; i++) {
-            accumulatedHeight += cardHeights[i];
-            if (accumulatedHeight > scrollTop + clientHeight + BUFFER_PX) {
-                endIndex = i;
-                break;
-            }
-        }
-
-        // Ensure we always render at least one card more than visible
-        endIndex = Math.min(
-            cardHeights.length - 1,
-            Math.max(endIndex, startIndex + 1),
-        );
-
-        setVisibleRange({ start: startIndex, end: endIndex + 1 });
-    };
-
     const handleImageClick = (image: string) => {
         setLightboxImage(image);
     };
@@ -250,57 +137,52 @@ export default function PortfolioCards() {
         setLightboxImage(null);
     };
 
-    const handleCardHeightChange = (index: number, height: number) => {
-        setCardHeights((prevHeights) => {
-            const newHeights = [...prevHeights];
-            newHeights[index] = height;
-            return newHeights;
-        });
-    };
-
-    const getTotalHeight = () =>
-        cardHeights.reduce((sum, height) => sum + height, 0);
-
     return (
         <>
-            <div
-                ref={containerRef}
-                onScroll={handleScroll}
-                className="w-full h-[70vh] min-h-40 overflow-y-auto border border-gray-300 rounded-lg"
-            >
-                <div
-                    className="relative"
-                    style={{ height: `${getTotalHeight()}px` }}
-                >
-                    {cards.slice(visibleRange.start, visibleRange.end).map(
-                        (card, index) => {
-                            const actualIndex = visibleRange.start + index;
-                            const topOffset = cardHeights.slice(0, actualIndex)
-                                .reduce((sum, height) => sum + height, 0);
-                            return (
-                                <div
-                                    key={card.id}
-                                    className="absolute left-0 right-0"
-                                    style={{ top: `${topOffset}px` }}
-                                >
-                                    <Card
-                                        data={card}
-                                        onImageClick={handleImageClick}
-                                        onHeightChange={(height) =>
-                                            handleCardHeightChange(
-                                                actualIndex,
-                                                height,
-                                            )}
-                                    />
-                                </div>
-                            );
-                        },
-                    )}
+            <div className="w-full h-[70vh] min-h-40 overflow-y-auto border border-[#232323] rounded-lg">
+                {initialCards.map((card) => (
+                    <div>
+                        {/* <Card
+                            key={card.id}
+                            data={card}
+                            onImageClick={handleImageClick}
+                        /> */}
+                        <div key={card.id} className="border border-[#232323] rounded-lg p-3 m-3">
+                            <h1 class="text-2xl font-bold">{card.title}</h1>
+                            <p className="text-sm mb-4">
+                                {parseDescription(card.description)}
+                            </p>
+                        </div>
+                    </div>
+                ))}
                 </div>
-            </div>
             {lightboxImage && (
                 <Lightbox image={lightboxImage} onClose={closeLightbox} />
             )}
         </>
     );
 }
+
+function parseDescription(description: string) {
+    const parts = description.split(/(<a.*?<\/a>)/);
+    return parts.map((part, index) => {
+      if (part.startsWith('<a')) {
+        const hrefMatch = part.match(/href=['"](.*?)['"]/);
+        const href = hrefMatch ? hrefMatch[1] : '#';
+        const text = part.replace(/<\/?a.*?>/g, '');
+        return (
+          <a
+            key={index}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#32564f] hover:underline"
+          >
+            {text}
+          </a>
+        );
+      }
+      return part;
+    });
+  }
+  
