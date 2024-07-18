@@ -32,37 +32,44 @@ function generatePlaceholderSvg(colorVariant: typeof colorVariants[number]) {
 const initialCards: CardData[] = [
     {
         id: 1,
+        title: "Things that I do Professionally",
+        description:
+            "Hi, I'm Joel and I'm an explorer in the world of design and development. Creating high quality and creatively approached tools and media is what interests me. This is a walkthrough of my experience and my thoughts on topics relevant to designing and developing user experiences. A little background: I got my first exposure to tinkering with websites during an internship. A web design firm had me coming in to cut out large quantities of photos in Photoshop. One day they got me set up on Dreamweaver and tasked me with bolding and italicizing website copy to make it more interesting. I continued to work my way through a few companies to the point that I started doing building site themes from scratch on CMS systems, using responsive-first frameworks in a time that creating separate mobile variants of websites was a thing.",
+        images: colorVariants.map(generatePlaceholderSvg),
+    },
+    {
+        id: 1,
         title: "Interfaces, Interfaces, & Interfaces",
         description:
-            "I got my first exposure to tinkering with websites during an internship at the tender age of 18. A web design firm had me coming in to cut out large quantities of photos in Photoshop. One day they got me set up on Dreamweaver and tasked me with bolding and italicizing website copy to make it more interesting. I continued to work my way through a few companies to the point that I started doing building themes from scratch on CMS systems, using responsive-first frameworks in a time that creating separate mobile variants of websites was a thing. These days I'm building SPA and SSR sites with React, Angular, React Native, Vue, Preact, and continuing to expand the tools I work with.",
+            "Currently I'm building SPA and SSR sites with React, Angular, React Native, Vue, Preact, and continuing to expand the tools I work with. I've been dabbling in building an app in Flutter and Firebase. Also on my list is to get some time with HTMX and controlling state on the backend. I'm not sure I'm really tied to a specific framework or stack currently, honing the skill of picking the appropriate stack for the job seems most significant, and a philosophy of simple implementations of Functional Programming is one of my most interested areas of focus.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 2,
         title: "Fluent in Animation",
         description:
-            "One of the more niche skills I've developed while creating websites is getting requests for animation. Be it complex css transforms, detailed SVGs changing state, or producing video designed to be embedded on sites. I've even produced <a href='https://www.youtube.com/watch?v=n2ru5WyMzLk' target='_blank' rel='noopener noreferrer'>motion graphics for advertisement</a>.",
+            "It's sort of a niche skill, but when applicable and useful it's quite valuable. Also very fun to work on. Be it complex css transforms, detailed SVGs changing state, or producing video designed to be embedded on sites. I've even produced <a href='https://www.youtube.com/watch?v=n2ru5WyMzLk' target='_blank' rel='noopener noreferrer'>motion graphics for advertisement</a>.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 3,
-        title: "Also Available on Canvas",
+        title: "Physical Copies also Available",
         description:
-            "Outside of websites and other digital media, I have time designing and producing print media. I leveraged lossless editing primarily in Photoshop. Many designers in this field use vector applications like Illustrator but I found that being able to play with complex textures in raster allowed for interesting designs when it came to processes like screenprinting",
+            "Outside of websites and other digital media, I have time designing and producing print media. I've used Photoshop since version 7.0 and it has a fond place in my heart. Many designers in this field use vector applications like Illustrator but I found that being able to play with complex rasterized textures first, and vector shapes as a secondary priority allowed for interesting designs when it came to processes like screenprinting. It also honed my skills in digital asset preparation. You might be surpised at how many fuzzy images on high DPI screens go unnoticed through review in to production.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 4,
         title: "Sometimes Full Stack",
         description:
-            "I manage my own sites, servers, databases, and backend code. I've also done this at scale managing about 30 sites for an agency, all on a stack of servers and software I maintained. Usually Ubuntu, MySQL, and PHP. Visiting this world from time to time is fun and good infrastructure is rewarding to architect.",
+            "I manage my own sites, servers, databases, and backend code on personal projects. I've also done this at scale professionally, managing about 30 sites for an agency, all on a stack of servers and software I maintained. (Usually Ubuntu, MySQL, and PHP) Visiting this world from time to time is fun and good infrastructure is rewarding to architect.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 5,
         title: "Intelligence alongside AI",
         description:
-            "AI is quickly becoming a required tool in development. It's too effective not to use. Currently a fan of Claude Sonnet, directly API'd in to VS Code. You can highlight or select snippets and prompt with relative context. It is ridiculous how fast it is. I enjoy that it helps to cover my weak areas in code.",
+            "I'm currently a fan of Claude 3.5 Sonnet. I treat it kind of like a faster version of Googling for Stackoverflow answers, along with carrying out tedious tasks that are akin to data entry. Just like any tool, there's wrong and right ways to use them. I'm starting to see a lot of value in pricipaled use. (That is, not just hoping that it will churn out your work for you that you don't understand.)",
         images: colorVariants.map(generatePlaceholderSvg),
     },
 ];
@@ -176,7 +183,7 @@ function parseDescription(description: string) {
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#32564f] hover:underline"
+            className="text-[#32564f] hover:text-[#54ac9b] hover:underline"
           >
             {text}
           </a>
