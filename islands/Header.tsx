@@ -53,7 +53,7 @@ export default function Header() {
       </div>
       <h1 className={`text-4xl font-bold text-center transition-all duration-300 ease-in-out ${isScrolled ? 'mx-4' : ''}`}>Creative Technology Specialist</h1>
       <p className={`text-center transition-all duration-300 ease-in-out ${isScrolled ? 'm-0 mt-3' : 'my-4'}`}>
-        Digital Design and Development
+        UI / UX / Design / Development / Multimedia
       </p>
     </header>
   );
