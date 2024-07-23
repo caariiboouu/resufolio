@@ -42,7 +42,7 @@ export default function Header() {
 
   return (
     <>
-      <div style={{ height: isScrolled ? `${spacerHeight}px` : '224' }} />
+      <div style={{ height: isScrolled ? `${spacerHeight}px` : '224px' }} />
 <header 
   style={{ right: 0, left: 0 }}
   className={`
