@@ -61,17 +61,16 @@ export default function Header() {
         className="relative inline-flex items-center transition-all duration-300 ease-in-out"
         onMouseEnter={() => setIsImageHovered(true)}
         onMouseLeave={() => setIsImageHovered(false)}
-        style={{ width: isScrolled ? '48px' : '128px', height: isScrolled ? '48px' : '128px' }}
       >
         <img
           src="/jc.png"
           alt="Joel Cuthriell, a UX Specialist with design, development, and consulting experience"
-          className={`transition-all duration-300 ease-in-out absolute top-0 left-0 ${
+          className={`transition-all duration-300 ease-in-out top-0 left-0 ${
             isScrolled ? 'h-12 w-12' : 'h-32 w-32'
-          } ${isScrolled && isImageHovered ? 'opacity-0' : 'opacity-100'}`}
+          } ${isScrolled && isImageHovered ? 'opacity-0 absolute' : 'opacity-100'}`}
         />
-        <h1 className={`w-full h-full flex items-center justify-center text-4xl font-bold whitespace-nowrap transition-all duration-300 ease-in-out absolute top-0 left-0 ${
-          isScrolled && isImageHovered ? 'opacity-100' : 'opacity-0'
+        <h1 className={`w-full h-full flex items-center justify-center text-4xl font-bold whitespace-nowrap transition-all duration-300 ease-in-out top-0 left-0 ${
+          isScrolled && isImageHovered ? 'opacity-100' : 'opacity-0 absolute'
         }`}>
             Joel Cuthriell&nbsp;&nbsp;•
           </h1>
