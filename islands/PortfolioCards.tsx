@@ -32,9 +32,9 @@ function generatePlaceholderSvg(colorVariant: typeof colorVariants[number]) {
 const initialCards: CardData[] = [
     {
         id: 1,
-        title: "Things that I do Professionally",
+        title: "Hi, I'm Joel",
         description:
-            "Hi, I'm Joel. This is a walkthrough of my experience and my thoughts on topics relevant to design and development work. A little background: I got my first exposure to tinkering with websites during a design internship; they had me coming in to cut out large quantities of photos in Photoshop. One day I was tasked with opening Dreamweaver and bolding and italicizing website copy to make it more interesting. I continued to work my way through a few companies to the point that I started doing building site themes from scratch on CMS systems, using responsive-first frameworks in a time that creating separate mobile variants of websites was a thing. As I've built up my career, I've found that straddling both creative and technical disiplines is quite rewarding in my career path and the work I produce.",
+            "This is a walkthrough of my experience and my thoughts on topics relevant to design and development work. I got my first exposure to tinkering with websites during a design internship; they had me coming in to cut out large quantities of photos in Photoshop. One day I was tasked with opening Dreamweaver and bolding and italicizing website copy to make it more interesting. I continued to work my way through a few companies to the point that I started doing building site themes from scratch on CMS systems, using responsive-first frameworks in a time that creating separate mobile variants of websites was a thing. As I've built up my career, I've found that straddling both creative and technical disiplines is quite rewarding in my career path and the work I produce.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
@@ -146,7 +146,6 @@ export default function PortfolioCards() {
 
     return (
         <>
-            <div className="w-full h-[70vh] min-h-40 overflow-y-auto border border-[#232323] rounded-lg">
                 {initialCards.map((card) => (
                     <div>
                         {/* <Card
@@ -162,7 +161,6 @@ export default function PortfolioCards() {
                         </div>
                     </div>
                 ))}
-                </div>
             {lightboxImage && (
                 <Lightbox image={lightboxImage} onClose={closeLightbox} />
             )}
