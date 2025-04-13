@@ -1,0 +1,12 @@
+{
+  "name": "resufolio",
+  "version": "1.0.0",
+  "description": "Resume portfolio built with Fresh",
+  "main": "main.ts",
+  "scripts": {
+    "start": "deno task start"
+  },
+  "dependencies": {
+    "cssesc": "^3.0.0"
+  }
+} 
