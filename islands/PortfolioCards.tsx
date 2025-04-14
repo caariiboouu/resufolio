@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "preact/hooks";
-import { IS_BROWSER } from "$fresh/runtime.ts";
+import { useState } from "preact/hooks";
 
 interface CardData {
     id: number;
@@ -32,84 +31,57 @@ function generatePlaceholderSvg(colorVariant: typeof colorVariants[number]) {
 const initialCards: CardData[] = [
     {
         id: 1,
-        title: "Hi, I'm Joel",
+        title: "Hi,",
         description:
-            "This is a walkthrough of my experience and my thoughts on topics relevant to design and development work. I got my first exposure to tinkering with websites during a design internship; they had me coming in to cut out large quantities of photos in Photoshop. One day I was tasked with opening Dreamweaver and bolding and italicizing website copy to make it more interesting. I continued to work my way through a few companies to the point that I started doing building site themes from scratch on CMS systems, using responsive-first frameworks in a time that creating separate mobile variants of websites was a thing. As I've built up my career, I've found that straddling both creative and technical disiplines is quite rewarding in my career path and the work I produce.",
-        images: colorVariants.map(generatePlaceholderSvg),
-    },
-    {
-        id: 1,
-        title: "Interfaces, Interfaces, & Interfaces",
-        description:
-            "Currently I'm building SPA and SSR sites with React, Angular, React Native, Vue, Preact, and continuing to expand the tools I work with. I've been dabbling in building an app in Flutter and Firebase. Also on my list is to get some time with HTMX and controlling state on the backend. I'm not sure I'm really tied to a specific framework or stack currently, honing the skill of picking the appropriate stack for the job seems most significant, and a philosophy of simple implementations of Functional Programming is one of my most interested areas of focus.",
+            "I'm a developer and designer living in Tulsa. In my work I operate on a principle that functionally useful things should look as good as they work, and that good looking things should be entirely functional.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
         id: 2,
+        title: "Interfaces, Interfaces, & Interfaces",
+        description:
+            "Currently I'm building SPA and SSR sites with React, Angular, React Native, Vue, Preact, HTMX, and continuing to expand the tools I work with. I'm not sure I'm really tied to a specific framework or stack currently, honing the skill of picking the appropriate stack for the job seems most important rather than being locked into a specific framework.",
+        images: colorVariants.map(generatePlaceholderSvg),
+    },
+    {
+        id: 3,
         title: "Fluent in Animation",
         description:
             "It's sort of a niche skill, but when applicable and useful it's quite valuable. Also very fun to work on. Be it complex css transforms, detailed SVGs changing state, or producing video designed to be embedded on sites. I've even produced <a href='https://www.youtube.com/watch?v=n2ru5WyMzLk' target='_blank' rel='noopener noreferrer'>motion graphics for advertisement</a>.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
-        id: 3,
+        id: 4,
         title: "Physical Copies also Available",
         description:
             "Outside of websites and other digital media, I have time designing and producing print media. I've used Photoshop since version 7.0 and it has a fond place in my heart. Many designers in this field use vector applications like Illustrator but I found that being able to play with complex rasterized textures first, and vector shapes as a secondary priority allowed for interesting designs when it came to processes like screenprinting. It also honed my skills in digital asset preparation. You might be surpised at how many fuzzy images on high DPI screens go unnoticed through review in to production.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
-        id: 4,
+        id: 5,
         title: "Sometimes Full Stack",
         description:
-            "I manage my own sites, servers, databases, and backend code on personal projects. I've also done this at scale professionally, managing about 30 sites for an agency, all on a stack of servers and software I maintained. (Usually Ubuntu, MySQL, and PHP) Visiting this world from time to time is fun and good infrastructure is rewarding to architect.",
+            "I've managed sites, servers, databases, and backend code professionally, at a peak of about 30 website servers for an agency. (Usually Ubuntu, MySQL, and PHP) Visiting this world from time to time is fun and good infrastructure is rewarding to architect.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
     {
-        id: 5,
+        id: 6,
         title: "Intelligence alongside AI",
         description:
-            "I'm currently a fan of Claude 3.5 Sonnet. I treat it kind of like a faster version of Googling for Stackoverflow answers, along with carrying out tedious tasks that are akin to data entry. Just like any tool, there's wrong and right ways to use them. I'm starting to see a lot of value in pricipaled use. (That is, not just hoping that it will churn out your work for you that you don't understand.)",
+            "AI is fantastic for gathering and interpereting large amounts of information. I brought a client's site from 20 second page load times down to 1 second loads by using AI to generate tests and rewrite database queries.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
 ];
 
-function Card(
-    { data, onImageClick }: {
-        data: CardData;
-        onImageClick: (image: string) => void;
-    },
-) {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            (prevIndex + 1) % data.images.length
-        );
-    };
-
-    const prevImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            (prevIndex - 1 + data.images.length) % data.images.length
-        );
-    };
-
-    return (
-        <div className="p-4 my-4">
-            <div class="border border-[#232323] rounded-lg p-4">
-                <h2 className="text-2xl mb-2">{data.title}</h2>
-                <p className="mb-4">{data.description}</p>
-                {/* Image carousel code remains commented out */}
-            </div>
-        </div>
-    );
-}
-
 function Lightbox({ image, onClose }: { image: string; onClose: () => void }) {
     const [isVisible, setIsVisible] = useState(false);
 
-    useEffect(() => {
+    useState(() => {
         setIsVisible(true);
-    }, []);
+        return () => {
+            setIsVisible(false);
+        };
+    });
 
     const handleClose = () => {
         setIsVisible(false);
@@ -134,8 +106,81 @@ function Lightbox({ image, onClose }: { image: string; onClose: () => void }) {
     );
 }
 
+function parseDescription(description: string) {
+    if (!description.includes("<a")) {
+        return description;
+    }
+
+    const parts = [];
+    let currentText = "";
+    let inTag = false;
+    let currentTag = "";
+    let i = 0;
+
+    while (i < description.length) {
+        if (description.substring(i, i + 2) === "<a" && !inTag) {
+            if (currentText) {
+                parts.push(currentText);
+                currentText = "";
+            }
+            inTag = true;
+            currentTag = "<a";
+            i += 2;
+        } else if (description.substring(i, i + 4) === "</a>" && inTag) {
+            currentTag += "</a>";
+            parts.push(currentTag);
+            currentTag = "";
+            inTag = false;
+            i += 4;
+        } else {
+            if (inTag) {
+                currentTag += description[i];
+            } else {
+                currentText += description[i];
+            }
+            i++;
+        }
+    }
+
+    if (currentText) {
+        parts.push(currentText);
+    }
+
+    return parts.map((part, index) => {
+        if (part.startsWith("<a") && part.endsWith("</a>")) {
+            // Parse the href and text from the anchor tag
+            const hrefMatch = part.match(/href=['"]([^'"]+)['"]/);
+            const href = hrefMatch ? hrefMatch[1] : "#";
+            
+            const targetMatch = part.match(/target=['"]([^'"]+)['"]/);
+            const target = targetMatch ? targetMatch[1] : "";
+            
+            const relMatch = part.match(/rel=['"]([^'"]+)['"]/);
+            const rel = relMatch ? relMatch[1] : "";
+            
+            // Extract the link text
+            const textMatch = part.match(/>([^<]+)</);
+            const text = textMatch ? textMatch[1] : "Link";
+            
+            return (
+                <a 
+                    key={index} 
+                    href={href} 
+                    target={target || undefined} 
+                    rel={rel || undefined}
+                    className="text-[#54ac9b] hover:text-[#32564f] underline transition-colors"
+                >
+                    {text}
+                </a>
+            );
+        }
+        return part;
+    });
+}
+
 export default function PortfolioCards() {
     const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
     const handleImageClick = (image: string) => {
         setLightboxImage(image);
     };
@@ -146,48 +191,55 @@ export default function PortfolioCards() {
 
     return (
         <>
+            <div className="space-y-8">
                 {initialCards.map((card) => (
-                    <div>
-                        {/* <Card
-                            key={card.id}
-                            data={card}
-                            onImageClick={handleImageClick}
-                        /> */}
-                        <div key={card.id} className="border border-[#232323] rounded-lg p-3 m-3">
-                            <h1 class="text-2xl font-bold">{card.title}</h1>
-                            <p className="text-sm mb-4">
-                                {parseDescription(card.description)}
-                            </p>
+                    <div 
+                        key={card.id} 
+                        className="group relative overflow-hidden transition-all duration-300 ease-in-out 
+                                hover:transform hover:scale-[1.01] hover:shadow-lg card-hover rounded-lg"
+                    >
+                        <div className="border border-[#232323] rounded-lg p-4 sm:p-6 
+                                      bg-gradient-to-br from-[#1a1a1a] via-[#232323] to-[#1a1a1a]
+                                      shadow-md backdrop-blur-sm gradient-animate gradient-border
+                                      noise-texture">
+                            <div className="relative z-10 card-content">
+                                <h2 className="text-xl sm:text-2xl font-bold mb-3 
+                                             bg-clip-text text-transparent 
+                                             bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
+                                             text-glow">
+                                    {card.title}
+                                </h2>
+                                <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                                            transition-all duration-300 group-hover:opacity-100">
+                                    {parseDescription(card.description)}
+                                </p>
+                                
+                                {/* <div className="mt-4 overflow-hidden rounded-lg shadow-lg">
+                                    {card.images.length > 0 && (
+                                        <div className="relative h-32 sm:h-48 overflow-hidden">
+                                            <img
+                                                src={card.images[0]}
+                                                alt={`${card.title} illustration`}
+                                                className="w-full h-full object-cover transition-all duration-300 
+                                                          cursor-pointer hover:scale-105 hover:brightness-110"
+                                                onClick={() => handleImageClick(card.images[0])}
+                                            />
+                                        </div>
+                                    )}
+                                </div> */}
+                            </div>
                         </div>
                     </div>
                 ))}
+            </div>
+
             {lightboxImage && (
-                <Lightbox image={lightboxImage} onClose={closeLightbox} />
+                <Lightbox 
+                    image={lightboxImage} 
+                    onClose={closeLightbox} 
+                />
             )}
         </>
     );
 }
-
-function parseDescription(description: string) {
-    const parts = description.split(/(<a.*?<\/a>)/);
-    return parts.map((part, index) => {
-      if (part.startsWith('<a')) {
-        const hrefMatch = part.match(/href=['"](.*?)['"]/);
-        const href = hrefMatch ? hrefMatch[1] : '#';
-        const text = part.replace(/<\/?a.*?>/g, '');
-        return (
-          <a
-            key={index}
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#32564f] hover:text-[#54ac9b] hover:underline"
-          >
-            {text}
-          </a>
-        );
-      }
-      return part;
-    });
-  }
   

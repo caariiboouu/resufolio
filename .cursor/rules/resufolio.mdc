@@ -1,0 +1,6 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+I'm always running 'deno task start' don't trying to run it.

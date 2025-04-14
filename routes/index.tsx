@@ -3,24 +3,25 @@ import PortfolioCards from "../islands/PortfolioCards.tsx";
 
 export default function Home() {
   return (
-    <div>
-      <div>
-        <Header />
-      </div>
-      <div className="px-4 py-8 mx-auto">
-        <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center">
-          <PortfolioCards />
-        
-          <div className="text-center mt-4 p-2">
-            <a
-              href="mailto:joel@cuthriell.com"
-              className="text-[#32564f] hover:text-[#54ac9b] underline"
-            >
-              joel@cuthriell.com
-            </a>
+    <div className="min-h-screen flex flex-col bg-[#E7DECA]">
+      <Header />
+      
+      <main className="flex-grow w-full relative">
+        <div className="container max-w-screen-xl mx-auto px-4 py-6">
+          <div className="max-w-4xl mx-auto">
+            <PortfolioCards />
+          
+            <div className="text-center mt-8 mb-4 p-4">
+              <a
+                href="mailto:joel@cuthriell.com"
+                className="text-[#32564f] hover:text-[#54ac9b] underline transition-colors duration-300"
+              >
+                joel@cuthriell.com
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
