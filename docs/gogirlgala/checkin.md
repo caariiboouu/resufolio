@@ -5,7 +5,7 @@ This role is responsible for giving patrons the table number that they'll be sea
 
 This also gives us an opportunity to ask if the patron would like to register their credit card on file. 
 
-## 'Home' State
+## Initial State
 For this role, you'll be best served by navigating to the Customer list and filtering by Go Girl Gala 2025
 
 <div class="img-grid">
@@ -63,16 +63,41 @@ Once the patron has come to you and you've greeted them, we'll need to start wit
 
 Once you've found the patron, tap on their name and you'll see the table and bidder numbers that you can note on the patron's card and hand it to them. 
 
-At this time, you'll offer the patron the opportunity to place their card on file.
+<div class="img-grid">
+  <a href="#lightbox-patron-2">
+    <img src="IMG_4476.PNG" alt="Customer Search Results">
+  </a>
+  <a href="#lightbox-patron-1">
+    <img src="IMG_4475.PNG" alt="Customer Profile with Table and Bidder Number">
+  </a>
+</div>
+
+<!-- Lightboxes for patron profile images -->
+<div id="lightbox-patron-2" class="lightbox">
+  <img src="IMG_4476.PNG" alt="Customer Search Results">
+  <a href="#checkin" class="close">×</a>
+  <a href="#lightbox-patron-1" class="nav prev">‹</a>
+  <a href="#lightbox-patron-1" class="nav next">›</a>
+</div>
+<div id="lightbox-patron-1" class="lightbox">
+  <img src="IMG_4475.PNG" alt="Customer Profile with Table and Bidder Number">
+  <a href="#checkin" class="close">×</a>
+  <a href="#lightbox-patron-2" class="nav prev">‹</a>
+  <a href="#lightbox-patron-2" class="nav next">›</a>
+</div>
+
+After providing their table and bidder number on a card, you'll offer the patron the opportunity to place their card on file.
 
 ## (Optional) Card on File
-It's important to stress that placing the card on file is optional. It's to allow patrons a way to make transactions at the event without needing to reauthorize their card over and over. Entirely optional to do. If they prefer to swipe their card for later transactions, that is entirely feasable.
+It's important to stress that placing the card on file is optional. It's to allow patrons a way to make transactions at the event without needing to reauthorize their card over and over. Again, entirely optional to do and it should not be stated as a required action. 
+
+The patron does have the option to use their card for transacions at the event rather than placing their card on file.
 
 If the patron does elect to place their card on file, there is an interface further down on their Customer Profile that says 'Payment on File', you'll be able to press 'Add' to start the adding process. The fastest way is inserting the card in to the chip reader slot at the bottom of the Terminal. This will fill a credit card number in that only reveals the last four digits of the card number on the interface.
 
 Many profiles will have email addresses filled ahead of time, but if not, the Terminal also requires an email address for receipts. It may be fastest to allow the patron to enter their email or ask that they provide the email.
 
-Adding a card on file allows for easier checkout later in the event.
+Once you've successfully saved the card, you can confirm its addition by looking at the same 'Payment on File' section to see the patron's card info present.
 
 <div class="img-grid">
   <a href="#lightbox-8">

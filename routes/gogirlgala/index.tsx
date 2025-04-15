@@ -260,58 +260,57 @@ export default function DocsPage(props: PageProps) {
           }
         ` }} />
       </Head>
-      <div class="min-h-screen bg-gray-100">
-        <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
-          <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
-            <h1 class="text-2xl font-bold text-gray-900">Go Girl Gala Square Terminal Guide</h1>
-          </div>
-        </header>
-        
-        <main class="max-w-7xl mx-auto pt-24 sm:pt-20 pb-6 px-4 sm:px-6 lg:px-8 main-content">
-          <div class="flex flex-col md:flex-row gap-6">
-            {/* Sidebar navigation */}
-            <div class="w-full md:w-64 flex-shrink-0">
-              <div class="bg-white p-4 rounded-lg shadow-sm sticky top-24 sm:top-20">
-                <h2 class="font-semibold text-lg mb-4">Documentation</h2>
-                <div id="nav-container">
-                  <div class="flex justify-center p-4">
-                    <div class="loading-spinner"></div>
-                  </div>
-                </div>
-                
-                {/* Retry button that appears when loading fails */}
-                <div id="retry-container" class="mt-4 hidden">
-                  <button id="retry-button" class="w-full py-2 px-3 rounded bg-indigo-600 text-white hover:bg-indigo-700">
-                    Retry Loading
-                  </button>
-                </div>
-              </div>
-            </div>
-            
-            {/* Main content */}
-            <div class="flex-1">
-              <div class="bg-white p-6 rounded-lg shadow-sm">
-                <div class="content-wrapper">
-                  <div id="content-container" class="markdown-body">
-                    <div class="flex justify-center items-center p-10">
-                      <div class="loading-spinner mr-3"></div>
-                      <p>Loading documentation...</p>
+      <div class="min-h-screen bg-gray-50 py-20">
+        <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="prose prose-lg max-w-none">
+            <div class="flex flex-col lg:flex-row">
+              {/* Documentation Sidebar - Add no-print class here */}
+              <div class="w-full md:w-64 flex-shrink-0 no-print">
+                <div class="bg-white p-4 rounded-lg shadow-sm sticky top-24 sm:top-20">
+                  <h2 class="font-semibold text-lg mb-4">Documentation</h2>
+                  <div id="nav-container">
+                    <div class="flex justify-center p-4">
+                      <div class="loading-spinner"></div>
                     </div>
+                  </div>
+                  
+                  {/* Retry button that appears when loading fails */}
+                  <div id="retry-container" class="mt-4 hidden">
+                    <button id="retry-button" class="w-full py-2 px-3 rounded bg-indigo-600 text-white hover:bg-indigo-700">
+                      Retry Loading
+                    </button>
                   </div>
                 </div>
               </div>
               
-              {/* Debug panel - hidden by default */}
-              <div id="debug-panel" class="debug-panel mt-4 hidden">
-                <h3>Debug Information</h3>
-                <div id="debug-output">
-                  <p>No debug information available yet.</p>
+              {/* Main content */}
+              <div class="flex-1 lg:ml-8 mt-6 lg:mt-0">
+                {/* Add the main page header here */}
+                <h1 class="text-3xl font-bold mb-6 text-gray-800">Go Girl Gala Square Terminal Guide</h1>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                  <div class="content-wrapper">
+                    <div id="content-container" class="markdown-body">
+                      <div class="flex justify-center items-center p-10">
+                        <div class="loading-spinner mr-3"></div>
+                        <p>Loading documentation...</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <button id="toggle-debug-details">Show Full Response</button>
+                
+                {/* Debug panel - hidden by default */}
+                <div id="debug-panel" class="debug-panel mt-4 hidden">
+                  <h3>Debug Information</h3>
+                  <div id="debug-output">
+                    <p>No debug information available yet.</p>
+                  </div>
+                  <button id="toggle-debug-details">Show Full Response</button>
+                </div>
               </div>
             </div>
           </div>
-        </main>
+        </div>
       </div>
       
       <script dangerouslySetInnerHTML={{ __html: `
