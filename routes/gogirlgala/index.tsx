@@ -262,6 +262,9 @@ export default function DocsPage(props: PageProps) {
       </Head>
       <div class="min-h-screen bg-gray-50 py-20">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Add the main page header here at the top level */}
+          <h1 class="text-3xl font-bold mb-6 text-gray-800">Go Girl Gala Square Terminal Guide</h1>
+          
           <div class="prose prose-lg max-w-none">
             <div class="flex flex-col lg:flex-row">
               {/* Documentation Sidebar - Add no-print class here */}
@@ -285,9 +288,6 @@ export default function DocsPage(props: PageProps) {
               
               {/* Main content */}
               <div class="flex-1 lg:ml-8 mt-6 lg:mt-0">
-                {/* Add the main page header here */}
-                <h1 class="text-3xl font-bold mb-6 text-gray-800">Go Girl Gala Square Terminal Guide</h1>
-                
                 <div class="bg-white p-6 rounded-lg shadow-sm">
                   <div class="content-wrapper">
                     <div id="content-container" class="markdown-body">
