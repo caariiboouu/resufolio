@@ -1,4 +1,5 @@
 import { useState } from "preact/hooks";
+import WoodcutIllustration from "./WoodcutIllustrations.tsx";
 
 interface CardData {
     id: number;
@@ -192,7 +193,7 @@ export default function PortfolioCards() {
     return (
         <>
             <div className="space-y-8">
-                {initialCards.map((card) => (
+                {initialCards.map((card, index) => (
                     <div 
                         key={card.id} 
                         className="group relative overflow-hidden transition-all duration-300 ease-in-out 
@@ -203,30 +204,57 @@ export default function PortfolioCards() {
                                       shadow-md backdrop-blur-sm gradient-animate gradient-border
                                       noise-texture">
                             <div className="relative z-10 card-content">
-                                <h2 className="text-xl sm:text-2xl font-bold mb-3 
-                                             bg-clip-text text-transparent 
-                                             bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
-                                             text-glow">
-                                    {card.title}
-                                </h2>
-                                <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
-                                            transition-all duration-300 group-hover:opacity-100">
-                                    {parseDescription(card.description)}
-                                </p>
-                                
-                                {/* <div className="mt-4 overflow-hidden rounded-lg shadow-lg">
-                                    {card.images.length > 0 && (
-                                        <div className="relative h-32 sm:h-48 overflow-hidden">
-                                            <img
-                                                src={card.images[0]}
-                                                alt={`${card.title} illustration`}
-                                                className="w-full h-full object-cover transition-all duration-300 
-                                                          cursor-pointer hover:scale-105 hover:brightness-110"
-                                                onClick={() => handleImageClick(card.images[0])}
-                                            />
-                                        </div>
+                                <div className="flex flex-wrap">
+                                    {index % 2 === 0 ? (
+                                        <>
+                                            {/* Content on left for even cards */}
+                                            <div className="w-full lg:w-2/3 pr-0 lg:pr-4 relative z-10">
+                                                <h2 className="text-xl sm:text-2xl font-bold mb-3 
+                                                            bg-clip-text text-transparent 
+                                                            bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
+                                                            text-glow">
+                                                    {card.title}
+                                                </h2>
+                                                <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                                                            transition-all duration-300 group-hover:opacity-100">
+                                                    {parseDescription(card.description)}
+                                                </p>
+                                            </div>
+                                            
+                                            {/* Illustration on right for even cards */}
+                                            <div className="w-full lg:w-1/3 mt-4 lg:mt-0 relative">
+                                                <WoodcutIllustration 
+                                                    cardId={card.id} 
+                                                    position="right" 
+                                                />
+                                            </div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            {/* Illustration on left for odd cards */}
+                                            <div className="w-full lg:w-1/3 mt-4 lg:mt-0 relative order-2 lg:order-1">
+                                                <WoodcutIllustration 
+                                                    cardId={card.id} 
+                                                    position="left" 
+                                                />
+                                            </div>
+                                            
+                                            {/* Content on right for odd cards */}
+                                            <div className="w-full lg:w-2/3 pl-0 lg:pl-4 relative z-10 order-1 lg:order-2">
+                                                <h2 className="text-xl sm:text-2xl font-bold mb-3 
+                                                            bg-clip-text text-transparent 
+                                                            bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
+                                                            text-glow">
+                                                    {card.title}
+                                                </h2>
+                                                <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                                                            transition-all duration-300 group-hover:opacity-100">
+                                                    {parseDescription(card.description)}
+                                                </p>
+                                            </div>
+                                        </>
                                     )}
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </div>
