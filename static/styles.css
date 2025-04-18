@@ -500,3 +500,540 @@ header {
     background-image: none !important;
   }
 }
+
+/* --- WOODCUT ILLUSTRATION STYLES --- */
+.woodcut-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  pointer-events: none;  /* Allow clicks to pass through to underlying elements */
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.woodcut-svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  max-width: 300px;
+  max-height: 240px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  animation: subtle-float 8s ease-in-out infinite;
+}
+
+.woodcut-right-container {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 240px;
+  height: 240px;
+  z-index: 1;
+  transform: translate(0, -50%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.woodcut-left-container {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 240px;
+  height: 240px;
+  z-index: 1;
+  transform: translate(0, -50%);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.woodcut-path {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: stroke-draw 3s ease forwards;
+}
+
+.woodcut-path-animated {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: stroke-draw 2s ease forwards, subtle-float 6s ease-in-out infinite;
+}
+
+.woodcut-wave {
+  animation: subtle-float 8s ease-in-out infinite;
+}
+
+.woodcut-dot {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: stroke-draw 1.5s ease forwards 1s;
+}
+
+.woodcut-dot-animated {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: stroke-draw 1.5s ease forwards 1.5s, pulse 4s ease-in-out infinite 2s;
+}
+
+.woodcut-dot-animated-delay {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: stroke-draw 1.5s ease forwards 2s, pulse 4s ease-in-out infinite 2.5s;
+}
+
+/* Interfaces animations */
+.woodcut-interface-1 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: stroke-draw 1.5s ease forwards, subtle-float 8s ease-in-out infinite;
+}
+
+.woodcut-interface-2 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: stroke-draw 1.5s ease forwards 0.3s, subtle-float 7s ease-in-out infinite 0.5s;
+}
+
+.woodcut-interface-3 {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: stroke-draw 1.5s ease forwards 0.6s, subtle-float 9s ease-in-out infinite 1s;
+}
+
+.woodcut-code-line {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: stroke-draw 1.5s ease forwards 1s;
+}
+
+/* Animation wave animations */
+.woodcut-wave-animation {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: stroke-draw 2s ease forwards, wave-float 10s ease-in-out infinite 2s;
+}
+
+.woodcut-wave-animation-delay {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: stroke-draw 2s ease forwards 0.5s, wave-float 12s ease-in-out infinite 2s;
+}
+
+.woodcut-wave-animation-delay-more {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: stroke-draw 2s ease forwards 1s, wave-float 8s ease-in-out infinite 2s;
+}
+
+.woodcut-particle-1 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: stroke-draw 1.5s ease forwards 1.2s, particle-float 12s ease-in-out infinite 2s;
+}
+
+.woodcut-particle-2 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: stroke-draw 1.5s ease forwards 1.4s, particle-float 10s ease-in-out infinite 2s;
+}
+
+.woodcut-particle-3 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: stroke-draw 1.5s ease forwards 1.6s, particle-float 8s ease-in-out infinite 2s;
+}
+
+.woodcut-particle-4 {
+  stroke-dasharray: 50;
+  stroke-dashoffset: 50;
+  animation: stroke-draw 1.5s ease forwards 1.8s, particle-float 9s ease-in-out infinite 2s;
+}
+
+/* Physical copies animations */
+.woodcut-book {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: stroke-draw 2s ease forwards;
+}
+
+.woodcut-book-top {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: stroke-draw 2s ease forwards 0.3s;
+}
+
+.woodcut-book-side {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: stroke-draw 2s ease forwards 0.6s;
+}
+
+.woodcut-page-base {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: stroke-draw 2s ease forwards 0.9s;
+}
+
+.woodcut-text-line {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: stroke-draw 1s ease forwards 1.2s;
+}
+
+.woodcut-page-turning {
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  animation: stroke-draw 2s ease forwards 1.5s, page-turn 10s ease-in-out infinite 3s;
+}
+
+/* Full Stack animations */
+.woodcut-server {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+}
+
+.woodcut-server-1 {
+  animation: stroke-draw 1s ease forwards, server-glow 4s ease-in-out infinite;
+}
+
+.woodcut-server-2 {
+  animation: stroke-draw 1s ease forwards 0.3s, server-glow 4s ease-in-out infinite 1s;
+}
+
+.woodcut-server-3 {
+  animation: stroke-draw 1s ease forwards 0.6s, server-glow 4s ease-in-out infinite 2s;
+}
+
+.woodcut-server-4 {
+  animation: stroke-draw 1s ease forwards 0.9s, server-glow 4s ease-in-out infinite 3s;
+}
+
+.woodcut-connection {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 10;
+}
+
+.woodcut-connection-1 {
+  animation: stroke-draw 1s ease forwards 1.2s, connection-flow 3s linear infinite 2s;
+}
+
+.woodcut-connection-2 {
+  animation: stroke-draw 1s ease forwards 1.5s, connection-flow 3s linear infinite 2.5s;
+}
+
+.woodcut-connection-3 {
+  animation: stroke-draw 1s ease forwards 1.8s, connection-flow 3s linear infinite 3s;
+}
+
+.woodcut-data-packet {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+}
+
+.woodcut-data-packet-1 {
+  animation: stroke-draw 1s ease forwards 2s, data-flow 3s linear infinite 2.5s;
+}
+
+.woodcut-data-packet-2 {
+  animation: stroke-draw 1s ease forwards 2.3s, data-flow 3s linear infinite 3s;
+}
+
+.woodcut-data-packet-3 {
+  animation: stroke-draw 1s ease forwards 2.6s, data-flow 3s linear infinite 3.5s;
+}
+
+/* AI animations */
+.woodcut-brain {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  animation: stroke-draw 3s ease forwards, brain-pulse 10s ease-in-out infinite 3s;
+}
+
+.woodcut-neural-connection {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: stroke-draw 2s ease forwards 1s;
+}
+
+.woodcut-node {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  r: 5;
+}
+
+.woodcut-node-1 {
+  animation: stroke-draw 1s ease forwards 1.2s, node-pulse 4s ease-in-out infinite 2s;
+}
+
+.woodcut-node-2 {
+  animation: stroke-draw 1s ease forwards 1.4s, node-pulse 4s ease-in-out infinite 2.5s;
+}
+
+.woodcut-node-3 {
+  animation: stroke-draw 1s ease forwards 1.6s, node-pulse 4s ease-in-out infinite 3s;
+}
+
+.woodcut-node-4 {
+  animation: stroke-draw 1s ease forwards 1.8s, node-pulse 4s ease-in-out infinite 3.5s;
+}
+
+.woodcut-node-5 {
+  animation: stroke-draw 1s ease forwards 2s, node-pulse 4s ease-in-out infinite 4s;
+}
+
+.woodcut-node-6 {
+  animation: stroke-draw 1s ease forwards 2.2s, node-pulse 4s ease-in-out infinite 4.5s;
+}
+
+.woodcut-circuit {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: stroke-draw 2s ease forwards 2.4s, circuit-pulse 6s linear infinite 3s;
+}
+
+.woodcut-chip {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: stroke-draw 1.5s ease forwards 2.6s, chip-pulse 5s ease-in-out infinite 3s;
+}
+
+/* Woodcut hover effects */
+.card-hover:hover .woodcut-svg {
+  opacity: 1;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+/* Animation keyframes */
+@keyframes stroke-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes subtle-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes subtle-float-right {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes subtle-float-left {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+}
+
+@keyframes subtle-float-diagonal {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(4px, -4px);
+  }
+}
+
+@keyframes subtle-float-diagonal-reverse {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-4px, -4px);
+  }
+}
+
+@keyframes subtle-rotation {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(2deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes wave-float {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  25% {
+    transform: translateY(-3px) scaleY(1.05);
+  }
+  50% {
+    transform: translateY(0) scaleY(0.95);
+  }
+  75% {
+    transform: translateY(3px) scaleY(1.05);
+  }
+}
+
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -5px);
+  }
+  50% {
+    transform: translate(0, -10px);
+  }
+  75% {
+    transform: translate(-5px, -5px);
+  }
+}
+
+@keyframes page-turn {
+  0%, 100% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(25deg);
+  }
+}
+
+@keyframes server-glow {
+  0%, 100% {
+    stroke-opacity: 0.8;
+    stroke-width: 2;
+  }
+  50% {
+    stroke-opacity: 1;
+    stroke-width: 2.5;
+  }
+}
+
+@keyframes connection-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+@keyframes data-flow {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes brain-pulse {
+  0%, 100% {
+    transform: scale(1);
+    stroke-width: 3;
+  }
+  50% {
+    transform: scale(1.03);
+    stroke-width: 3.5;
+  }
+}
+
+@keyframes node-pulse {
+  0%, 100% {
+    r: 5;
+    opacity: 0.8;
+  }
+  50% {
+    r: 6;
+    opacity: 1;
+  }
+}
+
+@keyframes circuit-pulse {
+  to {
+    stroke-dashoffset: -400;
+  }
+}
+
+@keyframes chip-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+/* Media queries for better mobile display */
+@media (max-width: 768px) {
+  .woodcut-container {
+    height: 150px;
+  }
+  
+  .woodcut-right-container {
+    right: -40px;
+    width: 180px;
+    height: 150px;
+  }
+  
+  .woodcut-left-container {
+    left: -40px;
+    width: 180px;
+    height: 150px;
+  }
+}
+
+.float-right {
+  animation: subtle-float-right 7s ease-in-out infinite;
+}
+
+.float-left {
+  animation: subtle-float-left 9s ease-in-out infinite;
+}
+
+.float-diagonal {
+  animation: subtle-float-diagonal 8.5s ease-in-out infinite;
+}
+
+.float-diagonal-reverse {
+  animation: subtle-float-diagonal-reverse 9.5s ease-in-out infinite;
+}
+
+.float-rotate {
+  animation: subtle-rotation 10s ease-in-out infinite;
+}
