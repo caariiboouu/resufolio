@@ -50,27 +50,51 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-hi ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Main circular frame */}
             <circle cx="120" cy="120" r="90" fill="none" stroke="#e5e7eb" strokeWidth="1.5" className="woodcut-path float-pulse" />
             
             {/* Central sun/face */}
             <circle cx="120" cy="120" r="30" fill="none" stroke="#e5e7eb" strokeWidth="1.2" className="woodcut-path float-rotate" />
-            <path d="M110,110 L130,110" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
-            <path d="M110,130 L130,130" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
-            <path d="M110,115 Q120,125 130,115" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
-            <circle cx="110" cy="105" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-twinkle" />
-            <circle cx="130" cy="105" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-twinkle" />
+            <path d="M100,120 L140,120" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-diagonal" />
+            <path d="M120,100 L120,140" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-diagonal-reverse" />
+            <circle cx="120" cy="120" r="15" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-rotate-reverse" />
+            <circle cx="120" cy="120" r="22" fill="none" stroke="#e5e7eb" strokeWidth="0.5" className="celestial-detail woodcut-path float-pulse-slow" />
+            <path d="M105,105 L135,135" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-right" />
+            <path d="M135,105 L105,135" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-left" />
             
             {/* Radiating beams */}
-            <path d="M120,60 L120,30" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity" />
-            <path d="M120,180 L120,210" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity-delay" />
-            <path d="M60,120 L30,120" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity" />
-            <path d="M180,120 L210,120" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity-delay" />
-            <path d="M150,90 L180,60" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity" />
-            <path d="M90,150 L60,180" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity-delay" />
-            <path d="M150,150 L180,180" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity" />
-            <path d="M90,90 L60,60" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity-delay" />
+            <path d="M120,30 L120,60" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-up-down" />
+            <path d="M120,180 L120,210" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-up-down-reverse" />
+            <path d="M30,120 L60,120" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-left-right" />
+            <path d="M180,120 L210,120" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-left-right-reverse" />
+            <path d="M51,51 L75,75" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-diagonal-small" />
+            <path d="M165,75 L189,51" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-diagonal-reverse-small" />
+            <path d="M51,189 L75,165" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-diagonal-small" />
+            <path d="M165,165 L189,189" stroke="#e5e7eb" strokeWidth="1" className="celestial-beam woodcut-path float-diagonal-reverse-small" />
+            
+            {/* Small planetary bodies */}
+            <circle cx="70" cy="70" r="8" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-planet woodcut-path float-circular" />
+            <circle cx="170" cy="70" r="8" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-planet woodcut-path float-circular-reverse" />
+            <circle cx="70" cy="170" r="8" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-planet woodcut-path float-circular-alt" />
+            <circle cx="170" cy="170" r="8" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-planet woodcut-path float-circular-alt-reverse" />
+            
+            {/* Tiny stars */}
+            <circle cx="40" cy="120" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.5" className="celestial-star woodcut-dot float-pulse-opacity" />
+            <circle cx="200" cy="120" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.5" className="celestial-star woodcut-dot float-pulse-opacity-delay" />
+            <circle cx="120" cy="40" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.5" className="celestial-star woodcut-dot float-pulse-opacity-delay-more" />
+            <circle cx="120" cy="200" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.5" className="celestial-star woodcut-dot float-pulse-opacity" />
+            
+            {/* Corner embellishments */}
+            <path d="M35,35 C40,25 50,25 55,35" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-flourish woodcut-path float-rotate-slow" />
+            <path d="M185,35 C190,25 200,25 205,35" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-flourish woodcut-path float-rotate-slow-reverse" />
+            <path d="M35,205 C40,215 50,215 55,205" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-flourish woodcut-path float-rotate-slow-reverse" />
+            <path d="M185,205 C190,215 200,215 205,205" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-flourish woodcut-path float-rotate-slow" />
             
             {/* Celestial orbits */}
             <circle cx="120" cy="120" r="60" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="orbit woodcut-path float-rotate-slow" />
@@ -121,6 +145,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-interfaces ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -523,6 +552,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-animation ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -657,6 +691,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-physical ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -1006,6 +1045,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-fullstack ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -1228,6 +1272,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-intelligence ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame */}
             <rect x="20" y="20" width="200" height="200" fill="none" stroke="#e5e7eb" strokeWidth="1" className="border-frame woodcut-path float-pulse-slow" />
@@ -1237,18 +1286,22 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
               <path 
                 d="M30,30 L50,30 M35,35 L55,35 M40,40 L60,40" 
                 stroke="#e5e7eb" strokeWidth="0.3" strokeOpacity="0.6"
+                className="float-left-right-small"
               />
               <path 
                 d="M180,30 L200,30 M175,35 L195,35 M170,40 L190,40" 
                 stroke="#e5e7eb" strokeWidth="0.3" strokeOpacity="0.6"
+                className="float-left-right-small-reverse"
               />
               <path 
                 d="M30,200 L50,200 M35,195 L55,195 M40,190 L60,190" 
                 stroke="#e5e7eb" strokeWidth="0.3" strokeOpacity="0.6"
+                className="float-left-right-small-reverse"
               />
               <path 
                 d="M180,200 L200,200 M175,195 L195,195 M170,190 L190,190" 
                 stroke="#e5e7eb" strokeWidth="0.3" strokeOpacity="0.6"
+                className="float-left-right-small"
               />
             </g>
             
@@ -1256,454 +1309,244 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             <line x1="120" y1="30" x2="120" y2="210" stroke="#e5e7eb" strokeWidth="1" strokeDasharray="5,3" className="divider woodcut-path float-pulse-opacity" />
             
             {/* Human side - left */}
-            <g className="human-side">
-              {/* Human figure */}
-              <circle 
-                cx="70" 
-                cy="80" 
-                r="20" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1.5"
-                className="human-head woodcut-path float-pulse"
-              />
-              
-              {/* Human body */}
-              <path 
-                d="M70,100 L70,150 M50,120 L90,120 M55,170 L70,150 M85,170 L70,150" 
-                stroke="#e5e7eb" 
-                strokeWidth="1.5"
-                className="human-body woodcut-path float-pulse-delay"
-              />
-              
-              {/* Human brain details */}
-              <path 
-                d="M60,75 C65,65 75,65 80,75 M65,85 S70,90 75,85" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="brain-detail woodcut-path float-pulse-opacity"
-              />
-              
-              {/* Facial features */}
-              <circle 
-                cx="65" cy="75" 
-                r="3" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="eye woodcut-path float-twinkle"
-              />
-              <circle 
-                cx="75" cy="75" 
-                r="3" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="eye woodcut-path float-twinkle-delay"
-              />
-              <path 
-                d="M67,80 C70,83 73,83 76,80" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="mouth woodcut-path float-up-down-small"
-              />
-              
-              {/* Book/knowledge */}
-              <path 
-                d="M40,110 L55,100 L55,125 L40,135 Z" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1"
-                className="book woodcut-path float-left-right-small"
-              />
-              <path 
-                d="M55,100 L70,110 L70,135 L55,125 Z" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1"
-                className="book woodcut-path float-left-right-small-delay"
-              />
-              <path 
-                d="M42,115 L53,105 M42,125 L53,115" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="book-lines woodcut-path float-opacity"
-              />
-              
-              {/* Additional human tools - pencil */}
-              <path 
-                d="M30,140 L45,130 M45,130 L48,133" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="pencil woodcut-path float-diagonal-small"
-              />
-              
-              {/* Coffee mug */}
-              <path 
-                d="M30,150 C30,145 35,145 35,150 L35,160 C25,160 25,160 30,160 Z" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="mug woodcut-path float-pulse"
-              />
-              <path 
-                d="M35,150 L40,150 L40,155 L38,160" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="mug-handle woodcut-path float-pulse-delay"
-              />
-              
-              {/* Humanistic elements - music note */}
-              <path 
-                d="M40,80 C37,83 35,85 35,88 C35,92 40,92 40,88 L40,75" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="music-note woodcut-path float-up-down-small"
-              />
-              <path 
-                d="M40,75 L45,73" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="note-flag woodcut-path float-diagonal-small"
-              />
-              
-              {/* Art palette */}
-              <path 
-                d="M95,105 C100,100 105,105 105,110 C105,115 100,120 95,115 C90,110 90,110 95,105 Z" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="art-palette woodcut-path float-rotate-slow"
-              />
-              <path 
-                d="M95,108 L97,110 M100,113 L102,111" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="palette-detail woodcut-path float-opacity"
-              />
-            </g>
+            <circle cx="70" cy="100" r="30" fill="none" stroke="#e5e7eb" strokeWidth="1.5" className="human-head woodcut-path float-circular-slow" />
+            <path 
+              d="M58,95 C60,90 65,90 68,95 M72,95 C75,90 80,90 82,95" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="human-eyes woodcut-path float-up-down-tiny"
+            />
+            <path 
+              d="M70,100 L70,105 M65,110 C66,112 74,112 75,110" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="human-nose-mouth woodcut-path float-up-down-small-delay"
+            />
+            
+            {/* Human connections to brain - left side */}
+            <path 
+              d="M85,80 C95,75 105,80 110,90" 
+              stroke="#e5e7eb" strokeWidth="0.8" strokeDasharray="2,1"
+              className="human-connection woodcut-path float-pulse-width"
+            />
+            <path 
+              d="M85,100 C95,105 105,105 114,100" 
+              stroke="#e5e7eb" strokeWidth="0.8" strokeDasharray="2,1"
+              className="human-connection woodcut-path float-pulse-width-delay"
+            />
+            <path 
+              d="M85,120 C95,125 105,120 110,110" 
+              stroke="#e5e7eb" strokeWidth="0.8" strokeDasharray="2,1"
+              className="human-connection woodcut-path float-pulse-width-delay-more"
+            />
+            
+            {/* Human thought symbols */}
+            <path 
+              d="M55,70 L60,65 L65,70 L60,75 Z" 
+              fill="none" stroke="#e5e7eb" strokeWidth="0.8"
+              className="human-symbol woodcut-path float-diagonal-small"
+            />
+            <path 
+              d="M48,80 C45,75 50,70 55,75 C60,80 55,85 50,80" 
+              fill="none" stroke="#e5e7eb" strokeWidth="0.8"
+              className="human-symbol woodcut-path float-diagonal-reverse-small"
+            />
+            <path 
+              d="M85,60 L90,65 L85,70" 
+              fill="none" stroke="#e5e7eb" strokeWidth="0.8"
+              className="human-symbol woodcut-path float-diagonal-small-delay"
+            />
             
             {/* AI side - right */}
-            <g className="ai-side">
-              {/* Computer/AI representation */}
-              <rect 
-                x="140" 
-                y="70" 
-                width="40" 
-                height="35" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1.5"
-                className="monitor woodcut-path float-pulse"
-              />
-              
-              {/* Screen content - circuit pattern */}
-              <path 
-                d="M145,80 L155,80 M145,90 L165,90 M155,80 L155,100" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="circuit-pattern woodcut-path float-pulse-opacity"
-              />
-              <path 
-                d="M165,80 L175,80 M175,80 L175,90 M175,90 L165,90" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="circuit-pattern-2 woodcut-path float-pulse-opacity-delay"
-              />
-              <circle 
-                cx="160" cy="85" 
-                r="3" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="circuit-node woodcut-path float-twinkle"
-              />
-              <circle 
-                cx="150" cy="95" 
-                r="3" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="circuit-node woodcut-path float-twinkle-delay"
-              />
-              <path 
-                d="M150,95 L160,85" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="circuit-connection woodcut-path float-pulse-opacity"
-              />
-              
-              {/* Base of computer */}
-              <rect 
-                x="145" 
-                y="105" 
-                width="30" 
-                height="10" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1.5"
-                className="computer-base woodcut-path float-pulse-delay"
-              />
-              
-              {/* Keyboard */}
-              <rect 
-                x="140" 
-                y="125" 
-                width="40" 
-                height="15" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1"
-                className="keyboard woodcut-path float-up-down-small"
-              />
-              <path 
-                d="M145,130 L175,130 M145,135 L175,135" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="keyboard-keys woodcut-path float-pulse-opacity"
-              />
-              <path 
-                d="M150,130 L150,135 M155,130 L155,135 M160,130 L160,135 M165,130 L165,135 M170,130 L170,135" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="keyboard-keys-vertical woodcut-path float-pulse-opacity-delay"
-              />
-              
-              {/* Data visualization */}
-              <rect 
-                x="145" 
-                y="150" 
-                width="30" 
-                height="20" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="1"
-                className="data-viz woodcut-path float-left-right-small"
-              />
-              <path 
-                d="M150,155 L150,165 M155,160 L155,165 M160,157 L160,165 M165,153 L165,165 M170,159 L170,165" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="data-bars woodcut-path float-up-down-small"
-              />
-              
-              {/* Additional tech elements - server */}
-              <rect 
-                x="185" 
-                y="75" 
-                width="20" 
-                height="40" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="server woodcut-path float-pulse-slow"
-              />
-              <path 
-                d="M187,80 L203,80 M187,85 L203,85 M187,90 L203,90 M187,95 L203,95 M187,100 L203,100 M187,105 L203,105" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="server-detail woodcut-path float-pulse-opacity"
-              />
-              
-              {/* Binary code */}
-              <path 
-                d="M190,120 L195,120 M190,125 L195,125 M200,120 L205,120 M200,130 L205,130 M190,135 L195,135 M200,135 L205,135" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="binary-code woodcut-path float-opacity"
-              />
-              
-              {/* Microchip */}
-              <rect 
-                x="185" 
-                y="150" 
-                width="15" 
-                height="15" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.75"
-                className="microchip woodcut-path float-pulse"
-              />
-              <path 
-                d="M187,153 L198,153 M187,157 L198,157 M187,161 L198,161" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.4"
-                className="chip-circuits woodcut-path float-opacity"
-              />
-              <path 
-                d="M200,153 L205,153 M200,157 L205,157 M200,161 L205,161" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.3"
-                className="chip-pins woodcut-path float-pulse-opacity"
-              />
-            </g>
-            
-            {/* Connection between human and AI */}
-            <path 
-              d="M90,80 L140,80 M90,90 L140,90 M90,100 L140,100" 
+            <rect 
+              x="140" y="70" 
+              width="60" height="60" 
+              rx="5" ry="5" 
               fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.75"
-              strokeDasharray="3,2"
-              className="connections woodcut-path float-pulse-opacity"
+              strokeWidth="1.5"
+              className="ai-chip woodcut-path float-rotate-micro"
             />
-            
-            {/* Neural network connections */}
-            <circle cx="105" cy="85" r="2" fill="#e5e7eb" className="node woodcut-path float-pulse" />
-            <circle cx="125" cy="85" r="2" fill="#e5e7eb" className="node woodcut-path float-pulse-delay" />
-            <circle cx="105" cy="95" r="2" fill="#e5e7eb" className="node woodcut-path float-pulse-delay-more" />
-            <circle cx="125" cy="95" r="2" fill="#e5e7eb" className="node woodcut-path float-pulse" />
             <path 
-              d="M105,85 L125,85 M105,95 L125,95 M105,85 L125,95 M105,95 L125,85" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.3"
-              className="neural-connections woodcut-path float-pulse-opacity"
+              d="M150,80 L155,80 M160,80 L165,80 M170,80 L175,80 M180,80 L185,80" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="ai-circuit-1 woodcut-path float-left-right-tiny"
+            />
+            <path 
+              d="M150,90 L160,90 M165,90 L175,90 M180,90 L190,90" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="ai-circuit-2 woodcut-path float-left-right-tiny-reverse"
+            />
+            <path 
+              d="M150,100 L155,100 M160,100 L170,100 M175,100 L185,100" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="ai-circuit-3 woodcut-path float-left-right-tiny-delay"
+            />
+            <path 
+              d="M150,110 L165,110 M170,110 L180,110 M185,110 L190,110" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="ai-circuit-4 woodcut-path float-left-right-tiny-delay-reverse"
+            />
+            <path 
+              d="M150,120 L155,120 M160,120 L165,120 M170,120 L180,120" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="ai-circuit-5 woodcut-path float-left-right-tiny-delay-more"
             />
             
-            {/* Solution/output at bottom center */}
-            <rect 
-              x="95" 
-              y="175" 
-              width="50" 
-              height="25" 
+            {/* AI connections to central area */}
+            <path 
+              d="M140,80 C135,75 125,75 126,90" 
+              stroke="#e5e7eb" strokeWidth="1" strokeDasharray="1,1"
+              className="ai-connection woodcut-path float-pulse-width-alternate"
+            />
+            <path 
+              d="M140,100 C130,102 127,95 126,100" 
+              stroke="#e5e7eb" strokeWidth="1" strokeDasharray="1,1"
+              className="ai-connection woodcut-path float-pulse-width-alternate-delay"
+            />
+            <path 
+              d="M140,120 C135,125 125,125 126,110" 
+              stroke="#e5e7eb" strokeWidth="1" strokeDasharray="1,1"
+              className="ai-connection woodcut-path float-pulse-width-alternate-delay-more"
+            />
+            
+            {/* AI binary symbols */}
+            <text 
+              x="170" y="145" 
+              fill="none" stroke="#e5e7eb" strokeWidth="0.5" fontSize="6"
+              className="ai-binary woodcut-path float-up-down-tiny"
+            >10101</text>
+            <text 
+              x="160" y="155" 
+              fill="none" stroke="#e5e7eb" strokeWidth="0.5" fontSize="6"
+              className="ai-binary woodcut-path float-up-down-tiny-reverse"
+            >01010</text>
+            <text 
+              x="170" y="165" 
+              fill="none" stroke="#e5e7eb" strokeWidth="0.5" fontSize="6"
+              className="ai-binary woodcut-path float-up-down-tiny-delay"
+            >11011</text>
+            
+            {/* Central interactive area - where human intelligence meets AI */}
+            <circle 
+              cx="120" cy="100" 
+              r="15" 
               fill="none" 
               stroke="#e5e7eb" 
               strokeWidth="1"
-              className="solution woodcut-path float-pulse-slow"
+              className="interaction-circle woodcut-path float-pulse-opacity-alternate"
             />
             <path 
-              d="M100,185 L140,185 M100,195 L140,195" 
+              d="M115,95 L125,105 M115,105 L125,95" 
+              stroke="#e5e7eb" strokeWidth="0.8"
+              className="interaction-cross woodcut-path float-rotate-slow"
+            />
+            <circle 
+              cx="120" cy="100" 
+              r="8" 
+              fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.75"
-              className="solution-lines woodcut-path float-opacity"
+              strokeWidth="0.5"
+              className="interaction-circle-inner woodcut-path float-pulse-reverse"
             />
             
-            {/* Connecting lines to solution */}
-            <path 
-              d="M70,150 C70,165 85,175 95,175" 
+            {/* Data flow indicators */}
+            <circle 
+              cx="120" cy="70" 
+              r="3" 
               fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.75"
-              className="human-connection woodcut-path float-pulse-opacity"
+              strokeWidth="0.5"
+              className="data-point woodcut-dot float-up-down-data"
             />
-            <path 
-              d="M160,150 C160,165 145,175 145,175" 
+            <circle 
+              cx="120" cy="85" 
+              r="2" 
               fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.75"
-              className="ai-connection woodcut-path float-pulse-opacity-delay"
+              strokeWidth="0.5"
+              className="data-point woodcut-dot float-up-down-data-delay"
+            />
+            <circle 
+              cx="120" cy="115" 
+              r="2" 
+              fill="none" 
+              stroke="#e5e7eb" 
+              strokeWidth="0.5"
+              className="data-point woodcut-dot float-down-up-data"
+            />
+            <circle 
+              cx="120" cy="130" 
+              r="3" 
+              fill="none" 
+              stroke="#e5e7eb" 
+              strokeWidth="0.5"
+              className="data-point woodcut-dot float-down-up-data-delay"
             />
             
-            {/* Document with combined output */}
+            {/* Explanation graphics */}
             <path 
-              d="M95,200 L120,190 L145,200" 
+              d="M50,170 L80,170 L80,180 L50,180 Z" 
               fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="output-doc woodcut-path float-up-down-small"
+              strokeWidth="0.8"
+              className="woodcut-explanation float-pulse-slow"
             />
             <path 
-              d="M100,205 L120,195 L140,205" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="output-doc woodcut-path float-up-down-small-delay"
+              d="M55,175 L75,175" 
+              stroke="#e5e7eb" strokeWidth="0.5"
+              className="woodcut-explanation-line float-left-right-micro"
             />
             
-            {/* Stars of insight */}
             <path 
-              d="M70,50 L70,40 L72,47 L65,44 L75,44 L68,47 Z" 
+              d="M160,170 L190,170 L190,180 L160,180 Z" 
               fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="insight-star woodcut-path float-twinkle"
+              strokeWidth="0.8"
+              className="woodcut-explanation float-pulse-slow-reverse"
             />
             <path 
-              d="M160,50 L160,40 L162,47 L155,44 L165,44 L158,47 Z" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="insight-star woodcut-path float-twinkle-delay"
-            />
-            <path 
-              d="M110,65 L110,55 L112,62 L105,59 L115,59 L108,62 Z" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="insight-star woodcut-path float-twinkle-delay-more"
+              d="M165,175 L185,175" 
+              stroke="#e5e7eb" strokeWidth="0.5"
+              className="woodcut-explanation-line float-left-right-micro-reverse"
             />
             
-            {/* Additional stars */}
+            {/* Connection between explanations */}
             <path 
-              d="M130,65 L130,55 L132,62 L125,59 L135,59 L128,62 Z" 
+              d="M80,175 C90,185 110,165 120,175 C130,185 150,165 160,175" 
               fill="none" 
               stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="insight-star woodcut-path float-twinkle"
-            />
-            <path 
-              d="M50,60 L50,50 L52,57 L45,54 L55,54 L48,57 Z" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="insight-star woodcut-path float-twinkle-delay"
-            />
-            <path 
-              d="M180,60 L180,50 L182,57 L175,54 L185,54 L178,57 Z" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="insight-star woodcut-path float-twinkle-delay-more"
+              strokeWidth="0.5" 
+              strokeDasharray="2,1"
+              className="woodcut-explanation-connection float-wave-small"
             />
             
-            {/* Celestial elements */}
+            {/* Subtle flourishes in corners */}
             <path 
-              d="M30,55 C33,50 37,50 40,55 C43,60 37,65 33,63 C29,60 27,60 30,55 Z" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="celestial-cloud woodcut-path float-rotate-slow"
-            />
-            <path 
-              d="M190,55 C193,50 197,50 200,55 C203,60 197,65 193,63 C189,60 187,60 190,55 Z" 
-              fill="none" 
-              stroke="#e5e7eb" 
-              strokeWidth="0.5"
-              className="celestial-cloud woodcut-path float-rotate-reverse-slow"
-            />
-            
-            {/* Dürer-style corner flourishes */}
-            <path 
-              d="M30,30 C35,35 40,30 45,35" 
+              d="M30,30 C35,25 40,25 45,30" 
               fill="none" 
               stroke="#e5e7eb" 
               strokeWidth="0.75"
-              className="flourish woodcut-path float-pulse-opacity"
+              className="flourish woodcut-path float-rotate-corner"
             />
             <path 
-              d="M210,30 C205,35 200,30 195,35" 
+              d="M195,30 C200,25 205,25 210,30" 
               fill="none" 
               stroke="#e5e7eb" 
               strokeWidth="0.75"
-              className="flourish woodcut-path float-pulse-opacity-delay"
+              className="flourish woodcut-path float-rotate-corner-reverse"
             />
             <path 
-              d="M30,210 C35,205 40,210 45,205" 
+              d="M30,190 C35,195 40,195 45,190" 
               fill="none" 
               stroke="#e5e7eb" 
               strokeWidth="0.75"
-              className="flourish woodcut-path float-pulse-opacity-delay"
+              className="flourish woodcut-path float-rotate-corner-reverse"
             />
             <path 
-              d="M210,210 C205,205 200,210 195,205" 
+              d="M195,190 C200,195 205,195 210,190" 
               fill="none" 
               stroke="#e5e7eb" 
               strokeWidth="0.75"
-              className="flourish woodcut-path float-pulse-opacity"
+              className="flourish woodcut-path float-rotate-corner"
             />
             
             {/* Dürer monogram subtly placed in corner */}
@@ -1735,8 +1578,30 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
   };
 
   return (
-    <div className={`woodcut-container ${position === "left" ? "woodcut-left-container" : "woodcut-right-container"}`}>
-      {renderIllustration()}
+    <div 
+      className={`woodcut-container ${position === "left" ? "woodcut-left-container" : "woodcut-right-container"}`}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: position === "left" ? '0 0 0 0' : '0 0 0 0',
+      }}
+    >
+      <div
+        style={{
+          borderRadius: '1rem',
+          border: '1px solid #e5e7eb',
+          backgroundColor: 'rgba(229, 231, 235, 0.05)',
+          overflow: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          height: '100%'
+        }}
+      >
+        {renderIllustration()}
+      </div>
     </div>
   );
 }

@@ -204,25 +204,27 @@ export default function PortfolioCards() {
                                       shadow-md backdrop-blur-sm gradient-animate gradient-border
                                       noise-texture">
                             <div className="relative z-10 card-content">
-                                <div className="flex flex-wrap">
+                                <div className="flex flex-wrap lg:min-h-[240px]">
                                     {index % 2 === 0 ? (
                                         <>
                                             {/* Content on left for even cards */}
-                                            <div className="w-full lg:w-2/3 pr-0 lg:pr-4 relative z-10">
-                                                <h2 className="text-xl sm:text-2xl font-bold mb-3 
-                                                            bg-clip-text text-transparent 
-                                                            bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
-                                                            text-glow">
-                                                    {card.title}
-                                                </h2>
-                                                <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
-                                                            transition-all duration-300 group-hover:opacity-100">
-                                                    {parseDescription(card.description)}
-                                                </p>
+                                            <div className="w-full lg:w-2/3 pr-0 lg:pr-4 relative z-10 flex items-center py-4 lg:py-0">
+                                                <div>
+                                                    <h2 className="text-xl sm:text-2xl font-bold mb-3 
+                                                                bg-clip-text text-transparent 
+                                                                bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
+                                                                text-glow">
+                                                        {card.title}
+                                                    </h2>
+                                                    <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                                                                transition-all duration-300 group-hover:opacity-100">
+                                                        {parseDescription(card.description)}
+                                                    </p>
+                                                </div>
                                             </div>
                                             
                                             {/* Illustration on right for even cards */}
-                                            <div className="w-full lg:w-1/3 mt-4 lg:mt-0 relative">
+                                            <div className="w-full lg:w-1/3 flex justify-center lg:justify-end items-center">
                                                 <WoodcutIllustration 
                                                     cardId={card.id} 
                                                     position="right" 
@@ -232,7 +234,7 @@ export default function PortfolioCards() {
                                     ) : (
                                         <>
                                             {/* Illustration on left for odd cards */}
-                                            <div className="w-full lg:w-1/3 mt-4 lg:mt-0 relative order-2 lg:order-1">
+                                            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start items-center order-2 lg:order-1">
                                                 <WoodcutIllustration 
                                                     cardId={card.id} 
                                                     position="left" 
@@ -240,17 +242,19 @@ export default function PortfolioCards() {
                                             </div>
                                             
                                             {/* Content on right for odd cards */}
-                                            <div className="w-full lg:w-2/3 pl-0 lg:pl-4 relative z-10 order-1 lg:order-2">
-                                                <h2 className="text-xl sm:text-2xl font-bold mb-3 
-                                                            bg-clip-text text-transparent 
-                                                            bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
-                                                            text-glow">
-                                                    {card.title}
-                                                </h2>
-                                                <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
-                                                            transition-all duration-300 group-hover:opacity-100">
-                                                    {parseDescription(card.description)}
-                                                </p>
+                                            <div className="w-full lg:w-2/3 pl-0 lg:pl-4 relative z-10 order-1 lg:order-2 flex items-center py-4 lg:py-0">
+                                                <div>
+                                                    <h2 className="text-xl sm:text-2xl font-bold mb-3 
+                                                                bg-clip-text text-transparent 
+                                                                bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
+                                                                text-glow">
+                                                        {card.title}
+                                                    </h2>
+                                                    <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                                                                transition-all duration-300 group-hover:opacity-100">
+                                                        {parseDescription(card.description)}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </>
                                     )}
