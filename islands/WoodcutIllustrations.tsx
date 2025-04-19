@@ -50,17 +50,23 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-hi ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Main circular frame */}
             <circle cx="120" cy="120" r="90" fill="none" stroke="#e5e7eb" strokeWidth="1.5" className="woodcut-path float-pulse" />
             
             {/* Central sun/face */}
             <circle cx="120" cy="120" r="30" fill="none" stroke="#e5e7eb" strokeWidth="1.2" className="woodcut-path float-rotate" />
-            <path d="M110,110 L130,110" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
-            <path d="M110,130 L130,130" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
-            <path d="M110,115 Q120,125 130,115" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
-            <circle cx="110" cy="105" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-twinkle" />
-            <circle cx="130" cy="105" r="3" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-twinkle" />
+            <path d="M100,120 L140,120" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity" />
+            <path d="M120,100 L120,140" stroke="#e5e7eb" strokeWidth="1" className="celestial-detail woodcut-path float-opacity-delay" />
+            <circle cx="120" cy="120" r="15" fill="none" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-rotate-reverse" />
+            <circle cx="120" cy="120" r="22" fill="none" stroke="#e5e7eb" strokeWidth="0.5" className="celestial-detail woodcut-path float-pulse" />
+            <path d="M105,105 L135,135" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-pulse-opacity" />
+            <path d="M135,105 L105,135" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-detail woodcut-path float-pulse-opacity-delay" />
             
             {/* Radiating beams */}
             <path d="M120,60 L120,30" stroke="#e5e7eb" strokeWidth="0.8" className="celestial-beam woodcut-path float-pulse-opacity" />
@@ -121,6 +127,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-interfaces ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -523,6 +534,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-animation ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -657,6 +673,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-physical ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -1006,6 +1027,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-fullstack ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame inspired by Dürer's woodcuts */}
             <rect x="10" y="10" width="220" height="220" fill="none" stroke="#e5e7eb" strokeWidth="2" className="woodcut-frame" />
@@ -1228,6 +1254,11 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
             ref={svgRef}
             viewBox="0 0 240 240" 
             className={`woodcut-svg woodcut-intelligence ${position === "left" ? "woodcut-left" : "woodcut-right"}`}
+            style={{
+              width: '100%',
+              height: '100%',
+              display: 'block'
+            }}
           >
             {/* Border frame */}
             <rect x="20" y="20" width="200" height="200" fill="none" stroke="#e5e7eb" strokeWidth="1" className="border-frame woodcut-path float-pulse-slow" />
@@ -1276,38 +1307,38 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
                 className="human-body woodcut-path float-pulse-delay"
               />
               
-              {/* Human brain details */}
+              {/* Replace facial features with abstract patterns */}
               <path 
-                d="M60,75 C65,65 75,65 80,75 M65,85 S70,90 75,85" 
+                d="M60,80 L80,80 M65,75 L75,75 M65,85 L75,85" 
                 fill="none" 
                 stroke="#e5e7eb" 
                 strokeWidth="0.75"
-                className="brain-detail woodcut-path float-pulse-opacity"
+                className="head-detail woodcut-path float-pulse-opacity"
               />
               
-              {/* Facial features */}
-              <circle 
-                cx="65" cy="75" 
-                r="3" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="eye woodcut-path float-twinkle"
-              />
-              <circle 
-                cx="75" cy="75" 
-                r="3" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="0.5"
-                className="eye woodcut-path float-twinkle-delay"
-              />
               <path 
-                d="M67,80 C70,83 73,83 76,80" 
+                d="M60,70 L80,70 M60,90 L80,90" 
                 fill="none" 
                 stroke="#e5e7eb" 
                 strokeWidth="0.5"
-                className="mouth woodcut-path float-up-down-small"
+                className="head-pattern woodcut-path float-opacity"
+              />
+              
+              <circle 
+                cx="70" cy="80" 
+                r="10" 
+                fill="none" 
+                stroke="#e5e7eb" 
+                strokeWidth="0.5"
+                className="head-circle woodcut-path float-rotate-slow"
+              />
+              
+              <path 
+                d="M65,75 L75,85 M75,75 L65,85" 
+                fill="none" 
+                stroke="#e5e7eb" 
+                strokeWidth="0.5"
+                className="head-cross woodcut-path float-pulse-opacity"
               />
               
               {/* Book/knowledge */}
@@ -1735,8 +1766,30 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
   };
 
   return (
-    <div className={`woodcut-container ${position === "left" ? "woodcut-left-container" : "woodcut-right-container"}`}>
-      {renderIllustration()}
+    <div 
+      className={`woodcut-container ${position === "left" ? "woodcut-left-container" : "woodcut-right-container"}`}
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: position === "left" ? '0 0 0 0' : '0 0 0 0',
+      }}
+    >
+      <div
+        style={{
+          borderRadius: '1rem',
+          border: '1px solid #e5e7eb',
+          backgroundColor: 'rgba(229, 231, 235, 0.05)',
+          overflow: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          height: '100%'
+        }}
+      >
+        {renderIllustration()}
+      </div>
     </div>
   );
 }
