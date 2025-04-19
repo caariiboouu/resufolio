@@ -1031,3 +1031,502 @@ header {
 .float-rotate {
   animation: subtle-rotation 10s ease-in-out infinite;
 }
+
+/* Additional animation classes for individual elements */
+.float-up-down {
+  animation: up-down-float 6s ease-in-out infinite;
+}
+
+.float-up-down-reverse {
+  animation: up-down-float-reverse 6s ease-in-out infinite;
+}
+
+.float-left-right {
+  animation: left-right-float 7s ease-in-out infinite;
+}
+
+.float-left-right-reverse {
+  animation: left-right-float-reverse 7s ease-in-out infinite;
+}
+
+.float-up-down-small {
+  animation: up-down-float-small 5s ease-in-out infinite;
+}
+
+.float-up-down-small-delay {
+  animation: up-down-float-small 5s ease-in-out infinite 0.5s;
+}
+
+.float-up-down-tiny {
+  animation: up-down-float-tiny 4s ease-in-out infinite;
+}
+
+.float-up-down-tiny-reverse {
+  animation: up-down-float-tiny-reverse 4s ease-in-out infinite;
+}
+
+.float-up-down-tiny-delay {
+  animation: up-down-float-tiny 4s ease-in-out infinite 1s;
+}
+
+.float-left-right-small {
+  animation: left-right-float-small 4s ease-in-out infinite;
+}
+
+.float-left-right-small-reverse {
+  animation: left-right-float-small-reverse 4s ease-in-out infinite;
+}
+
+.float-left-right-tiny {
+  animation: left-right-float-tiny 3s ease-in-out infinite;
+}
+
+.float-left-right-tiny-reverse {
+  animation: left-right-float-tiny-reverse 3s ease-in-out infinite;
+}
+
+.float-left-right-tiny-delay {
+  animation: left-right-float-tiny 3s ease-in-out infinite 0.7s;
+}
+
+.float-left-right-tiny-delay-reverse {
+  animation: left-right-float-tiny-reverse 3s ease-in-out infinite 0.7s;
+}
+
+.float-left-right-tiny-delay-more {
+  animation: left-right-float-tiny 3s ease-in-out infinite 1.4s;
+}
+
+.float-left-right-micro {
+  animation: left-right-float-micro 2s ease-in-out infinite;
+}
+
+.float-left-right-micro-reverse {
+  animation: left-right-float-micro-reverse 2s ease-in-out infinite;
+}
+
+.float-diagonal-small {
+  animation: diagonal-float-small 5s ease-in-out infinite;
+}
+
+.float-diagonal-small-delay {
+  animation: diagonal-float-small 5s ease-in-out infinite 1s;
+}
+
+.float-diagonal-reverse-small {
+  animation: diagonal-float-reverse-small 5s ease-in-out infinite;
+}
+
+.float-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+.float-pulse-width {
+  animation: pulse-width 4s ease-in-out infinite;
+}
+
+.float-pulse-width-delay {
+  animation: pulse-width 4s ease-in-out infinite 1s;
+}
+
+.float-pulse-width-delay-more {
+  animation: pulse-width 4s ease-in-out infinite 2s;
+}
+
+.float-pulse-width-alternate {
+  animation: pulse-width-alternate 5s ease-in-out infinite;
+}
+
+.float-pulse-width-alternate-delay {
+  animation: pulse-width-alternate 5s ease-in-out infinite 1.5s;
+}
+
+.float-pulse-width-alternate-delay-more {
+  animation: pulse-width-alternate 5s ease-in-out infinite 3s;
+}
+
+.float-pulse-opacity-alternate {
+  animation: pulse-opacity-alternate 6s ease-in-out infinite;
+}
+
+.float-pulse-reverse {
+  animation: pulse-reverse 4s ease-in-out infinite;
+}
+
+.float-rotate-slow {
+  animation: rotate-slow 10s linear infinite;
+}
+
+.float-rotate-slow-reverse {
+  animation: rotate-slow-reverse 12s linear infinite;
+}
+
+.float-rotate-micro {
+  animation: rotate-micro 15s linear infinite;
+}
+
+.float-rotate-corner {
+  animation: rotate-corner 8s ease-in-out infinite;
+}
+
+.float-rotate-corner-reverse {
+  animation: rotate-corner-reverse 8s ease-in-out infinite;
+}
+
+.float-circular {
+  animation: circular-path 12s linear infinite;
+}
+
+.float-circular-reverse {
+  animation: circular-path-reverse 12s linear infinite;
+}
+
+.float-circular-alt {
+  animation: circular-path 15s linear infinite 2s;
+}
+
+.float-circular-alt-reverse {
+  animation: circular-path-reverse 15s linear infinite 2s;
+}
+
+.float-up-down-data {
+  animation: data-flow-up-down 3s ease-in-out infinite;
+}
+
+.float-up-down-data-delay {
+  animation: data-flow-up-down 3s ease-in-out infinite 1s;
+}
+
+.float-down-up-data {
+  animation: data-flow-down-up 3s ease-in-out infinite;
+}
+
+.float-down-up-data-delay {
+  animation: data-flow-down-up 3s ease-in-out infinite 1s;
+}
+
+.float-wave-small {
+  animation: wave-small 8s ease-in-out infinite;
+}
+
+/* Animation keyframes for new movements */
+@keyframes up-down-float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes up-down-float-reverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes left-right-float {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-8px);
+  }
+}
+
+@keyframes left-right-float-reverse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+@keyframes up-down-float-small {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes up-down-float-tiny {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes up-down-float-tiny-reverse {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+
+@keyframes left-right-float-small {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+}
+
+@keyframes left-right-float-small-reverse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes left-right-float-tiny {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-2px);
+  }
+}
+
+@keyframes left-right-float-tiny-reverse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes left-right-float-micro {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes left-right-float-micro-reverse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+}
+
+@keyframes diagonal-float-small {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(3px, -3px);
+  }
+}
+
+@keyframes diagonal-float-reverse-small {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-3px, -3px);
+  }
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-width {
+  0%, 100% {
+    stroke-width: 0.8;
+    opacity: 0.8;
+  }
+  50% {
+    stroke-width: 1.2;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-width-alternate {
+  0%, 100% {
+    stroke-dasharray: "1,1";
+    opacity: 0.7;
+  }
+  50% {
+    stroke-dasharray: "2,1";
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-opacity-alternate {
+  0%, 100% {
+    opacity: 0.7;
+    stroke-width: 1;
+  }
+  50% {
+    opacity: 1;
+    stroke-width: 1.2;
+  }
+}
+
+@keyframes pulse-reverse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-slow-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes rotate-micro {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
+@keyframes rotate-corner {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes rotate-corner-reverse {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-3deg);
+  }
+}
+
+@keyframes circular-path {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(4px, -4px);
+  }
+  50% {
+    transform: translate(0, -6px);
+  }
+  75% {
+    transform: translate(-4px, -4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes circular-path-reverse {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-4px, -4px);
+  }
+  50% {
+    transform: translate(0, -6px);
+  }
+  75% {
+    transform: translate(4px, -4px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes data-flow-up-down {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  51% {
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes data-flow-down-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+  51% {
+    transform: translateY(10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes wave-small {
+  0%, 100% {
+    transform: translateY(0) scaleY(1);
+  }
+  50% {
+    transform: translateY(-2px) scaleY(1.05);
+  }
+}
