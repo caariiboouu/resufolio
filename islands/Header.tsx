@@ -90,34 +90,38 @@ export default function Header() {
           <div className={`flex items-center justify-between`}>
             {/* Left: Name and Title */}
             <div className="flex-1">
-              <div>
-                <h1 className={`font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d] text-glow
-                              transition-all duration-300 ease-in-out
-                              ${isScrolled ? 'text-lg sm:text-xl' : 'text-2xl sm:text-3xl'}`}
-                >
-                  Joel Cuthriell
-                </h1>
-                <p className={`transition-all duration-300 ease-in-out
-                             ${isScrolled ? 'text-xs opacity-75 mt-0' : 'text-sm sm:text-base mt-1 opacity-90'}`}
-                >
-                  Interactive Specialist
-                </p>
-              </div>
+              <a href="/" className="inline-block hover:opacity-80 transition-opacity">
+                <div>
+                  <h1 className={`font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d] text-glow
+                                transition-all duration-300 ease-in-out
+                                ${isScrolled ? 'text-lg sm:text-xl' : 'text-2xl sm:text-3xl'}`}
+                  >
+                    Joel Cuthriell
+                  </h1>
+                  <p className={`transition-all duration-300 ease-in-out
+                              ${isScrolled ? 'text-xs opacity-75 mt-0' : 'text-sm sm:text-base mt-1 opacity-90'}`}
+                  >
+                    Interactive Specialist
+                  </p>
+                </div>
+              </a>
             </div>
             
             {/* Center: Logo */}
             <div className="flex justify-center items-center" 
                 onMouseEnter={() => setIsImageHovered(true)}
                 onMouseLeave={() => setIsImageHovered(false)}>
-              <div className={`relative transition-all duration-300 ease-in-out
-                            ${isScrolled ? 'h-8 w-8 sm:h-10 sm:w-10' : 'h-16 w-16 sm:h-24 sm:w-24'}`}
-              >
-                <img
-                  src="/jc.png"
-                  alt="Joel Cuthriell, a UX Specialist"
-                  className="w-full h-full object-cover rounded-full shadow-md hover:shadow-xl transition-all"
-                />
-              </div>
+              <a href="/" className="block hover:opacity-90 transition-opacity">
+                <div className={`relative transition-all duration-300 ease-in-out
+                              ${isScrolled ? 'h-8 w-8 sm:h-10 sm:w-10' : 'h-16 w-16 sm:h-24 sm:w-24'}`}
+                >
+                  <img
+                    src="/jc.png"
+                    alt="Joel Cuthriell, a UX Specialist"
+                    className="w-full h-full object-cover rounded-full shadow-md hover:shadow-xl transition-all"
+                  />
+                </div>
+              </a>
             </div>
             
             {/* Right: Skills */}

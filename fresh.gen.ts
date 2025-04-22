@@ -9,6 +9,7 @@ import * as $api_joke from "./routes/api/joke.ts";
 import * as $gogirlgala_index from "./routes/gogirlgala/index.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $square_terminals from "./routes/square-terminals.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $PortfolioCards from "./islands/PortfolioCards.tsx";
 import * as $WoodcutIllustrations from "./islands/WoodcutIllustrations.tsx";
@@ -23,6 +24,7 @@ const manifest = {
     "./routes/gogirlgala/index.tsx": $gogirlgala_index,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/square-terminals.tsx": $square_terminals,
   },
   islands: {
     "./islands/Header.tsx": $Header,
