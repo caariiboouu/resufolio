@@ -72,6 +72,13 @@ const initialCards: CardData[] = [
             "AI is fantastic for gathering and interpereting large amounts of information. I brought a client's site from 20 second page load times down to 1 second loads by using AI to generate tests and rewrite database queries.",
         images: colorVariants.map(generatePlaceholderSvg),
     },
+    {
+        id: 7,
+        title: "Square Terminal Rentals - Tulsa",
+        description:
+            "Need payment processing for your Tulsa event? <a href='/square-terminals' target='_self'>Rent professional Square Terminals</a> for just $100 per device. Available now for events, markets, and businesses in the Tulsa metro area.",
+        images: ["/SHOP_US_Product_Square_Terminal_Gallery-01.png"],
+    },
 ];
 
 function Lightbox({ image, onClose }: { image: string; onClose: () => void }) {
@@ -225,20 +232,38 @@ export default function PortfolioCards() {
                                             
                                             {/* Illustration on right for even cards */}
                                             <div className="w-full lg:w-1/3 flex justify-center lg:justify-end items-center">
-                                                <WoodcutIllustration 
-                                                    cardId={card.id} 
-                                                    position="right" 
-                                                />
+                                                {card.images[0] && card.images[0].startsWith('/') ? (
+                                                    <img 
+                                                        src={card.images[0]} 
+                                                        alt={card.title}
+                                                        className="max-w-full h-auto rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                                                        onClick={() => handleImageClick(card.images[0])}
+                                                    />
+                                                ) : (
+                                                    <WoodcutIllustration 
+                                                        cardId={card.id} 
+                                                        position="right" 
+                                                    />
+                                                )}
                                             </div>
                                         </>
                                     ) : (
                                         <>
                                             {/* Illustration on left for odd cards */}
                                             <div className="w-full lg:w-1/3 flex justify-center lg:justify-start items-center order-2 lg:order-1">
-                                                <WoodcutIllustration 
-                                                    cardId={card.id} 
-                                                    position="left" 
-                                                />
+                                                {card.images[0] && card.images[0].startsWith('/') ? (
+                                                    <img 
+                                                        src={card.images[0]} 
+                                                        alt={card.title}
+                                                        className="max-w-full h-auto rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                                                        onClick={() => handleImageClick(card.images[0])}
+                                                    />
+                                                ) : (
+                                                    <WoodcutIllustration 
+                                                        cardId={card.id} 
+                                                        position="left" 
+                                                    />
+                                                )}
                                             </div>
                                             
                                             {/* Content on right for odd cards */}
