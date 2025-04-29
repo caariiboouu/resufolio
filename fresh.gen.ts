@@ -4,14 +4,17 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $_gogirlgala_index from "./routes/_gogirlgala/index.tsx";
 import * as $api_docs from "./routes/api/docs.ts";
 import * as $api_joke from "./routes/api/joke.ts";
-import * as $gogirlgala_index from "./routes/gogirlgala/index.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $resume from "./routes/resume.tsx";
 import * as $square_terminals from "./routes/square-terminals.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $PortfolioCards from "./islands/PortfolioCards.tsx";
+import * as $ResumeContent from "./islands/ResumeContent.tsx";
+import * as $ResumeViewer from "./islands/ResumeViewer.tsx";
 import * as $WoodcutIllustrations from "./islands/WoodcutIllustrations.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -19,16 +22,19 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/_gogirlgala/index.tsx": $_gogirlgala_index,
     "./routes/api/docs.ts": $api_docs,
     "./routes/api/joke.ts": $api_joke,
-    "./routes/gogirlgala/index.tsx": $gogirlgala_index,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/resume.tsx": $resume,
     "./routes/square-terminals.tsx": $square_terminals,
   },
   islands: {
     "./islands/Header.tsx": $Header,
     "./islands/PortfolioCards.tsx": $PortfolioCards,
+    "./islands/ResumeContent.tsx": $ResumeContent,
+    "./islands/ResumeViewer.tsx": $ResumeViewer,
     "./islands/WoodcutIllustrations.tsx": $WoodcutIllustrations,
   },
   baseUrl: import.meta.url,
