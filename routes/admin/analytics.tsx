@@ -4,7 +4,7 @@ import { analyticsStore } from "../../utils/analytics.ts";
 import AnalyticsDashboard from "../../islands/AnalyticsDashboard.tsx";
 
 // Allowed IP addresses
-const ALLOWED_IPS = ["72.192.106.200", "127.0.0.1", "::1", "localhost"];
+const ALLOWED_IPS = ["72.192.106.200", "127.0.0.1", "::1", "localhost", "cuthriell.com"];
 
 interface AnalyticsPageData {
   stats: {
@@ -22,7 +22,10 @@ export const handler: Handlers<AnalyticsPageData> = {
     const ip = req.headers.get("x-forwarded-for") || req.headers.get("host")?.split(":")[0] || "unknown";
     console.log("Client IP:", ip);
     console.log("Headers:", Object.fromEntries(req.headers.entries()));
-    const authorized = ALLOWED_IPS.includes(ip);
+    
+    // Check if the IP is in the allowed list or if the host contains cuthriell.com
+    const host = req.headers.get("host") || "";
+    const authorized = ALLOWED_IPS.includes(ip) || host.includes("cuthriell.com");
     
     // Only send stats if the IP is authorized
     const stats = authorized ? analyticsStore.getStats() : {
