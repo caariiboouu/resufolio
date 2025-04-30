@@ -294,7 +294,7 @@ export default function ResumeViewer({ pdfUrl, isOpen, onClose }: {
                 download={filename}
                 className="px-4 py-2 border border-[#32564f] text-[#32564f] rounded hover:bg-gray-200 transition-colors duration-300"
               >
-                Download PDF
+                Download Portfolio
               </a>
             </div>
           </div>
