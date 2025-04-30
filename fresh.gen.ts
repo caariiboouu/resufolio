@@ -5,12 +5,17 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_gogirlgala_index from "./routes/_gogirlgala/index.tsx";
+import * as $admin_analytics from "./routes/admin/analytics.tsx";
+import * as $api_analytics from "./routes/api/analytics.ts";
+import * as $api_analytics_data from "./routes/api/analytics/data.ts";
 import * as $api_docs from "./routes/api/docs.ts";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $resume from "./routes/resume.tsx";
 import * as $square_terminals from "./routes/square-terminals.tsx";
+import * as $AnalyticsDashboard from "./islands/AnalyticsDashboard.tsx";
+import * as $AnalyticsTracker from "./islands/AnalyticsTracker.tsx";
 import * as $Header from "./islands/Header.tsx";
 import * as $PortfolioCards from "./islands/PortfolioCards.tsx";
 import * as $ResumeContent from "./islands/ResumeContent.tsx";
@@ -23,6 +28,9 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/_gogirlgala/index.tsx": $_gogirlgala_index,
+    "./routes/admin/analytics.tsx": $admin_analytics,
+    "./routes/api/analytics.ts": $api_analytics,
+    "./routes/api/analytics/data.ts": $api_analytics_data,
     "./routes/api/docs.ts": $api_docs,
     "./routes/api/joke.ts": $api_joke,
     "./routes/greet/[name].tsx": $greet_name_,
@@ -31,6 +39,8 @@ const manifest = {
     "./routes/square-terminals.tsx": $square_terminals,
   },
   islands: {
+    "./islands/AnalyticsDashboard.tsx": $AnalyticsDashboard,
+    "./islands/AnalyticsTracker.tsx": $AnalyticsTracker,
     "./islands/Header.tsx": $Header,
     "./islands/PortfolioCards.tsx": $PortfolioCards,
     "./islands/ResumeContent.tsx": $ResumeContent,

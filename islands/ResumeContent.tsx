@@ -1,9 +1,44 @@
-import { useState } from "preact/hooks";
+import { useState, useRef, useEffect } from "preact/hooks";
 import ResumeViewer from "./ResumeViewer.tsx";
 
 export default function ResumeContent() {
   const [isResumeModalOpen, setResumeModalOpen] = useState(false);
+  const [portfolioDropdownOpen, setPortfolioDropdownOpen] = useState(false);
+  const [resumeDropdownOpen, setResumeDropdownOpen] = useState(false);
+  const portfolioTimeoutRef = useRef<number | null>(null);
+  const resumeTimeoutRef = useRef<number | null>(null);
   const pdfUrl = "/portfolio-joel-cuthriell.pdf";
+  const resumeUrl = "/resume-joel-cuthriell.pdf";
+  
+  // Clear timeouts on unmount
+  useEffect(() => {
+    return () => {
+      if (portfolioTimeoutRef.current) clearTimeout(portfolioTimeoutRef.current);
+      if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    };
+  }, []);
+
+  const handlePortfolioMouseEnter = () => {
+    if (portfolioTimeoutRef.current) clearTimeout(portfolioTimeoutRef.current);
+    setPortfolioDropdownOpen(true);
+  };
+
+  const handlePortfolioMouseLeave = () => {
+    portfolioTimeoutRef.current = setTimeout(() => {
+      setPortfolioDropdownOpen(false);
+    }, 300) as unknown as number;
+  };
+
+  const handleResumeMouseEnter = () => {
+    if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
+    setResumeDropdownOpen(true);
+  };
+
+  const handleResumeMouseLeave = () => {
+    resumeTimeoutRef.current = setTimeout(() => {
+      setResumeDropdownOpen(false);
+    }, 300) as unknown as number;
+  };
   
   return (
     <>
@@ -13,12 +48,66 @@ export default function ResumeContent() {
           <p className="text-left text-[#32564f]/80 mb-4 md:mb-0">
             <a className="underline" href="mailto:joel@cuthriell.com">joel@cuthriell.com</a> | <a className="underline" href="tel:+14055820062">405.582.0062</a> | Tulsa, OK
           </p>
-          <button
-            onClick={() => setResumeModalOpen(true)}
-            className="px-4 py-2 bg-[#32564f] text-white rounded hover:bg-[#54ac9b] transition-colors duration-300"
-          >
-            Open Portfolio
-          </button>
+          <div className="flex items-center">
+            <div 
+              className="relative mr-3"
+              onMouseEnter={handlePortfolioMouseEnter}
+              onMouseLeave={handlePortfolioMouseLeave}
+            >
+              <button
+                onClick={() => setResumeModalOpen(true)}
+                className="px-4 py-2 bg-[#32564f] text-white rounded hover:bg-[#54ac9b] transition-colors duration-300"
+              >
+                Open Portfolio
+              </button>
+              <div 
+                className={`absolute left-0 right-0 mt-0 bg-white shadow-md rounded-b-lg overflow-hidden transition-all duration-300 z-10 ${
+                  portfolioDropdownOpen 
+                    ? 'max-h-20 opacity-100 border border-t-0 border-[#32564f]/20' 
+                    : 'max-h-0 opacity-0 pointer-events-none'
+                }`}
+              >
+                <a 
+                  href={pdfUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 text-sm text-[#32564f] hover:bg-gray-100"
+                >
+                  open in new tab
+                </a>
+              </div>
+            </div>
+            
+            <div 
+              className="relative"
+              onMouseEnter={handleResumeMouseEnter}
+              onMouseLeave={handleResumeMouseLeave}
+            >
+              <a
+                href={resumeUrl} 
+                download="resume-joel-cuthriell.pdf"
+                className="px-4 py-2 border border-[#32564f] text-[#32564f] rounded hover:bg-gray-200 transition-colors duration-300 inline-block"
+              >
+                Download Resume
+              </a>
+              <div 
+                className={`absolute left-0 right-0 mt-0 bg-white shadow-md rounded-b-lg overflow-hidden transition-all duration-300 z-10 ${
+                  resumeDropdownOpen 
+                    ? 'max-h-20 opacity-100 border border-t-0 border-[#32564f]/20' 
+                    : 'max-h-0 opacity-0 pointer-events-none'
+                }`}
+              >
+                <a 
+                  href={resumeUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 text-sm text-[#32564f] hover:bg-gray-100"
+                >
+                  open in new tab
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Skills */}
