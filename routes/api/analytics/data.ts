@@ -2,15 +2,18 @@ import { Handlers } from "$fresh/server.ts";
 import { analyticsStore } from "../../../utils/analytics.ts";
 
 // Allowed IP addresses that can access analytics data
-const ALLOWED_IPS = ["72.192.106.200"];
+const ALLOWED_IPS = ["72.192.106.200", "127.0.0.1", "::1", "localhost", "cuthriell.com"];
 
 export const handler: Handlers = {
   async GET(req) {
     try {
-      const ip = req.headers.get("x-forwarded-for") || "unknown";
+      const ip = req.headers.get("x-forwarded-for") || req.headers.get("host")?.split(":")[0] || "unknown";
       
-      // Check if the IP is allowed to access analytics data
-      if (!ALLOWED_IPS.includes(ip)) {
+      // Check if the IP is allowed or if the host contains cuthriell.com
+      const host = req.headers.get("host") || "";
+      const authorized = ALLOWED_IPS.includes(ip) || host.includes("cuthriell.com");
+      
+      if (!authorized) {
         return new Response(JSON.stringify({ error: "Unauthorized" }), {
           status: 403,
           headers: { "Content-Type": "application/json" }
