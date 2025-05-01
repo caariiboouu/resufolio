@@ -1,4 +1,4 @@
-import { useState } from "preact/hooks";
+import { useState, useEffect } from "preact/hooks";
 
 interface AnalyticsPageData {
   stats: {
@@ -9,18 +9,33 @@ interface AnalyticsPageData {
   };
 }
 
+interface VisitorStats {
+  ip: string;
+  totalViews: number;
+  uniquePages: number;
+  firstVisit: number;
+  lastVisit: number;
+  pages: string[];
+  referrers: string[];
+  userAgents: string[];
+}
+
 export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData["stats"] }) {
   const [activeTab, setActiveTab] = useState("overview");
-  const [pageViews, setPageViews] = useState([]);
-  const [userActions, setUserActions] = useState([]);
+  const [pageViews, setPageViews] = useState<any[]>([]);
+  const [userActions, setUserActions] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [referrerStats, setReferrerStats] = useState<{source: string, count: number}[]>([]);
+  const [visitorStats, setVisitorStats] = useState<VisitorStats[]>([]);
   
   // Function to fetch data from the API
   const fetchData = async (type: string) => {
     setLoading(true);
     try {
       const response = await fetch(`/api/analytics/data?type=${type}`);
+      if (!response.ok) {
+        throw new Error(`Failed to fetch ${type}: ${response.statusText}`);
+      }
       const data = await response.json();
       
       if (type === "pageviews") {
@@ -32,22 +47,66 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
           const referrer = view.referrer || "direct";
           referrerCounts[referrer] = (referrerCounts[referrer] || 0) + 1;
         });
-        
-        // Convert to array and sort
         const sortedReferrers = Object.entries(referrerCounts)
           .map(([source, count]) => ({ source, count }))
           .sort((a, b) => b.count - a.count);
-          
         setReferrerStats(sortedReferrers);
+        
+        // Calculate visitor stats by IP
+        const statsByIp: Record<string, VisitorStats> = {};
+        data.forEach((view: any) => {
+          const ip = view.ip || 'unknown';
+          if (!statsByIp[ip]) {
+            statsByIp[ip] = {
+              ip: ip,
+              totalViews: 0,
+              uniquePages: 0,
+              firstVisit: view.timestamp,
+              lastVisit: view.timestamp,
+              pages: [],
+              referrers: [],
+              userAgents: [],
+            };
+          }
+          statsByIp[ip].totalViews++;
+          statsByIp[ip].lastVisit = Math.max(statsByIp[ip].lastVisit, view.timestamp);
+          statsByIp[ip].firstVisit = Math.min(statsByIp[ip].firstVisit, view.timestamp);
+          if (!statsByIp[ip].pages.includes(view.path)) {
+            statsByIp[ip].pages.push(view.path);
+            statsByIp[ip].uniquePages++;
+          }
+          const referrer = view.referrer || 'direct';
+          if (!statsByIp[ip].referrers.includes(referrer)) {
+             statsByIp[ip].referrers.push(referrer);
+          }
+          if (!statsByIp[ip].userAgents.includes(view.userAgent)) {
+             statsByIp[ip].userAgents.push(view.userAgent);
+          }
+        });
+        
+        const sortedVisitorStats = Object.values(statsByIp)
+          .sort((a, b) => b.lastVisit - a.lastVisit); // Sort by most recent visit
+        setVisitorStats(sortedVisitorStats);
+          
       } else if (type === "actions") {
         setUserActions(data);
       }
     } catch (error) {
       console.error(`Error fetching ${type}:`, error);
+      // Optionally set an error state here to display to the user
     } finally {
       setLoading(false);
     }
   };
+  
+  // Fetch initial data for overview tab
+  useEffect(() => {
+    if (activeTab === 'overview' || activeTab === 'pageviews' || activeTab === 'referrers' || activeTab === 'visitors') {
+       fetchData('pageviews');
+    } else if (activeTab === 'actions') {
+       fetchData('actions');
+    }
+  }, [activeTab]); // Re-fetch when tab changes
   
   return (
     <div className="min-h-screen bg-gray-100 p-4">
@@ -97,6 +156,21 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
                 }`}
               >
                 Referrers
+              </button>
+            </li>
+            <li className="mr-2">
+              <button 
+                onClick={() => {
+                  setActiveTab("visitors");
+                  fetchData("pageviews"); // Needs pageviews data
+                }}
+                className={`inline-block p-4 ${
+                  activeTab === "visitors" 
+                    ? "text-[#32564f] border-b-2 border-[#32564f]" 
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                Visitors by IP
               </button>
             </li>
             <li>
@@ -179,6 +253,7 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
                         <th className="py-2 px-3 border-b text-left">Time</th>
                         <th className="py-2 px-3 border-b text-left">Referrer</th>
                         <th className="py-2 px-3 border-b text-left">Screen Size</th>
+                        <th className="py-2 px-3 border-b text-left">IP Address</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -188,6 +263,7 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
                           <td className="py-2 px-3 border-b">{new Date(view.timestamp).toLocaleString()}</td>
                           <td className="py-2 px-3 border-b">{view.referrer}</td>
                           <td className="py-2 px-3 border-b">{view.screenSize}</td>
+                          <td className="py-2 px-3 border-b">{view.ip}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -293,6 +369,7 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
                         <th className="py-2 px-3 border-b text-left">Element</th>
                         <th className="py-2 px-3 border-b text-left">Path</th>
                         <th className="py-2 px-3 border-b text-left">Time</th>
+                        <th className="py-2 px-3 border-b text-left">IP Address</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -302,6 +379,7 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
                           <td className="py-2 px-3 border-b">{action.element}</td>
                           <td className="py-2 px-3 border-b">{action.path}</td>
                           <td className="py-2 px-3 border-b">{new Date(action.timestamp).toLocaleString()}</td>
+                          <td className="py-2 px-3 border-b">{action.ip}</td>
                         </tr>
                       ))}
                     </tbody>
@@ -309,6 +387,57 @@ export default function AnalyticsDashboard({ stats }: { stats: AnalyticsPageData
                 </div>
               ) : (
                 <p className="text-gray-500">No user actions data available yet.</p>
+              )}
+            </div>
+          )}
+          
+          {activeTab === "visitors" && (
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-[#32564f]">Visitors by IP Address</h3>
+              {loading ? (
+                <div className="text-center py-8">
+                  <div className="w-10 h-10 border-4 border-[#32564f] border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                  <p>Loading data...</p>
+                </div>
+              ) : visitorStats.length > 0 ? (
+                <div className="overflow-x-auto">
+                  <table className="min-w-full bg-white">
+                    <thead>
+                      <tr>
+                        <th className="py-2 px-3 border-b text-left">IP Address</th>
+                        <th className="py-2 px-3 border-b text-left">Total Views</th>
+                        <th className="py-2 px-3 border-b text-left">Unique Pages</th>
+                        <th className="py-2 px-3 border-b text-left">First Visit</th>
+                        <th className="py-2 px-3 border-b text-left">Last Visit</th>
+                        <th className="py-2 px-3 border-b text-left">Pages Visited</th>
+                        <th className="py-2 px-3 border-b text-left">Referrers</th>
+                        <th className="py-2 px-3 border-b text-left">User Agents</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {visitorStats.map((visitor) => (
+                        <tr key={visitor.ip} className="hover:bg-gray-50">
+                          <td className="py-2 px-3 border-b font-mono">{visitor.ip}</td>
+                          <td className="py-2 px-3 border-b text-center">{visitor.totalViews}</td>
+                          <td className="py-2 px-3 border-b text-center">{visitor.uniquePages}</td>
+                          <td className="py-2 px-3 border-b">{new Date(visitor.firstVisit).toLocaleString()}</td>
+                          <td className="py-2 px-3 border-b">{new Date(visitor.lastVisit).toLocaleString()}</td>
+                          <td className="py-2 px-3 border-b text-xs">
+                            {visitor.pages.map(page => <div key={page}>{page}</div>)}
+                          </td>
+                          <td className="py-2 px-3 border-b text-xs">
+                            {visitor.referrers.map(ref => <div key={ref}>{ref}</div>)}
+                          </td>
+                          <td className="py-2 px-3 border-b text-xs">
+                             {visitor.userAgents.map(ua => <div key={ua} title={ua}>{ua.substring(0, 30)}...</div>)}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              ) : (
+                <p className="text-gray-500">No visitor data available yet.</p>
               )}
             </div>
           )}
