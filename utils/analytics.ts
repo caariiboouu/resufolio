@@ -1,4 +1,9 @@
-// Simple in-memory analytics store
+import { ensureFile } from "https://deno.land/std@0.224.0/fs/ensure_file.ts";
+
+// Simple analytics store with JSON file persistence
+
+const DATA_FILE_PATH = "./analytics_data.json";
+
 export interface PageView {
   id: string;
   path: string;
@@ -18,51 +23,114 @@ export interface UserAction {
   ip: string;
 }
 
-// In-memory storage for analytics data
-// This will reset when the server restarts
+interface AnalyticsData {
+  pageViews: PageView[];
+  userActions: UserAction[];
+}
+
+// Class to manage analytics data with file persistence
 class AnalyticsStore {
-  private pageViews: PageView[] = [];
-  private userActions: UserAction[] = [];
+  private data: AnalyticsData = { pageViews: [], userActions: [] };
+  private writeTimeout: number | null = null;
+  private writeScheduled = false;
+
+  constructor() {
+    this.loadData();
+  }
+
+  private async loadData(): Promise<void> {
+    try {
+      await ensureFile(DATA_FILE_PATH);
+      const fileContent = await Deno.readTextFile(DATA_FILE_PATH);
+      if (fileContent.trim()) {
+        this.data = JSON.parse(fileContent);
+        // Ensure arrays exist
+        this.data.pageViews = this.data.pageViews || [];
+        this.data.userActions = this.data.userActions || [];
+        console.log(`Loaded ${this.data.pageViews.length} page views and ${this.data.userActions.length} user actions from ${DATA_FILE_PATH}`);
+      } else {
+        console.log(`${DATA_FILE_PATH} is empty. Initializing with empty data.`);
+        this.data = { pageViews: [], userActions: [] };
+      }
+    } catch (error) {
+      console.error(`Error loading analytics data from ${DATA_FILE_PATH}:`, error);
+      // Initialize with empty data if loading fails
+      this.data = { pageViews: [], userActions: [] };
+    }
+  }
+
+  // Debounced write function to avoid excessive writes
+  private scheduleWrite(): void {
+    if (this.writeScheduled) return; // Already scheduled
+
+    this.writeScheduled = true;
+    if (this.writeTimeout) {
+      clearTimeout(this.writeTimeout);
+    }
+
+    // Wait 5 seconds after the last change to write
+    this.writeTimeout = setTimeout(async () => {
+      await this.writeData();
+      this.writeScheduled = false;
+      this.writeTimeout = null;
+    }, 5000); 
+  }
+
+  private async writeData(): Promise<void> {
+    try {
+      // Keep only the last 1000 entries for each type to prevent file bloat
+      this.data.pageViews = this.data.pageViews.slice(-1000);
+      this.data.userActions = this.data.userActions.slice(-1000);
+      
+      const dataString = JSON.stringify(this.data, null, 2);
+      await Deno.writeTextFile(DATA_FILE_PATH, dataString);
+      console.log(`Analytics data written to ${DATA_FILE_PATH}`);
+    } catch (error) {
+      console.error(`Error writing analytics data to ${DATA_FILE_PATH}:`, error);
+    }
+  }
   
   addPageView(pageView: PageView): void {
-    this.pageViews.push(pageView);
-    
-    // Limit storage to prevent memory issues (keep last 1000 page views)
-    if (this.pageViews.length > 1000) {
-      this.pageViews = this.pageViews.slice(-1000);
+    // Check if the path starts with /admin - if so, don't track
+    if (pageView.path.startsWith("/admin")) {
+      console.log("Skipping admin page view tracking for path:", pageView.path);
+      return;
     }
+    this.data.pageViews.push(pageView);
+    this.scheduleWrite(); 
   }
   
   addUserAction(userAction: UserAction): void {
-    this.userActions.push(userAction);
-    
-    // Limit storage to prevent memory issues (keep last 1000 actions)
-    if (this.userActions.length > 1000) {
-      this.userActions = this.userActions.slice(-1000);
+    // Check if the path starts with /admin - if so, don't track
+    if (userAction.path.startsWith("/admin")) {
+      console.log("Skipping admin user action tracking for path:", userAction.path);
+      return;
     }
+    this.data.userActions.push(userAction);
+    this.scheduleWrite();
   }
   
   getPageViews(limit: number = 100): PageView[] {
-    return this.pageViews.slice(-limit).reverse();
+    // Return data from the in-memory store
+    return this.data.pageViews.slice(-limit).reverse();
   }
   
   getUserActions(limit: number = 100): UserAction[] {
-    return this.userActions.slice(-limit).reverse();
+    // Return data from the in-memory store
+    return this.data.userActions.slice(-limit).reverse();
   }
   
   getStats() {
-    // Calculate last 24 hours
+    // Calculate stats based on the in-memory data
     const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
     
-    const views24h = this.pageViews.filter(view => view.timestamp >= oneDayAgo).length;
-    const totalViews = this.pageViews.length;
+    const views24h = this.data.pageViews.filter(view => view.timestamp >= oneDayAgo).length;
+    const totalViews = this.data.pageViews.length;
     
-    // Get unique visitors by IP
-    const uniqueIPs = new Set(this.pageViews.map(view => view.ip));
+    const uniqueIPs = new Set(this.data.pageViews.map(view => view.ip));
     const uniqueVisitors = uniqueIPs.size;
     
-    // Most viewed pages
-    const pageCounts = this.pageViews.reduce((acc, view) => {
+    const pageCounts = this.data.pageViews.reduce((acc, view) => {
       acc[view.path] = (acc[view.path] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
