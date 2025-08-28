@@ -44,6 +44,33 @@
       "timestamp": 1756355945782,
       "ip": "unknown",
       "screenSize": "2000x1153"
+    },
+    {
+      "id": "2bc5f1d8-11d0-469b-8771-99a90ae358e1",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756355997798,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
+    },
+    {
+      "id": "2992c76f-a1d7-4d28-b151-99653acea2d9",
+      "path": "/resume",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "direct",
+      "timestamp": 1756356025361,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
+    },
+    {
+      "id": "f33eb634-d40e-4e3f-8b42-610e7d0ceab0",
+      "path": "/resume",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "direct",
+      "timestamp": 1756356029379,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
     }
   ],
   "userActions": [
