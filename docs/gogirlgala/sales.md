@@ -1,22 +1,40 @@
 # 2. Sales
 
 ## Outline
-As a sales volunteer, your role is to support a smooth and positive guest experience by efficiently processing transactions throughout the evening. You are an essential part of making our fundraising efforts successful, and your friendliness, attention to detail, and availability will make a big impact!
 
-During cocktail hour, your main focus will be assisting the Girl Scouts as they work the room selling raffle tickets. The girls will engage the guests and generate interest, your role is to step in to process payment.
+As a sales volunteer, your role is to support a smooth and positive guest
+experience by efficiently processing transactions throughout the evening. You
+are an essential part of making our fundraising efforts successful, and your
+friendliness, attention to detail, and availability will make a big impact!
 
-Stay alert and move with the flow of the room. Make yourself visible and approachable. Let the Girl Scouts know they can wave you down or bring guests to you when someone is ready to pay.
+During cocktail hour, your main focus will be assisting the Girl Scouts as they
+work the room selling raffle tickets. The girls will engage the guests and
+generate interest, your role is to step in to process payment.
 
-When processing a payment, greet the guest with a smile and thank them for their support. You might say, “Thank you so much for buying a raffle ticket! Good luck!”
+Stay alert and move with the flow of the room. Make yourself visible and
+approachable. Let the Girl Scouts know they can wave you down or bring guests to
+you when someone is ready to pay.
 
-Then ask, “Would you like to use the card you registered at check-in, or would you prefer to swipe a new one?” If the guest has a card on file, confirm the purchase and process the charge. If not, swipe their card using your Square reader and confirm the transaction.
+When processing a payment, greet the guest with a smile and thank them for their
+support. You might say, “Thank you so much for buying a raffle ticket! Good
+luck!”
 
+Then ask, “Would you like to use the card you registered at check-in, or would
+you prefer to swipe a new one?” If the guest has a card on file, confirm the
+purchase and process the charge. If not, swipe their card using your Square
+reader and confirm the transaction.
 
 ## Initial State
-Navigate to 'Checkout' in the app's main navigation. Under the Library, you’ll see a list of available items to sell.
+
+Navigate to 'Checkout' in the app's main navigation. Under the Library, you’ll
+see a list of available items to sell.
 
 ## Making a Sale
-Start by selecting the item, reviewing the sale, and then asking the patron their name so that you can assign them to the transaction. Once selected you'll see a variety of payment options. One will state if their payment card is on file. If it is, use that unless specified not to.
+
+Start by selecting the item, reviewing the sale, and then asking the patron
+their name so that you can assign them to the transaction. Once selected you'll
+see a variety of payment options. One will state if their payment card is on
+file. If it is, use that unless specified not to.
 
 <div class="img-grid">
   <a href="#lightbox-1">
@@ -69,6 +87,7 @@ Start by selecting the item, reviewing the sale, and then asking the patron thei
 </div>
 
 ## Processing the Payment
+
 Once you've entered the sale amount:
 
 1. If using a new card:
@@ -77,7 +96,10 @@ Once you've entered the sale amount:
    - Once approved, remove their card
 
 2. If using card on file:
-   - The terminal will automatically generate and email a receipt if an email address is associated with the payment method.
+   - The terminal will automatically generate and email a receipt if an email
+     address is associated with the payment method.
 
 ## Complete
-After the payment is processed successfully, thank the patron and hand them their purchased items if applicable.
+
+After the payment is processed successfully, thank the patron and hand them
+their purchased items if applicable.

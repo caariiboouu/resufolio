@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(deno task:*)",
+      "Bash(rm:*)",
+      "Bash(deno fmt:*)",
+      "Bash(grep:*)"
+    ],
+    "defaultMode": "acceptEdits"
+  }
+}

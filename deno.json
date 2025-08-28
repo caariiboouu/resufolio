@@ -26,5 +26,5 @@
     "camelcase-css": "npm:camelcase-css@2.0.1"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },
-  "nodeModulesDir": true
+  "nodeModulesDir": "auto"
 }

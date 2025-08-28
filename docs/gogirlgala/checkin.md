@@ -1,14 +1,26 @@
 # 1. Check In
 
 ## Outline
-As a check-in volunteer at the Go Girl Gala, you are the first face our guests will see, so it’s important to create a warm and welcoming experience right from the start. Please arrive on time, dressed professionally, and wearing your name tag.
 
-As each guest approaches your check-in station, greet them with a smile and say something warm and genuine like, “Good evening! We’re so glad you’re here. Thank you for supporting Girl Scouts tonight!”
+As a check-in volunteer at the Go Girl Gala, you are the first face our guests
+will see, so it’s important to create a warm and welcoming experience right from
+the start. Please arrive on time, dressed professionally, and wearing your name
+tag.
 
-Begin by asking for the guest’s name and locating their registration information on the check-in list in the Square app. Once located, let them know their assigned table number and bidder number, and explain that their bidder paddle, with their number clearly marked, is waiting for them at their seat. This number will be used throughout the evening for all bidding and donation purposes.
+As each guest approaches your check-in station, greet them with a smile and say
+something warm and genuine like, “Good evening! We’re so glad you’re here. Thank
+you for supporting Girl Scouts tonight!”
+
+Begin by asking for the guest’s name and locating their registration information
+on the check-in list in the Square app. Once located, let them know their
+assigned table number and bidder number, and explain that their bidder paddle,
+with their number clearly marked, is waiting for them at their seat. This number
+will be used throughout the evening for all bidding and donation purposes.
 
 ## Initial State
-For this role, you'll be best served by navigating to the Customer list and filtering by Go Girl Gala 2025
+
+For this role, you'll be best served by navigating to the Customer list and
+filtering by Go Girl Gala 2025
 
 <div class="img-grid">
   <a href="#lightbox-1">
@@ -61,9 +73,12 @@ For this role, you'll be best served by navigating to the Customer list and filt
 </div>
 
 ## A Patron Arrives
-Once the patron has come to you and you've greeted them, ask for their name and enter it into the search field on the Square app on your phone or terminal.
 
-When you've found the patron, tap on their name. You’ll see their table and bidder numbers, which you can write on their card before handing it to them.
+Once the patron has come to you and you've greeted them, ask for their name and
+enter it into the search field on the Square app on your phone or terminal.
+
+When you've found the patron, tap on their name. You’ll see their table and
+bidder numbers, which you can write on their card before handing it to them.
 
 <div class="img-grid">
   <a href="#lightbox-patron-2">
@@ -88,21 +103,36 @@ When you've found the patron, tap on their name. You’ll see their table and bi
   <a href="#lightbox-patron-2" class="nav next">›</a>
 </div>
 
-At this time, you'll also offer the patron the opportunity to place their card on file.
+At this time, you'll also offer the patron the opportunity to place their card
+on file.
 
 ## (Optional) Card on File
-Kindly ask if they would like to register a credit card on file. You might say something like:
 
-“Would you like to put a card on file to make your evening easier? That way, you won’t have to re-swipe for any auction items, champagne sales, or donations—it’s just one less thing to think about. It’s completely optional, and you’re also welcome to pay as you go if you prefer.”
+Kindly ask if they would like to register a credit card on file. You might say
+something like:
 
-If the guest agrees, take their card, swipe it using the Square reader, and confirm that it’s been added to their profile. Thank them again and let them know they’re all set.
+“Would you like to put a card on file to make your evening easier? That way, you
+won’t have to re-swipe for any auction items, champagne sales, or donations—it’s
+just one less thing to think about. It’s completely optional, and you’re also
+welcome to pay as you go if you prefer.”
 
-Whether or not they choose to register a card, thank them sincerely for attending. A friendly, “We’re so excited to have you here tonight. It’s going to be a fantastic evening in support of Girl Scouts!” goes a long way.
+If the guest agrees, take their card, swipe it using the Square reader, and
+confirm that it’s been added to their profile. Thank them again and let them
+know they’re all set.
 
-If the patron chooses to place their card on file, scroll to the 'Payment on File' section in their customer profile and press 'Add' to begin. The fastest method is to insert the card into the chip reader at the bottom of the terminal. This securely captures the card information and will only display the last four digits.
+Whether or not they choose to register a card, thank them sincerely for
+attending. A friendly, “We’re so excited to have you here tonight. It’s going to
+be a fantastic evening in support of Girl Scouts!” goes a long way.
 
-Note: Many profiles will already have email addresses populated. If not, an email will need to be added for receipt purposes. You can ask the patron to enter their email directly or provide it aloud.
+If the patron chooses to place their card on file, scroll to the 'Payment on
+File' section in their customer profile and press 'Add' to begin. The fastest
+method is to insert the card into the chip reader at the bottom of the terminal.
+This securely captures the card information and will only display the last four
+digits.
 
+Note: Many profiles will already have email addresses populated. If not, an
+email will need to be added for receipt purposes. You can ask the patron to
+enter their email directly or provide it aloud.
 
 <div class="img-grid">
   <a href="#lightbox-8">
@@ -137,4 +167,6 @@ Note: Many profiles will already have email addresses populated. If not, an emai
 </div>
 
 ## Complete
-That's all we'll be doing in this role. Thank them for attending and direct them to the gathering area past the check in tables.
+
+That's all we'll be doing in this role. Thank them for attending and direct them
+to the gathering area past the check in tables.
