@@ -9,8 +9,6 @@ import * as $admin_analytics from "./routes/admin/analytics.tsx";
 import * as $api_analytics from "./routes/api/analytics.ts";
 import * as $api_analytics_data from "./routes/api/analytics/data.ts";
 import * as $api_docs from "./routes/api/docs.ts";
-import * as $api_joke from "./routes/api/joke.ts";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $resume from "./routes/resume.tsx";
 import * as $square_terminals from "./routes/square-terminals.tsx";
@@ -32,8 +30,6 @@ const manifest = {
     "./routes/api/analytics.ts": $api_analytics,
     "./routes/api/analytics/data.ts": $api_analytics_data,
     "./routes/api/docs.ts": $api_docs,
-    "./routes/api/joke.ts": $api_joke,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/resume.tsx": $resume,
     "./routes/square-terminals.tsx": $square_terminals,

@@ -132,12 +132,12 @@ html {
     rgba(231, 222, 202, 0.1),
     rgba(196, 182, 157, 0.05)
   );
-  -webkit-mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
-  mask: 
-     linear-gradient(#fff 0 0) content-box, 
-     linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -269,7 +269,7 @@ header {
   .card-hover:hover {
     transform: translateY(-3px);
   }
-  
+
   .card-hover:hover .card-content {
     transform: translateZ(5px);
   }
@@ -285,7 +285,13 @@ header {
 
 /* Markdown body styling */
 .markdown-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif;
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
@@ -368,13 +374,13 @@ header {
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   /* Preserve scrollbars but make content visible */
   body {
     overflow-y: visible !important;
     background-color: white !important;
   }
-  
+
   /* Make fixed header relative for printing */
   header {
     position: relative !important;
@@ -385,7 +391,7 @@ header {
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   /* Reset container elements for proper printing */
   .min-h-screen {
     min-height: 0 !important;
@@ -393,20 +399,20 @@ header {
     padding: 0 !important;
     margin: 0 !important;
   }
-  
+
   /* Fix top padding that causes blank first page */
   .py-20 {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
-  
+
   /* Fix content container */
   .bg-white.p-6.rounded-lg.shadow-sm {
     padding: 0.5cm !important;
     box-shadow: none !important;
     border-radius: 0 !important;
   }
-  
+
   /* Fix layout elements spacing */
   .prose, .max-w-none {
     max-width: none !important;
@@ -414,53 +420,53 @@ header {
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   /* Fix main content padding */
   .flex-1 {
     margin: 0 !important;
     padding: 0 !important;
   }
-  
+
   /* Hide pure decorative elements */
   .noise-texture::before {
     display: none !important;
   }
-  
+
   /* Set page properties */
   @page {
     size: auto;
     margin: 0.5cm;
   }
-  
+
   /* Ensure elements are not cut off between pages */
   section, article, .card-hover, .markdown-body {
     page-break-inside: avoid;
     break-inside: avoid;
   }
-  
+
   /* Preserve colors in printing */
   * {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
-  
+
   /* Ensure background colors/images print */
-  .gradient-animate, 
-  .gradient-border, 
+  .gradient-animate,
+  .gradient-border,
   .header-blur {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
   }
-  
+
   /* Remove animations that might cause issues */
   * {
     animation: none !important;
     transition: none !important;
   }
-  
+
   /* Hide documentation elements */
-  .docs-container, 
-  div[class*="documentation"], 
+  .docs-container,
+  div[class*="documentation"],
   div[class*="docs"],
   aside,
   nav[role="navigation"],
@@ -473,7 +479,7 @@ header {
   #retry-container {
     display: none !important;
   }
-  
+
   /* Direct selector for the documentation div shown in the user's example */
   .w-full.md\:w-64.flex-shrink-0,
   div.bg-white.p-4.rounded-lg.shadow-sm.sticky,
@@ -482,18 +488,18 @@ header {
   [id^="nav-page-"] {
     display: none !important;
   }
-  
+
   /* For any future documentation elements, add this class */
   .no-print {
     display: none !important;
   }
-  
+
   /* Remove tan/beige backgrounds */
   div, section, main, article, body, html {
     background-color: white !important;
     background-image: none !important;
   }
-  
+
   /* Force white background on any element with beige/tan colors */
   *[style*="background"] {
     background-color: white !important;
@@ -571,32 +577,42 @@ header {
 .woodcut-dot-animated {
   stroke-dasharray: 20;
   stroke-dashoffset: 20;
-  animation: stroke-draw 1.5s ease forwards 1.5s, pulse 4s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1.5s ease forwards 1.5s,
+    pulse 4s ease-in-out infinite 2s;
 }
 
 .woodcut-dot-animated-delay {
   stroke-dasharray: 20;
   stroke-dashoffset: 20;
-  animation: stroke-draw 1.5s ease forwards 2s, pulse 4s ease-in-out infinite 2.5s;
+  animation:
+    stroke-draw 1.5s ease forwards 2s,
+    pulse 4s ease-in-out infinite 2.5s;
 }
 
 /* Interfaces animations */
 .woodcut-interface-1 {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
-  animation: stroke-draw 1.5s ease forwards, subtle-float 8s ease-in-out infinite;
+  animation:
+    stroke-draw 1.5s ease forwards,
+    subtle-float 8s ease-in-out infinite;
 }
 
 .woodcut-interface-2 {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
-  animation: stroke-draw 1.5s ease forwards 0.3s, subtle-float 7s ease-in-out infinite 0.5s;
+  animation:
+    stroke-draw 1.5s ease forwards 0.3s,
+    subtle-float 7s ease-in-out infinite 0.5s;
 }
 
 .woodcut-interface-3 {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
-  animation: stroke-draw 1.5s ease forwards 0.6s, subtle-float 9s ease-in-out infinite 1s;
+  animation:
+    stroke-draw 1.5s ease forwards 0.6s,
+    subtle-float 9s ease-in-out infinite 1s;
 }
 
 .woodcut-code-line {
@@ -609,43 +625,57 @@ header {
 .woodcut-wave-animation {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: stroke-draw 2s ease forwards, wave-float 10s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 2s ease forwards,
+    wave-float 10s ease-in-out infinite 2s;
 }
 
 .woodcut-wave-animation-delay {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: stroke-draw 2s ease forwards 0.5s, wave-float 12s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 2s ease forwards 0.5s,
+    wave-float 12s ease-in-out infinite 2s;
 }
 
 .woodcut-wave-animation-delay-more {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: stroke-draw 2s ease forwards 1s, wave-float 8s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 2s ease forwards 1s,
+    wave-float 8s ease-in-out infinite 2s;
 }
 
 .woodcut-particle-1 {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: stroke-draw 1.5s ease forwards 1.2s, particle-float 12s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1.5s ease forwards 1.2s,
+    particle-float 12s ease-in-out infinite 2s;
 }
 
 .woodcut-particle-2 {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: stroke-draw 1.5s ease forwards 1.4s, particle-float 10s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1.5s ease forwards 1.4s,
+    particle-float 10s ease-in-out infinite 2s;
 }
 
 .woodcut-particle-3 {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: stroke-draw 1.5s ease forwards 1.6s, particle-float 8s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1.5s ease forwards 1.6s,
+    particle-float 8s ease-in-out infinite 2s;
 }
 
 .woodcut-particle-4 {
   stroke-dasharray: 50;
   stroke-dashoffset: 50;
-  animation: stroke-draw 1.5s ease forwards 1.8s, particle-float 9s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1.5s ease forwards 1.8s,
+    particle-float 9s ease-in-out infinite 2s;
 }
 
 /* Physical copies animations */
@@ -682,7 +712,9 @@ header {
 .woodcut-page-turning {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
-  animation: stroke-draw 2s ease forwards 1.5s, page-turn 10s ease-in-out infinite 3s;
+  animation:
+    stroke-draw 2s ease forwards 1.5s,
+    page-turn 10s ease-in-out infinite 3s;
 }
 
 /* Full Stack animations */
@@ -696,15 +728,21 @@ header {
 }
 
 .woodcut-server-2 {
-  animation: stroke-draw 1s ease forwards 0.3s, server-glow 4s ease-in-out infinite 1s;
+  animation:
+    stroke-draw 1s ease forwards 0.3s,
+    server-glow 4s ease-in-out infinite 1s;
 }
 
 .woodcut-server-3 {
-  animation: stroke-draw 1s ease forwards 0.6s, server-glow 4s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1s ease forwards 0.6s,
+    server-glow 4s ease-in-out infinite 2s;
 }
 
 .woodcut-server-4 {
-  animation: stroke-draw 1s ease forwards 0.9s, server-glow 4s ease-in-out infinite 3s;
+  animation:
+    stroke-draw 1s ease forwards 0.9s,
+    server-glow 4s ease-in-out infinite 3s;
 }
 
 .woodcut-connection {
@@ -713,15 +751,21 @@ header {
 }
 
 .woodcut-connection-1 {
-  animation: stroke-draw 1s ease forwards 1.2s, connection-flow 3s linear infinite 2s;
+  animation:
+    stroke-draw 1s ease forwards 1.2s,
+    connection-flow 3s linear infinite 2s;
 }
 
 .woodcut-connection-2 {
-  animation: stroke-draw 1s ease forwards 1.5s, connection-flow 3s linear infinite 2.5s;
+  animation:
+    stroke-draw 1s ease forwards 1.5s,
+    connection-flow 3s linear infinite 2.5s;
 }
 
 .woodcut-connection-3 {
-  animation: stroke-draw 1s ease forwards 1.8s, connection-flow 3s linear infinite 3s;
+  animation:
+    stroke-draw 1s ease forwards 1.8s,
+    connection-flow 3s linear infinite 3s;
 }
 
 .woodcut-data-packet {
@@ -738,14 +782,18 @@ header {
 }
 
 .woodcut-data-packet-3 {
-  animation: stroke-draw 1s ease forwards 2.6s, data-flow 3s linear infinite 3.5s;
+  animation:
+    stroke-draw 1s ease forwards 2.6s,
+    data-flow 3s linear infinite 3.5s;
 }
 
 /* AI animations */
 .woodcut-brain {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
-  animation: stroke-draw 3s ease forwards, brain-pulse 10s ease-in-out infinite 3s;
+  animation:
+    stroke-draw 3s ease forwards,
+    brain-pulse 10s ease-in-out infinite 3s;
 }
 
 .woodcut-neural-connection {
@@ -761,39 +809,55 @@ header {
 }
 
 .woodcut-node-1 {
-  animation: stroke-draw 1s ease forwards 1.2s, node-pulse 4s ease-in-out infinite 2s;
+  animation:
+    stroke-draw 1s ease forwards 1.2s,
+    node-pulse 4s ease-in-out infinite 2s;
 }
 
 .woodcut-node-2 {
-  animation: stroke-draw 1s ease forwards 1.4s, node-pulse 4s ease-in-out infinite 2.5s;
+  animation:
+    stroke-draw 1s ease forwards 1.4s,
+    node-pulse 4s ease-in-out infinite 2.5s;
 }
 
 .woodcut-node-3 {
-  animation: stroke-draw 1s ease forwards 1.6s, node-pulse 4s ease-in-out infinite 3s;
+  animation:
+    stroke-draw 1s ease forwards 1.6s,
+    node-pulse 4s ease-in-out infinite 3s;
 }
 
 .woodcut-node-4 {
-  animation: stroke-draw 1s ease forwards 1.8s, node-pulse 4s ease-in-out infinite 3.5s;
+  animation:
+    stroke-draw 1s ease forwards 1.8s,
+    node-pulse 4s ease-in-out infinite 3.5s;
 }
 
 .woodcut-node-5 {
-  animation: stroke-draw 1s ease forwards 2s, node-pulse 4s ease-in-out infinite 4s;
+  animation:
+    stroke-draw 1s ease forwards 2s,
+    node-pulse 4s ease-in-out infinite 4s;
 }
 
 .woodcut-node-6 {
-  animation: stroke-draw 1s ease forwards 2.2s, node-pulse 4s ease-in-out infinite 4.5s;
+  animation:
+    stroke-draw 1s ease forwards 2.2s,
+    node-pulse 4s ease-in-out infinite 4.5s;
 }
 
 .woodcut-circuit {
   stroke-dasharray: 200;
   stroke-dashoffset: 200;
-  animation: stroke-draw 2s ease forwards 2.4s, circuit-pulse 6s linear infinite 3s;
+  animation:
+    stroke-draw 2s ease forwards 2.4s,
+    circuit-pulse 6s linear infinite 3s;
 }
 
 .woodcut-chip {
   stroke-dasharray: 100;
   stroke-dashoffset: 100;
-  animation: stroke-draw 1.5s ease forwards 2.6s, chip-pulse 5s ease-in-out infinite 3s;
+  animation:
+    stroke-draw 1.5s ease forwards 2.6s,
+    chip-pulse 5s ease-in-out infinite 3s;
 }
 
 /* Woodcut hover effects */
@@ -995,17 +1059,17 @@ header {
     width: 180px;
     height: 180px;
   }
-  
+
   .woodcut-right-container {
     width: 180px;
     height: 180px;
   }
-  
+
   .woodcut-left-container {
     width: 180px;
     height: 180px;
   }
-  
+
   .woodcut-svg {
     max-width: 180px;
     max-height: 180px;

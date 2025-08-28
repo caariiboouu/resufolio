@@ -1,0 +1,67 @@
+{
+  "pageViews": [
+    {
+      "id": "60c5eb10-49fd-4f20-a629-77bc4e68566e",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "direct",
+      "timestamp": 1756355787758,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "748782e5-5b69-4206-89d4-63e5c743913a",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "direct",
+      "timestamp": 1756355881556,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
+    },
+    {
+      "id": "ca27011d-9496-44e3-b5aa-71e63626b0a3",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756355883587,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
+    },
+    {
+      "id": "3907582a-ec7a-47b4-ade4-f5ff1589523f",
+      "path": "/resume",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "direct",
+      "timestamp": 1756355889011,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
+    },
+    {
+      "id": "008e14ab-38c1-4d9e-975b-38ca30001acd",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/resume",
+      "timestamp": 1756355945782,
+      "ip": "unknown",
+      "screenSize": "2000x1153"
+    }
+  ],
+  "userActions": [
+    {
+      "id": "4d021fcd-9c97-4797-a673-9550f12e4766",
+      "action": "click",
+      "path": "/",
+      "element": "img.w-full.h-full.object-cover.rounded-full.shadow-md.hover:shadow-xl.transition-all",
+      "timestamp": 1756355883495,
+      "ip": "unknown"
+    },
+    {
+      "id": "0d4ba26e-a030-4c5e-9397-abd2ed6786c3",
+      "action": "click",
+      "path": "/resume",
+      "element": "h1.font-bold.bg-clip-text.text-transparent.bg-gradient-to-r.from-[#E7DECA].via-[#d4c5a7].to-[#c4b69d",
+      "timestamp": 1756355945705,
+      "ip": "unknown"
+    }
+  ]
+}

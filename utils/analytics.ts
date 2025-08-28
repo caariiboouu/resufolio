@@ -47,13 +47,20 @@ class AnalyticsStore {
         // Ensure arrays exist
         this.data.pageViews = this.data.pageViews || [];
         this.data.userActions = this.data.userActions || [];
-        console.log(`Loaded ${this.data.pageViews.length} page views and ${this.data.userActions.length} user actions from ${DATA_FILE_PATH}`);
+        console.log(
+          `Loaded ${this.data.pageViews.length} page views and ${this.data.userActions.length} user actions from ${DATA_FILE_PATH}`,
+        );
       } else {
-        console.log(`${DATA_FILE_PATH} is empty. Initializing with empty data.`);
+        console.log(
+          `${DATA_FILE_PATH} is empty. Initializing with empty data.`,
+        );
         this.data = { pageViews: [], userActions: [] };
       }
     } catch (error) {
-      console.error(`Error loading analytics data from ${DATA_FILE_PATH}:`, error);
+      console.error(
+        `Error loading analytics data from ${DATA_FILE_PATH}:`,
+        error,
+      );
       // Initialize with empty data if loading fails
       this.data = { pageViews: [], userActions: [] };
     }
@@ -73,7 +80,7 @@ class AnalyticsStore {
       await this.writeData();
       this.writeScheduled = false;
       this.writeTimeout = null;
-    }, 5000); 
+    }, 5000);
   }
 
   private async writeData(): Promise<void> {
@@ -81,15 +88,18 @@ class AnalyticsStore {
       // Keep only the last 1000 entries for each type to prevent file bloat
       this.data.pageViews = this.data.pageViews.slice(-1000);
       this.data.userActions = this.data.userActions.slice(-1000);
-      
+
       const dataString = JSON.stringify(this.data, null, 2);
       await Deno.writeTextFile(DATA_FILE_PATH, dataString);
       console.log(`Analytics data written to ${DATA_FILE_PATH}`);
     } catch (error) {
-      console.error(`Error writing analytics data to ${DATA_FILE_PATH}:`, error);
+      console.error(
+        `Error writing analytics data to ${DATA_FILE_PATH}:`,
+        error,
+      );
     }
   }
-  
+
   addPageView(pageView: PageView): void {
     // Check if the path starts with /admin - if so, don't track
     if (pageView.path.startsWith("/admin")) {
@@ -97,57 +107,61 @@ class AnalyticsStore {
       return;
     }
     this.data.pageViews.push(pageView);
-    this.scheduleWrite(); 
+    this.scheduleWrite();
   }
-  
+
   addUserAction(userAction: UserAction): void {
     // Check if the path starts with /admin - if so, don't track
     if (userAction.path.startsWith("/admin")) {
-      console.log("Skipping admin user action tracking for path:", userAction.path);
+      console.log(
+        "Skipping admin user action tracking for path:",
+        userAction.path,
+      );
       return;
     }
     this.data.userActions.push(userAction);
     this.scheduleWrite();
   }
-  
+
   getPageViews(limit: number = 100): PageView[] {
     // Return data from the in-memory store
     return this.data.pageViews.slice(-limit).reverse();
   }
-  
+
   getUserActions(limit: number = 100): UserAction[] {
     // Return data from the in-memory store
     return this.data.userActions.slice(-limit).reverse();
   }
-  
+
   getStats() {
     // Calculate stats based on the in-memory data
     const oneDayAgo = Date.now() - 24 * 60 * 60 * 1000;
-    
-    const views24h = this.data.pageViews.filter(view => view.timestamp >= oneDayAgo).length;
+
+    const views24h =
+      this.data.pageViews.filter((view) => view.timestamp >= oneDayAgo).length;
     const totalViews = this.data.pageViews.length;
-    
-    const uniqueIPs = new Set(this.data.pageViews.map(view => view.ip));
+
+    const uniqueIPs = new Set(this.data.pageViews.map((view) => view.ip));
     const uniqueVisitors = uniqueIPs.size;
-    
+
     const pageCounts = this.data.pageViews.reduce((acc, view) => {
       acc[view.path] = (acc[view.path] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
-    
+
     const topPages = Object.entries(pageCounts)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 5)
       .map(([path, count]) => ({ path, count }));
-    
+
     return {
       views24h,
       totalViews,
       uniqueVisitors,
-      topPages
+      topPages,
     };
   }
 }
 
 // Export a singleton instance
-export const analyticsStore = new AnalyticsStore(); 
+export const analyticsStore = new AnalyticsStore();

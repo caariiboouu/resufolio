@@ -14,8 +14,11 @@ export default function DocsPage(props: PageProps) {
       <Head>
         <title>Go Girl Gala Square Terminal Guide</title>
         <link rel="stylesheet" href="/styles.css" />
-        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-        <style dangerouslySetInnerHTML={{ __html: `
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js">
+        </script>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
           .markdown-body img {
             max-width: 100%;
             border-radius: 8px;
@@ -258,13 +261,17 @@ export default function DocsPage(props: PageProps) {
               transform: scale(1);
             }
           }
-        ` }} />
+        `,
+          }}
+        />
       </Head>
       <div class="min-h-screen bg-gray-50 py-20">
         <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Add the main page header here at the top level */}
-          <h1 class="text-3xl font-bold mb-6 text-gray-800">Go Girl Gala Square Terminal Guide</h1>
-          
+          <h1 class="text-3xl font-bold mb-6 text-gray-800">
+            Go Girl Gala Square Terminal Guide
+          </h1>
+
           <div class="prose prose-lg max-w-none">
             <div class="flex flex-col lg:flex-row">
               {/* Documentation Sidebar - Add no-print class here */}
@@ -276,16 +283,19 @@ export default function DocsPage(props: PageProps) {
                       <div class="loading-spinner"></div>
                     </div>
                   </div>
-                  
+
                   {/* Retry button that appears when loading fails */}
                   <div id="retry-container" class="mt-4 hidden">
-                    <button id="retry-button" class="w-full py-2 px-3 rounded bg-indigo-600 text-white hover:bg-indigo-700">
+                    <button
+                      id="retry-button"
+                      class="w-full py-2 px-3 rounded bg-indigo-600 text-white hover:bg-indigo-700"
+                    >
                       Retry Loading
                     </button>
                   </div>
                 </div>
               </div>
-              
+
               {/* Main content */}
               <div class="flex-1 lg:ml-8 mt-6 lg:mt-0">
                 <div class="bg-white p-6 rounded-lg shadow-sm">
@@ -298,7 +308,7 @@ export default function DocsPage(props: PageProps) {
                     </div>
                   </div>
                 </div>
-                
+
                 {/* Debug panel - hidden by default */}
                 <div id="debug-panel" class="debug-panel mt-4 hidden">
                   <h3>Debug Information</h3>
@@ -312,8 +322,10 @@ export default function DocsPage(props: PageProps) {
           </div>
         </div>
       </div>
-      
-      <script dangerouslySetInnerHTML={{ __html: `
+
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
         // Initialize variables
         let pages = [];
         let activeSlug = '';
@@ -699,7 +711,9 @@ export default function DocsPage(props: PageProps) {
             setupLightboxHandlers();
           }, 1);
         }
-      ` }} />
+      `,
+        }}
+      />
     </>
   );
-} 
+}
