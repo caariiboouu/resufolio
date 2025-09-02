@@ -1164,129 +1164,251 @@ header {
   transform: translateZ(0); /* Hardware acceleration */
 }
 
-/* Efficient animations using transform3d for GPU - optimized timing */
+/* Paused animations by default - only animate on card hover */
 .woodcut-breathe {
-  animation: woodcut-breathe 8s ease-in-out infinite;
+  animation: woodcut-breathe 4s ease-in-out infinite;
+  will-change: transform;
   transform-origin: center;
 }
 
 .woodcut-eye-pulse {
   animation: woodcut-eye-pulse 6s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .woodcut-float {
   animation: woodcut-float 5s ease-in-out infinite;
+  will-change: transform;
 }
 
 .woodcut-float-delay {
   animation: woodcut-float 5s ease-in-out infinite 2s;
+  will-change: transform;
 }
 
 .woodcut-wave {
-  animation: woodcut-wave-flow 12s ease-in-out infinite;
+  animation: woodcut-wave-flow 6s ease-in-out infinite;
+  will-change: transform;
 }
 
 .woodcut-particle-1 {
-  animation: woodcut-particle-drift 8s ease-in-out infinite;
+  animation: woodcut-particle-drift 4s ease-in-out infinite;
+  will-change: transform;
 }
 
 .woodcut-particle-2 {
-  animation: woodcut-particle-drift 8s ease-in-out infinite 3s;
+  animation: woodcut-particle-drift 4s ease-in-out infinite 1.5s;
+  will-change: transform;
 }
+
+/* Activate animations only on card hover */
 
 .woodcut-text-appear {
   animation: woodcut-text-write 4s ease-out infinite 1s;
+  will-change: opacity;
 }
 
 .woodcut-text-appear-delay {
   animation: woodcut-text-write 4s ease-out infinite 2s;
+  will-change: opacity;
 }
 
 .woodcut-text-appear-more {
   animation: woodcut-text-write 4s ease-out infinite 3s;
+  will-change: opacity;
 }
 
 .woodcut-stack-1 {
   animation: woodcut-build 6s ease-out infinite;
+  will-change: transform;
 }
 
 .woodcut-stack-2 {
   animation: woodcut-build 6s ease-out infinite 1s;
+  will-change: transform;
 }
 
 .woodcut-stack-3 {
   animation: woodcut-build 6s ease-out infinite 2s;
+  will-change: transform;
 }
 
 .woodcut-neural-1 {
   animation: woodcut-neural-pulse 7s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .woodcut-neural-2 {
   animation: woodcut-neural-pulse 7s ease-in-out infinite 2s;
+  will-change: opacity;
 }
 
 .woodcut-neural-center {
   animation: woodcut-neural-pulse 7s ease-in-out infinite 4s;
+  will-change: transform;
 }
 
 .woodcut-rays {
   animation: woodcut-rays-glow 6s ease-in-out infinite;
+  will-change: opacity;
 }
 
 .woodcut-build-delay {
-  animation: woodcut-build 3s ease-out infinite 0.3s;
+  animation: woodcut-build 6s ease-out infinite 0.5s;
+  will-change: transform;
 }
 
 .woodcut-build-more {
-  animation: woodcut-build 3s ease-out infinite 0.7s;
+  animation: woodcut-build 6s ease-out infinite 1s;
+  will-change: transform;
 }
 
-/* Hardware-accelerated keyframes */
+/* Space-themed animations */
+.woodcut-sun-pulse {
+  animation: woodcut-sun-pulse 3s ease-in-out infinite;
+  will-change: transform;
+}
+
+.woodcut-sun-glow {
+  animation: woodcut-sun-glow 4s ease-in-out infinite;
+  will-change: opacity;
+}
+
+.woodcut-orbit-inner {
+  animation: woodcut-orbit-spin 8s linear infinite;
+  will-change: transform;
+  transform-origin: center;
+}
+
+.woodcut-orbit-middle {
+  animation: woodcut-orbit-spin 12s linear infinite reverse;
+  will-change: transform;
+  transform-origin: center;
+}
+
+.woodcut-orbit-outer {
+  animation: woodcut-orbit-spin 16s linear infinite;
+  will-change: transform;
+  transform-origin: center;
+}
+
+.woodcut-planet-inner {
+  animation: woodcut-planet-orbit-inner 8s linear infinite;
+  will-change: transform;
+  transform-origin: 80px 80px;
+}
+
+.woodcut-planet-middle {
+  animation: woodcut-planet-orbit-middle 12s linear infinite;
+  will-change: transform;
+  transform-origin: 80px 80px;
+}
+
+.woodcut-planet-outer {
+  animation: woodcut-planet-orbit-outer 16s linear infinite;
+  will-change: transform;
+  transform-origin: 80px 80px;
+}
+
+.woodcut-asteroid-1 {
+  animation: woodcut-asteroid-drift-1 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+.woodcut-asteroid-2 {
+  animation: woodcut-asteroid-drift-2 7s ease-in-out infinite 1s;
+  will-change: transform;
+}
+
+.woodcut-asteroid-3 {
+  animation: woodcut-asteroid-drift-3 5s ease-in-out infinite 2s;
+  will-change: transform;
+}
+
+.woodcut-asteroid-4 {
+  animation: woodcut-asteroid-drift-4 8s ease-in-out infinite 0.5s;
+  will-change: transform;
+}
+
+.woodcut-asteroid-5 {
+  animation: woodcut-asteroid-drift-5 6s ease-in-out infinite 1.5s;
+  will-change: transform;
+}
+
+.woodcut-star-1 {
+  animation: woodcut-star-twinkle-1 4s ease-in-out infinite;
+  will-change: opacity;
+}
+
+.woodcut-star-2 {
+  animation: woodcut-star-twinkle-2 5s ease-in-out infinite 1s;
+  will-change: opacity;
+}
+
+.woodcut-star-3 {
+  animation: woodcut-star-twinkle-3 3s ease-in-out infinite 2s;
+  will-change: opacity;
+}
+
+.woodcut-star-4 {
+  animation: woodcut-star-twinkle-4 6s ease-in-out infinite 0.5s;
+  will-change: opacity;
+}
+
+.woodcut-star-5 {
+  animation: woodcut-star-twinkle-5 4s ease-in-out infinite 1.5s;
+  will-change: opacity;
+}
+
+.woodcut-star-6 {
+  animation: woodcut-star-twinkle-6 5s ease-in-out infinite 2.5s;
+  will-change: opacity;
+}
+
+/* Optimized hardware-accelerated keyframes - fewer intermediate steps */
 @keyframes woodcut-breathe {
   0%, 100% { transform: scale3d(1, 1, 1); }
-  50% { transform: scale3d(1.02, 1.02, 1); }
+  50% { transform: scale3d(1.015, 1.015, 1); }
 }
 
 @keyframes woodcut-eye-pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.6; }
+  0%, 70%, 100% { opacity: 1; }
+  35% { opacity: 0.7; }
 }
 
 @keyframes woodcut-float {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  50% { transform: translate3d(0, -2px, 0); }
+  0%, 60%, 100% { transform: translate3d(0, 0, 0); }
+  30% { transform: translate3d(0, -1px, 0); }
 }
 
 @keyframes woodcut-wave-flow {
-  0%, 100% { transform: translate3d(0, 0, 0); }
-  25% { transform: translate3d(1px, -1px, 0); }
-  75% { transform: translate3d(-1px, 1px, 0); }
+  0%, 60%, 100% { transform: translate3d(0, 0, 0); }
+  30% { transform: translate3d(0.5px, -0.5px, 0); }
 }
 
 @keyframes woodcut-particle-drift {
-  0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.8; }
-  50% { transform: translate3d(2px, -2px, 0); opacity: 1; }
+  0%, 70%, 100% { transform: translate3d(0, 0, 0); opacity: 0.8; }
+  35% { transform: translate3d(1px, -1px, 0); opacity: 1; }
 }
 
 @keyframes woodcut-text-write {
-  0%, 80% { opacity: 0; }
+  0%, 85% { opacity: 0; }
   100% { opacity: 1; }
 }
 
 @keyframes woodcut-build {
-  0%, 70% { opacity: 0; transform: translate3d(0, 5px, 0); }
+  0%, 75% { opacity: 0; transform: translate3d(0, 2px, 0); }
   100% { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes woodcut-neural-pulse {
-  0%, 100% { opacity: 0.7; transform: scale3d(1, 1, 1); }
-  50% { opacity: 1; transform: scale3d(1.1, 1.1, 1); }
+  0%, 70%, 100% { opacity: 0.7; transform: scale3d(1, 1, 1); }
+  35% { opacity: 1; transform: scale3d(1.05, 1.05, 1); }
 }
 
 @keyframes woodcut-rays-glow {
-  0%, 100% { opacity: 0.6; }
-  50% { opacity: 0.9; }
+  0%, 70%, 100% { opacity: 0.6; }
+  35% { opacity: 0.8; }
 }
 
 @media (max-width: 768px) {
@@ -1434,4 +1556,90 @@ header {
   50% {
     transform: scale(1.02);
   }
+}
+
+/* Space animation keyframes */
+@keyframes woodcut-sun-pulse {
+  0%, 100% { transform: scale3d(1, 1, 1); }
+  50% { transform: scale3d(1.1, 1.1, 1); }
+}
+
+@keyframes woodcut-sun-glow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+@keyframes woodcut-orbit-spin {
+  0% { transform: rotate3d(0, 0, 1, 0deg); }
+  100% { transform: rotate3d(0, 0, 1, 360deg); }
+}
+
+@keyframes woodcut-planet-orbit-inner {
+  0% { transform: rotate3d(0, 0, 1, 0deg) translate3d(22px, 0, 0); }
+  100% { transform: rotate3d(0, 0, 1, 360deg) translate3d(22px, 0, 0); }
+}
+
+@keyframes woodcut-planet-orbit-middle {
+  0% { transform: rotate3d(0, 0, 1, 0deg) translate3d(35px, 0, 0); }
+  100% { transform: rotate3d(0, 0, 1, 360deg) translate3d(35px, 0, 0); }
+}
+
+@keyframes woodcut-planet-orbit-outer {
+  0% { transform: rotate3d(0, 0, 1, 0deg) translate3d(42px, 0, 0); }
+  100% { transform: rotate3d(0, 0, 1, 360deg) translate3d(42px, 0, 0); }
+}
+
+@keyframes woodcut-asteroid-drift-1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(2px, -3px, 0); }
+}
+
+@keyframes woodcut-asteroid-drift-2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-1px, 2px, 0); }
+}
+
+@keyframes woodcut-asteroid-drift-3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(3px, 1px, 0); }
+}
+
+@keyframes woodcut-asteroid-drift-4 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-2px, -1px, 0); }
+}
+
+@keyframes woodcut-asteroid-drift-5 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(1px, 3px, 0); }
+}
+
+@keyframes woodcut-star-twinkle-1 {
+  0%, 70%, 100% { opacity: 1; }
+  35% { opacity: 0.3; }
+}
+
+@keyframes woodcut-star-twinkle-2 {
+  0%, 60%, 100% { opacity: 1; }
+  30% { opacity: 0.4; }
+}
+
+@keyframes woodcut-star-twinkle-3 {
+  0%, 80%, 100% { opacity: 1; }
+  40% { opacity: 0.2; }
+}
+
+@keyframes woodcut-star-twinkle-4 {
+  0%, 65%, 100% { opacity: 1; }
+  32% { opacity: 0.5; }
+}
+
+@keyframes woodcut-star-twinkle-5 {
+  0%, 75%, 100% { opacity: 1; }
+  37% { opacity: 0.3; }
+}
+
+@keyframes woodcut-star-twinkle-6 {
+  0%, 55%, 100% { opacity: 1; }
+  28% { opacity: 0.4; }
 }

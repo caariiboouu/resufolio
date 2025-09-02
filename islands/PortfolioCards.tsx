@@ -41,7 +41,7 @@ const initialCards: CardData[] = [
     id: 2,
     title: "Interfaces, Interfaces, & Interfaces",
     description:
-      "Currently I'm building SPA and SSR sites with React, Angular, React Native, Vue, Preact, HTMX, and continuing to expand the tools I work with. I'm not sure I'm really tied to a specific framework or stack currently, honing the skill of picking the appropriate stack for the job seems most important rather than being locked into a specific framework.",
+      "Currently I'm building projects React, Angular, React Native, Vue, Preact, HTMX, and continuing to expand the tools I work with. I'm not sure I'm really tied to a specific framework or stack currently, honing the skill of picking the appropriate stack for the job is most important rather than being locked into a specific framework.",
     images: colorVariants.map(generatePlaceholderSvg),
   },
   {
@@ -55,7 +55,7 @@ const initialCards: CardData[] = [
     id: 4,
     title: "Physical Copies also Available",
     description:
-      "Outside of websites and other digital media, I have time designing and producing print media. I've used Photoshop since version 7.0 and it has a fond place in my heart. Many designers in this field use vector applications like Illustrator but I found that being able to play with complex rasterized textures first, and vector shapes as a secondary priority allowed for interesting designs when it came to processes like screenprinting. It also honed my skills in digital asset preparation. You might be surpised at how many fuzzy images on high DPI screens go unnoticed through review in to production.",
+      "Outside of websites and other digital media, I have time designing and producing print media. I've used Photoshop since version 7.0 and it has a fond place in my heart.",
     images: colorVariants.map(generatePlaceholderSvg),
   },
   {
@@ -69,7 +69,7 @@ const initialCards: CardData[] = [
     id: 6,
     title: "Intelligence alongside AI",
     description:
-      "AI is fantastic for gathering and interpereting large amounts of information. I brought a client's site from 20 second page load times down to 1 second loads by using AI to generate tests and rewrite database queries.",
+      "AI assisted development is the way of the future, in my opinion. I've found that using it to create mockups, wireframees, and expore concepts in larger codebases is incredibly valuable and leads to deeper learning by helping to bridge concepts. I've built entire features, optimized codebases, and expored new techniques by guiding LLMs with thoughtful prompting.",
     images: colorVariants.map(generatePlaceholderSvg),
   },
   {

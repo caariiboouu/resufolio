@@ -368,6 +368,132 @@
       "timestamp": 1756781717711,
       "ip": "unknown",
       "screenSize": "1861x1153"
+    },
+    {
+      "id": "5db948e0-80f7-4f80-81c3-ac1c5f568684",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756783328063,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "2c1c48b3-0386-49b6-aedc-6eba293befa9",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756783329655,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "f30221f5-e0cc-4e85-8c15-f0a2f7d50e36",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756783749775,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "af7ac4a8-54d0-49dd-bf33-13226923640f",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756783768773,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "8d1b793e-7d54-4c1e-9e76-87a3047c9679",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756783777776,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "8c647015-640c-41ec-87a6-571f93267e93",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756783801786,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "1a454feb-10ae-4114-97fc-0f80671c5bac",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756787849884,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "97b72b68-27c5-4208-b0e7-099a4e1588f2",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756788023369,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "efc56df5-63bd-45dd-b118-3ae47545e00b",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756788076791,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "1da005b9-083b-494f-be8e-2801736d8601",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756788149691,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "b5b40f2f-e4c3-4d83-9dc5-35085d2b73d8",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756788486016,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "ef34fc53-f3b3-4e37-a2aa-6d05e3bfdaa3",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756789938511,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "f83c9286-d0af-45c9-91fe-9044535ef93f",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756790029386,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
+    },
+    {
+      "id": "80391be4-1a88-4880-901b-a77bed2f8e5f",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1756790199513,
+      "ip": "unknown",
+      "screenSize": "1861x1153"
     }
   ],
   "userActions": [

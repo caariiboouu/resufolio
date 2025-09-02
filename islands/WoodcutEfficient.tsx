@@ -6,14 +6,11 @@ interface IllustrationProps {
 export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
   const renderIllustration = () => {
     switch (cardId) {
-      case 1: // "Hi." - Detailed alchemical all-seeing eye
+      case 1: // "Hi." - Space-inspired celestial system
         return (
           <div className="woodcut-frame">
             <svg viewBox="0 0 160 160" className="woodcut-svg">
-              {/* Outer decorative border */}
-              <rect x="10" y="10" width="140" height="140" fill="none" stroke="#e5e7eb" strokeWidth="1.5" />
-              
-              {/* Inner circular frame */}
+              {/* Outer cosmos frame */}
               <circle 
                 cx="80" 
                 cy="80" 
@@ -21,64 +18,102 @@ export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
                 fill="none" 
                 stroke="#e5e7eb" 
                 strokeWidth="2"
-                className="woodcut-breathe"
               />
               
-              {/* Secondary circle */}
-              <circle cx="80" cy="80" r="50" fill="none" stroke="#e5e7eb" strokeWidth="1" />
-              
-              {/* Sacred triangle */}
-              <path 
-                d="M80,45 L55,95 L105,95 Z" 
-                fill="none" 
-                stroke="#e5e7eb" 
-                strokeWidth="2.5"
-              />
-              
-              {/* Central all-seeing eye */}
+              {/* Central sun */}
               <circle 
                 cx="80" 
                 cy="80" 
-                r="8" 
-                fill="none"
-                stroke="#e5e7eb" 
-                strokeWidth="1.5"
+                r="10" 
+                fill="#e5e7eb"
               />
               <circle 
                 cx="80" 
+                cy="80" 
+                r="7" 
+                fill="none" 
+                stroke="#e5e7eb" 
+                strokeWidth="1"
+                className="woodcut-sun-glow"
+              />
+              
+              {/* Solar rays */}
+              <g className="woodcut-rays">
+                <line x1="80" y1="30" x2="80" y2="45" stroke="#e5e7eb" strokeWidth="2" />
+                <line x1="80" y1="115" x2="80" y2="130" stroke="#e5e7eb" strokeWidth="2" />
+                <line x1="30" y1="80" x2="45" y2="80" stroke="#e5e7eb" strokeWidth="2" />
+                <line x1="115" y1="80" x2="130" y2="80" stroke="#e5e7eb" strokeWidth="2" />
+                <line x1="45" y1="45" x2="52" y2="52" stroke="#e5e7eb" strokeWidth="1.5" />
+                <line x1="108" y1="108" x2="115" y2="115" stroke="#e5e7eb" strokeWidth="1.5" />
+                <line x1="115" y1="45" x2="108" y2="52" stroke="#e5e7eb" strokeWidth="1.5" />
+                <line x1="52" y1="108" x2="45" y2="115" stroke="#e5e7eb" strokeWidth="1.5" />
+              </g>
+              
+              {/* Inner planet orbit */}
+              <circle 
+                cx="80" 
+                cy="80" 
+                r="22" 
+                fill="none" 
+                stroke="#e5e7eb" 
+                strokeWidth="0.8"
+                strokeDasharray="3,3"
+                className="woodcut-orbit-inner"
+              />
+              
+              {/* Middle planet orbit */}
+              <circle 
+                cx="80" 
+                cy="80" 
+                r="35" 
+                fill="none" 
+                stroke="#e5e7eb" 
+                strokeWidth="0.6"
+                strokeDasharray="2,4"
+                className="woodcut-orbit-middle"
+              />
+              
+              {/* Inner planet */}
+              <circle 
+                cx="102" 
+                cy="80" 
+                r="3" 
+                fill="#e5e7eb"
+                className="woodcut-planet-inner"
+              />
+              
+              {/* Middle planet */}
+              <circle 
+                cx="115" 
                 cy="80" 
                 r="4" 
                 fill="#e5e7eb"
-                className="woodcut-eye-pulse"
+                className="woodcut-planet-middle"
+              />
+              <circle 
+                cx="115" 
+                cy="80" 
+                r="2.5" 
+                fill="none" 
+                stroke="#e5e7eb" 
+                strokeWidth="0.5"
               />
               
-              {/* Divine emanation rays */}
-              <g className="woodcut-rays">
-                <line x1="80" y1="25" x2="80" y2="40" stroke="#e5e7eb" strokeWidth="2" />
-                <line x1="70" y1="30" x2="75" y2="42" stroke="#e5e7eb" strokeWidth="1.5" />
-                <line x1="90" y1="30" x2="85" y2="42" stroke="#e5e7eb" strokeWidth="1.5" />
-                <line x1="62" y1="35" x2="68" y2="45" stroke="#e5e7eb" strokeWidth="1" />
-                <line x1="98" y1="35" x2="92" y2="45" stroke="#e5e7eb" strokeWidth="1" />
-              </g>
               
-              {/* Alchemical corner symbols */}
-              <circle cx="25" cy="25" r="4" fill="none" stroke="#e5e7eb" strokeWidth="1" />
-              <circle cx="135" cy="25" r="4" fill="none" stroke="#e5e7eb" strokeWidth="1" />
-              <circle cx="25" cy="135" r="4" fill="none" stroke="#e5e7eb" strokeWidth="1" />
-              <circle cx="135" cy="135" r="4" fill="none" stroke="#e5e7eb" strokeWidth="1" />
+              {/* Asteroid belt */}
+              <circle cx="90" cy="55" r="1" fill="#e5e7eb" className="woodcut-asteroid-1" />
+              <circle cx="110" cy="50" r="0.8" fill="#e5e7eb" className="woodcut-asteroid-2" />
+              <circle cx="125" cy="45" r="1.2" fill="#e5e7eb" className="woodcut-asteroid-3" />
+              <circle cx="100" cy="110" r="0.9" fill="#e5e7eb" className="woodcut-asteroid-4" />
+              <circle cx="115" cy="115" r="1.1" fill="#e5e7eb" className="woodcut-asteroid-5" />
               
-              {/* Sacred geometry lines */}
-              <line x1="55" y1="95" x2="105" y2="95" stroke="#e5e7eb" strokeWidth="2" />
-              <line x1="80" y1="95" x2="80" y2="105" stroke="#e5e7eb" strokeWidth="1" />
-              
-              {/* Mystical dots */}
-              <circle cx="65" cy="70" r="1.5" fill="#e5e7eb" className="woodcut-float" />
-              <circle cx="95" cy="70" r="1.5" fill="#e5e7eb" className="woodcut-float-delay" />
-              <circle cx="80" cy="60" r="1" fill="#e5e7eb" className="woodcut-eye-pulse" />
-              
-              {/* Hermetic cross */}
-              <line x1="77" y1="77" x2="83" y2="83" stroke="#e5e7eb" strokeWidth="0.5" />
-              <line x1="83" y1="77" x2="77" y2="83" stroke="#e5e7eb" strokeWidth="0.5" />
+              {/* Distant stars */}
+              <circle cx="30" cy="40" r="1" fill="#e5e7eb" className="woodcut-star-1" />
+              <circle cx="130" cy="45" r="0.8" fill="#e5e7eb" className="woodcut-star-2" />
+              <circle cx="25" cy="120" r="1.2" fill="#e5e7eb" className="woodcut-star-3" />
+              <circle cx="135" cy="125" r="0.9" fill="#e5e7eb" className="woodcut-star-4" />
+              <circle cx="45" cy="25" r="0.7" fill="#e5e7eb" className="woodcut-star-5" />
+              <circle cx="115" cy="30" r="1" fill="#e5e7eb" className="woodcut-star-6" />
             </svg>
           </div>
         );
