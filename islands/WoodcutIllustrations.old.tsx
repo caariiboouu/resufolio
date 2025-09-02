@@ -6,83 +6,84 @@ interface IllustrationProps {
   position: "left" | "right";
 }
 
-// Helper function to add woodcut texture to SVG elements
-const addWoodcutTexture = (svg: SVGElement) => {
-  // Add a filter definition for the woodcut texture
-  const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-
-  // Create a filter for the woodcut texture
-  const filter = document.createElementNS(
-    "http://www.w3.org/2000/svg",
-    "filter",
-  );
-  filter.setAttribute("id", "woodcut-texture");
-  filter.innerHTML = `
-    <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="5" seed="10" result="noise" />
-    <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G" />
-    <feMorphology operator="dilate" radius="0.5" result="morph"/>
-    <feMorphology in="morph" operator="erode" radius="0.5"/>
-  `;
-
-  defs.appendChild(filter);
-  svg.insertBefore(defs, svg.firstChild);
-
-  // Apply the filter to all paths and shapes
-  const elements = svg.querySelectorAll(
-    "path, rect, circle, ellipse, polygon, polyline",
-  );
-  elements.forEach((el) => {
-    el.setAttribute("filter", "url(#woodcut-texture)");
-  });
-};
-
-// Woodcut Illustrations for each card
+// Optimized Woodcut Illustrations - GPU-friendly traditional woodcut style
 export function WoodcutIllustration({ cardId, position }: IllustrationProps) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const [animationState, setAnimationState] = useState<"running" | "paused">(
-    "running",
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Simple crosshatch pattern component
+  const CrossHatch = ({ x, y, width, height, spacing = 8, opacity = 0.3 }: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+    spacing?: number;
+    opacity?: number;
+  }) => (
+    <g opacity={opacity}>
+      {Array.from({ length: Math.floor(height / spacing) }).map((_, i) => (
+        <line
+          key={`h-${i}`}
+          x1={x}
+          y1={y + i * spacing}
+          x2={x + width}
+          y2={y + i * spacing}
+          stroke="#e5e7eb"
+          strokeWidth="0.5"
+        />
+      ))}
+      {Array.from({ length: Math.floor(width / spacing) }).map((_, i) => (
+        <line
+          key={`v-${i}`}
+          x1={x + i * spacing}
+          y1={y}
+          x2={x + i * spacing}
+          y2={y + height}
+          stroke="#e5e7eb"
+          strokeWidth="0.5"
+        />
+      ))}
+    </g>
   );
-  const containerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (svgRef.current) {
-      addWoodcutTexture(svgRef.current);
-    }
+  // Simple hatching pattern component
+  const Hatching = (
+    { x, y, width, height, angle = 45, spacing = 6, opacity = 0.4 }: {
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      angle?: number;
+      spacing?: number;
+      opacity?: number;
+    },
+  ) => {
+    const lines = [];
+    const radians = (angle * Math.PI) / 180;
+    const lineLength = Math.sqrt(width * width + height * height);
+    const numLines = Math.floor(lineLength / spacing);
 
-    // Set up timer to pause animations after 10 seconds
-    const timer = setTimeout(() => {
-      setAnimationState("paused");
+    for (let i = 0; i < numLines; i++) {
+      const offset = i * spacing;
+      const x1 = x + Math.cos(radians) * offset;
+      const y1 = y + Math.sin(radians) * offset;
+      const x2 = x1 + Math.cos(radians + Math.PI / 2) * lineLength;
+      const y2 = y1 + Math.sin(radians + Math.PI / 2) * lineLength;
 
-      // Apply paused state to all animated elements
-      if (svgRef.current) {
-        const animatedElements = svgRef.current.querySelectorAll(
-          '[class*="float-"], [class*="woodcut-"]',
-        );
-        animatedElements.forEach((el) => {
-          if (el instanceof SVGElement) {
-            el.style.animationPlayState = "paused";
-          }
-        });
-      }
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, [animationState]); // Reset timer when animation state changes
-
-  // Function to restart animations on hover
-  const restartAnimations = () => {
-    setAnimationState("running");
-
-    if (svgRef.current) {
-      const animatedElements = svgRef.current.querySelectorAll(
-        '[class*="float-"], [class*="woodcut-"]',
+      lines.push(
+        <line
+          key={i}
+          x1={x1}
+          y1={y1}
+          x2={x2}
+          y2={y2}
+          stroke="#e5e7eb"
+          strokeWidth="0.5"
+          opacity={opacity}
+        />,
       );
-      animatedElements.forEach((el) => {
-        if (el instanceof SVGElement) {
-          el.style.animationPlayState = "running";
-        }
-      });
     }
+    return <g>{lines}</g>;
   };
 
   // Determine which illustration to render based on cardId

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
-import WoodcutIllustration from "./WoodcutIllustrations.tsx";
+import { WoodcutIllustration } from "./WoodcutEfficient.tsx";
 
 interface CardData {
   id: number;

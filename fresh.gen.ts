@@ -18,7 +18,8 @@ import * as $Header from "./islands/Header.tsx";
 import * as $PortfolioCards from "./islands/PortfolioCards.tsx";
 import * as $ResumeContent from "./islands/ResumeContent.tsx";
 import * as $ResumeViewer from "./islands/ResumeViewer.tsx";
-import * as $WoodcutIllustrations from "./islands/WoodcutIllustrations.tsx";
+import * as $WoodcutEfficient from "./islands/WoodcutEfficient.tsx";
+import * as $WoodcutIllustrations_old from "./islands/WoodcutIllustrations.old.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -41,7 +42,8 @@ const manifest = {
     "./islands/PortfolioCards.tsx": $PortfolioCards,
     "./islands/ResumeContent.tsx": $ResumeContent,
     "./islands/ResumeViewer.tsx": $ResumeViewer,
-    "./islands/WoodcutIllustrations.tsx": $WoodcutIllustrations,
+    "./islands/WoodcutEfficient.tsx": $WoodcutEfficient,
+    "./islands/WoodcutIllustrations.old.tsx": $WoodcutIllustrations_old,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
