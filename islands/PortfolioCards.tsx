@@ -69,7 +69,7 @@ const initialCards: CardData[] = [
     id: 6,
     title: "Intelligence alongside AI",
     description:
-      "AI assisted development is the way of the future, in my opinion. I've found that using it to create mockups, wireframees, and expore concepts in larger codebases is incredibly valuable and leads to deeper learning by helping to bridge concepts. I've built entire features, optimized codebases, and expored new techniques by guiding LLMs with thoughtful prompting.",
+      "I've found that using AI to create mockups, wireframees, and expore concepts in larger codebases is incredibly valuable and leads to deeper learning by helping to bridge concepts. I've built entire features, optimized codebases, and expored new techniques by guiding LLMs with thoughtful prompting.",
     images: colorVariants.map(generatePlaceholderSvg),
   },
   {

@@ -629,6 +629,15 @@
       "timestamp": 1757388726875,
       "ip": "unknown",
       "screenSize": "1557x1087"
+    },
+    {
+      "id": "bef7d218-a105-48f3-b891-b885c86dbfc8",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1757389300270,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
     }
   ],
   "userActions": [

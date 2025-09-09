@@ -105,9 +105,6 @@ export default function Projects(props: PageProps) {
             <h1 class="text-5xl font-bold text-[#232323] mb-4 text-center">
               Projects
             </h1>
-            <p class="text-xl text-[#1a1a1a] text-center mb-16 max-w-3xl mx-auto">
-              Video walkthroughs of various projects showcasing UX/UI design and development work.
-            </p>
             
             <div class="space-y-20">
               {projects.map((project, index) => (

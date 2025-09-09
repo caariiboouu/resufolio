@@ -12,7 +12,8 @@
       "Bash(mv:*)",
       "WebFetch(domain:css-tricks.com)",
       "WebFetch(domain:developer.chrome.com)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "Bash(git push:*)"
     ],
     "defaultMode": "acceptEdits"
   }
