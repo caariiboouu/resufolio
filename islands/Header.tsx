@@ -146,8 +146,42 @@ export default function Header() {
               </a>
             </div>
 
-            {/* Right: Skills */}
+            {/* Right: Navigation and Skills */}
             <div className="flex-1 text-right">
+              <nav className={`mb-1 transition-all duration-300 ease-in-out ${isScrolled ? "mb-0" : ""}`}>
+                <ul className="flex justify-end space-x-6">
+                  <li>
+                    <a
+                      href="/"
+                      className={`hover:text-[#54ac9b] transition-colors duration-200 ${
+                        isScrolled ? "text-xs" : "text-sm"
+                      }`}
+                    >
+                      Portfolio
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/projects"
+                      className={`hover:text-[#54ac9b] transition-colors duration-200 ${
+                        isScrolled ? "text-xs" : "text-sm"
+                      }`}
+                    >
+                      Projects
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/resume"
+                      className={`hover:text-[#54ac9b] transition-colors duration-200 ${
+                        isScrolled ? "text-xs" : "text-sm"
+                      }`}
+                    >
+                      Resume
+                    </a>
+                  </li>
+                </ul>
+              </nav>
               <p
                 className={`transition-all duration-300 ease-in-out
                           ${
