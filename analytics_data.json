@@ -494,6 +494,141 @@
       "timestamp": 1756790199513,
       "ip": "unknown",
       "screenSize": "1861x1153"
+    },
+    {
+      "id": "9683f2d9-7589-4032-9c01-225d81beb634",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "direct",
+      "timestamp": 1757388482156,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "51eac9db-73c3-46d5-864d-e7774de1fad5",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "direct",
+      "timestamp": 1757388486908,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "c1264e39-0733-49ed-8f5c-ddff7b34a71d",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "direct",
+      "timestamp": 1757388486908,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "7e167d94-2288-4b9d-bea3-d54f8544b53f",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/projects",
+      "timestamp": 1757388554784,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "a49c3dfa-2695-4ac3-84cb-12c388957be0",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/projects",
+      "timestamp": 1757388554784,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "db58b749-f4a8-4fc6-8d20-47bd00e78bdd",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/projects",
+      "timestamp": 1757388558745,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "918b8862-bcf3-4377-a3ac-1c6e894e7289",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1757388561113,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "1f68bee6-199e-46be-90ad-8118ff1b89ce",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1757388561956,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "1f91fd0a-4964-4fbb-ba1b-16c25186b352",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1757388561961,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "64d770ca-975e-4c8d-9032-596dc855ed83",
+      "path": "/resume",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/projects",
+      "timestamp": 1757388563904,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "ee6df9c4-b887-4a05-b68d-663686b8f0bc",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/resume",
+      "timestamp": 1757388565282,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "f4a0cbf9-6c64-4e5b-a351-f82f58cb41c4",
+      "path": "/projects",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/resume",
+      "timestamp": 1757388565282,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "cb080cc0-8dd4-40e4-8777-448c1befaefd",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/projects",
+      "timestamp": 1757388566269,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "493588d3-deef-4e72-a395-7c115f9b9c8a",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1757388568079,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
+    },
+    {
+      "id": "1716df3f-1e29-4b25-a0a4-e71b856dd3a5",
+      "path": "/",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.0 Safari/605.1.15",
+      "referrer": "http://localhost:8000/",
+      "timestamp": 1757388726875,
+      "ip": "unknown",
+      "screenSize": "1557x1087"
     }
   ],
   "userActions": [
@@ -511,6 +646,262 @@
       "path": "/resume",
       "element": "h1.font-bold.bg-clip-text.text-transparent.bg-gradient-to-r.from-[#E7DECA].via-[#d4c5a7].to-[#c4b69d",
       "timestamp": 1756355945705,
+      "ip": "unknown"
+    },
+    {
+      "id": "54d654c6-8961-47d4-8861-191df3a777b6",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388491234,
+      "ip": "unknown"
+    },
+    {
+      "id": "c8e5f4f6-a4a3-42d0-a3f6-f75973f40c79",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388491234,
+      "ip": "unknown"
+    },
+    {
+      "id": "88ddea21-77f7-42c0-84c2-e099fe2c3b5f",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388493990,
+      "ip": "unknown"
+    },
+    {
+      "id": "3c677a4e-050d-4cd1-932d-8ced7a613b02",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388493990,
+      "ip": "unknown"
+    },
+    {
+      "id": "d3dd91bb-7085-4148-9150-64294e18a924",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388495917,
+      "ip": "unknown"
+    },
+    {
+      "id": "e12e6bc2-aaa1-4039-9b9a-14fcde309840",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388495917,
+      "ip": "unknown"
+    },
+    {
+      "id": "05639cf3-78f7-4d87-9af9-bffb8b3a8584",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388497559,
+      "ip": "unknown"
+    },
+    {
+      "id": "868f2b54-70a9-4f68-bfb8-c39a562bce5f",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388497559,
+      "ip": "unknown"
+    },
+    {
+      "id": "147c2a72-0054-4bb0-9ab1-fc4ceaf06e36",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388498897,
+      "ip": "unknown"
+    },
+    {
+      "id": "b7cb5740-bee5-45a9-9ccb-b37509dfb0c7",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388498899,
+      "ip": "unknown"
+    },
+    {
+      "id": "f906140c-72c8-48d4-95e3-060109329b05",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388500063,
+      "ip": "unknown"
+    },
+    {
+      "id": "0c93a20a-3007-4b89-b709-158c5eef7df3",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388500063,
+      "ip": "unknown"
+    },
+    {
+      "id": "fd7855d9-fdc0-42b4-a1cf-76de8ea69717",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388501890,
+      "ip": "unknown"
+    },
+    {
+      "id": "e1dd2bbe-0dbb-4f6a-ba5d-c5fc0ce0890a",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388501893,
+      "ip": "unknown"
+    },
+    {
+      "id": "58fa7336-bb22-4039-9cde-7a73b6561f3f",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388503020,
+      "ip": "unknown"
+    },
+    {
+      "id": "a8df8f93-8d2a-42c0-879d-c1b2ac013010",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388503020,
+      "ip": "unknown"
+    },
+    {
+      "id": "6fb7c9a7-5df0-4750-acd3-ff0db73c0194",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388504174,
+      "ip": "unknown"
+    },
+    {
+      "id": "e2b7f6be-792a-4809-9ad8-fe9e0b20f5ce",
+      "action": "click",
+      "path": "/projects",
+      "element": "video.w-full.rounded-lg.shadow-lg:Your browser does not support the video tag.",
+      "timestamp": 1757388504174,
+      "ip": "unknown"
+    },
+    {
+      "id": "1dae8a06-e188-474b-8e12-8a15bd2c272b",
+      "action": "click",
+      "path": "/projects",
+      "element": "p.transition-all.duration-300.ease-in-out.text-sm.opacity-90:UI / UX / Design / Development",
+      "timestamp": 1757388517497,
+      "ip": "unknown"
+    },
+    {
+      "id": "9da1abe8-a333-4d20-8e5c-42a540e37637",
+      "action": "click",
+      "path": "/projects",
+      "element": "p.transition-all.duration-300.ease-in-out.text-sm.opacity-90:UI / UX / Design / Development",
+      "timestamp": 1757388517497,
+      "ip": "unknown"
+    },
+    {
+      "id": "072fedc2-09c1-451d-9557-7b5de1cce991",
+      "action": "click",
+      "path": "/projects",
+      "element": "p.transition-all.duration-300.ease-in-out.text-sm.opacity-90:UI / UX / Design / Development",
+      "timestamp": 1757388517689,
+      "ip": "unknown"
+    },
+    {
+      "id": "3a5733a7-8796-417f-8bea-da9282335dab",
+      "action": "click",
+      "path": "/projects",
+      "element": "p.transition-all.duration-300.ease-in-out.text-sm.opacity-90:UI / UX / Design / Development",
+      "timestamp": 1757388517690,
+      "ip": "unknown"
+    },
+    {
+      "id": "405af6c2-daaa-4386-8c8d-66b094386fcc",
+      "action": "click",
+      "path": "/projects",
+      "element": "p.transition-all.duration-300.ease-in-out.text-sm.opacity-90:UI / UX / Design / Development",
+      "timestamp": 1757388517849,
+      "ip": "unknown"
+    },
+    {
+      "id": "b70c6979-e224-4e0e-bf78-05a0df51ccc6",
+      "action": "click",
+      "path": "/projects",
+      "element": "p.transition-all.duration-300.ease-in-out.text-sm.opacity-90:UI / UX / Design / Development",
+      "timestamp": 1757388517850,
+      "ip": "unknown"
+    },
+    {
+      "id": "bbec765e-37bd-43ec-882d-cd64015c29fe",
+      "action": "click",
+      "path": "/",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Portfolio[href=http://localhost:8000/]",
+      "timestamp": 1757388560972,
+      "ip": "unknown"
+    },
+    {
+      "id": "beb6786b-f256-42de-9825-c38f1f4a9d81",
+      "action": "click",
+      "path": "/",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Projects[href=http://localhost:8000/pr",
+      "timestamp": 1757388561738,
+      "ip": "unknown"
+    },
+    {
+      "id": "1ef1b6b4-bdc0-4974-8cf5-3dcf48e00077",
+      "action": "click",
+      "path": "/projects",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Resume[href=http://localhost:8000/resu",
+      "timestamp": 1757388563667,
+      "ip": "unknown"
+    },
+    {
+      "id": "ed26487f-f53b-4e78-867e-e2f813a4de8f",
+      "action": "click",
+      "path": "/projects",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Resume[href=http://localhost:8000/resu",
+      "timestamp": 1757388563667,
+      "ip": "unknown"
+    },
+    {
+      "id": "2d12c16c-1992-42d9-9550-1944581dbfa3",
+      "action": "click",
+      "path": "/resume",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Projects[href=http://localhost:8000/pr",
+      "timestamp": 1757388565029,
+      "ip": "unknown"
+    },
+    {
+      "id": "3161b2d3-4b6c-4772-8e21-d400f9022a31",
+      "action": "click",
+      "path": "/projects",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Portfolio[href=http://localhost:8000/]",
+      "timestamp": 1757388566033,
+      "ip": "unknown"
+    },
+    {
+      "id": "7ef4f8be-6cb7-4a56-9531-2edf29717aaa",
+      "action": "click",
+      "path": "/projects",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Portfolio[href=http://localhost:8000/]",
+      "timestamp": 1757388566045,
+      "ip": "unknown"
+    },
+    {
+      "id": "61575f17-9bf4-4a00-bbad-7731f8bb6136",
+      "action": "click",
+      "path": "/",
+      "element": "a.hover:text-[#54ac9b].transition-colors.duration-200.text-sm:Portfolio[href=http://localhost:8000/]",
+      "timestamp": 1757388567888,
       "ip": "unknown"
     }
   ]

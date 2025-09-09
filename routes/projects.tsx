@@ -49,7 +49,7 @@ export default function Projects(props: PageProps) {
       description: [
         "Built with CSS Grid Level 2"
       ],
-      extendedDescription: "This is an experimental solution to overstuffed tables. They expand on hover."
+      extendedDescription: "This is an experimental solution to overstuffed tables. They expand horizontally on hover."
     },
     {
       id: "tucker",

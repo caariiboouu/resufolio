@@ -116,7 +116,7 @@ export default function Header() {
                         : "text-sm sm:text-base mt-1 opacity-90"
                     }`}
                   >
-                    Interactive Specialist
+                    UI / UX / Design / Development
                   </p>
                 </div>
               </a>
@@ -157,7 +157,7 @@ export default function Header() {
                         isScrolled ? "text-xs" : "text-sm"
                       }`}
                     >
-                      Portfolio
+                      About
                     </a>
                   </li>
                   <li>
@@ -182,14 +182,6 @@ export default function Header() {
                   </li>
                 </ul>
               </nav>
-              <p
-                className={`transition-all duration-300 ease-in-out
-                          ${
-                  isScrolled ? "text-xs opacity-50" : "text-sm opacity-90"
-                }`}
-              >
-                UI / UX / Design / Development
-              </p>
             </div>
           </div>
         </div>

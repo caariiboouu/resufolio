@@ -11,7 +11,8 @@
       "Bash(curl:*)",
       "Bash(mv:*)",
       "WebFetch(domain:css-tricks.com)",
-      "WebFetch(domain:developer.chrome.com)"
+      "WebFetch(domain:developer.chrome.com)",
+      "Bash(pkill:*)"
     ],
     "defaultMode": "acceptEdits"
   }
