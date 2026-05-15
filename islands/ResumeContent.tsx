@@ -53,7 +53,7 @@ export default function ResumeContent() {
             </a>{" "}
             | <a className="underline" href="tel:+14055820062">405.582.0062</a>
             {" "}
-            | Tulsa, OK
+            | Oklahoma City, OK
           </p>
           <div className="flex items-center">
             <div

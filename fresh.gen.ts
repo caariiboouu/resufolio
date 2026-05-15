@@ -10,9 +10,7 @@ import * as $api_analytics from "./routes/api/analytics.ts";
 import * as $api_analytics_data from "./routes/api/analytics/data.ts";
 import * as $api_docs from "./routes/api/docs.ts";
 import * as $index from "./routes/index.tsx";
-import * as $projects from "./routes/projects.tsx";
 import * as $resume from "./routes/resume.tsx";
-import * as $square_terminals from "./routes/square-terminals.tsx";
 import * as $AnalyticsDashboard from "./islands/AnalyticsDashboard.tsx";
 import * as $AnalyticsTracker from "./islands/AnalyticsTracker.tsx";
 import * as $Header from "./islands/Header.tsx";
@@ -33,9 +31,7 @@ const manifest = {
     "./routes/api/analytics/data.ts": $api_analytics_data,
     "./routes/api/docs.ts": $api_docs,
     "./routes/index.tsx": $index,
-    "./routes/projects.tsx": $projects,
     "./routes/resume.tsx": $resume,
-    "./routes/square-terminals.tsx": $square_terminals,
   },
   islands: {
     "./islands/AnalyticsDashboard.tsx": $AnalyticsDashboard,

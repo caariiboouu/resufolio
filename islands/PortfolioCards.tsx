@@ -34,7 +34,7 @@ const initialCards: CardData[] = [
     id: 1,
     title: "Hi,",
     description:
-      "I'm a developer and designer living in Tulsa. In my work I operate on a principle that functionally useful things should look as good as they work, and that good looking things should be entirely functional.",
+      "I'm a developer and designer living in Oklahoma City. In my work I operate on a principle that functionally useful things should look as good as they work, and that good looking things should be entirely functional.",
     images: colorVariants.map(generatePlaceholderSvg),
   },
   {
@@ -64,20 +64,6 @@ const initialCards: CardData[] = [
     description:
       "I've managed sites, servers, databases, and backend code professionally, at a peak of about 30 website servers for an agency. (Usually Ubuntu, MySQL, and PHP) Visiting this world from time to time is fun and good infrastructure is rewarding to architect.",
     images: colorVariants.map(generatePlaceholderSvg),
-  },
-  {
-    id: 6,
-    title: "Intelligence alongside AI",
-    description:
-      "I've found that using AI to create mockups, wireframees, and expore concepts in larger codebases is incredibly valuable and leads to deeper learning by helping to bridge concepts. I've built entire features, optimized codebases, and expored new techniques by guiding LLMs with thoughtful prompting.",
-    images: colorVariants.map(generatePlaceholderSvg),
-  },
-  {
-    id: 7,
-    title: "Square Terminal Rentals - Tulsa",
-    description:
-      "Need payment processing for your Tulsa event? <a href='/square-terminals' target='_self'>Rent professional Square Terminals</a> for just $100 per device. Available now for events, markets, and businesses in the Tulsa metro area.",
-    images: ["/SHOP_US_Product_Square_Terminal_Gallery-01.png"],
   },
 ];
 
@@ -203,8 +189,9 @@ export default function PortfolioCards() {
         {initialCards.map((card, index) => (
           <div
             key={card.id}
-            className="group relative overflow-hidden transition-all duration-300 ease-in-out 
-                                hover:transform hover:scale-[1.01] hover:shadow-lg card-hover rounded-lg"
+            style={{ animationDelay: `${index * 90}ms` }}
+            className="group relative overflow-hidden transition-all duration-300 ease-in-out
+                                hover:transform hover:scale-[1.01] hover:shadow-lg card-hover card-enter rounded-lg"
           >
             <div className="border border-[#232323] rounded-lg p-4 sm:p-6 
                                       bg-gradient-to-br from-[#1a1a1a] via-[#232323] to-[#1a1a1a]
@@ -218,13 +205,12 @@ export default function PortfolioCards() {
                         {/* Content on left for even cards */}
                         <div className="w-full lg:w-2/3 pr-0 lg:pr-4 relative z-10 flex items-center py-4 lg:py-0">
                           <div>
-                            <h2 className="text-xl sm:text-2xl font-bold mb-3 
-                                                                bg-clip-text text-transparent 
-                                                                bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
-                                                                text-glow">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-3
+                                                                bg-clip-text text-transparent
+                                                                bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]">
                               {card.title}
                             </h2>
-                            <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                            <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90
                                                                 transition-all duration-300 group-hover:opacity-100">
                               {parseDescription(card.description)}
                             </p>
@@ -275,13 +261,12 @@ export default function PortfolioCards() {
                         {/* Content on right for odd cards */}
                         <div className="w-full lg:w-2/3 pl-0 lg:pl-4 relative z-10 order-1 lg:order-2 flex items-center py-4 lg:py-0">
                           <div>
-                            <h2 className="text-xl sm:text-2xl font-bold mb-3 
-                                                                bg-clip-text text-transparent 
-                                                                bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
-                                                                text-glow">
+                            <h2 className="text-xl sm:text-2xl font-bold mb-3
+                                                                bg-clip-text text-transparent
+                                                                bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]">
                               {card.title}
                             </h2>
-                            <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90 
+                            <p className="text-[#E7DECA] text-sm sm:text-base leading-relaxed opacity-90
                                                                 transition-all duration-300 group-hover:opacity-100">
                               {parseDescription(card.description)}
                             </p>
