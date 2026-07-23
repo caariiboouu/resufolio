@@ -1,7 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
 import Header from "../islands/Header.tsx";
-import AnalyticsTracker from "../islands/AnalyticsTracker.tsx";
 
 export default function Projects(props: PageProps) {
   const projects = [
@@ -98,8 +97,7 @@ export default function Projects(props: PageProps) {
       
       <div class="min-h-screen bg-gradient-to-br from-[#E7DECA] to-white">
         <Header />
-        <AnalyticsTracker />
-        
+
         <main class="pt-32 pb-16 px-6">
           <div class="max-w-6xl mx-auto">
             <h1 class="text-5xl font-bold text-[#232323] mb-4 text-center">

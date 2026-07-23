@@ -1,6 +1,5 @@
 import { type PageProps } from "$fresh/server.ts";
 import { useCSP } from "$fresh/runtime.ts";
-import AnalyticsTracker from "../islands/AnalyticsTracker.tsx";
 
 export default function App({ Component }: PageProps) {
   useCSP((csp) => {
@@ -26,7 +25,6 @@ export default function App({ Component }: PageProps) {
       </head>
       <body class="bg-[#E7DECA] min-h-screen">
         <Component />
-        <AnalyticsTracker />
       </body>
     </html>
   );
