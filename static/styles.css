@@ -76,12 +76,30 @@ body {
 }
 
 /* --- TEXT STYLES --- */
-.text-glow {
-  text-shadow: 0 0 10px rgba(231, 222, 202, 0.3);
-}
-
 .text-wrap-balance {
   text-wrap: balance;
+}
+
+/* Card entrance: subtle fade + rise, staggered via inline animation-delay */
+.card-enter {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  animation: card-enter 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes card-enter {
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-enter {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
 
 .image-hover {

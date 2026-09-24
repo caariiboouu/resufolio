@@ -100,7 +100,7 @@ export default function Header() {
               >
                 <div>
                   <h1
-                    className={`font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d] text-glow
+                    className={`font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#E7DECA] via-[#d4c5a7] to-[#c4b69d]
                                 transition-all duration-300 ease-in-out
                                 ${
                       isScrolled ? "text-lg sm:text-xl" : "text-2xl sm:text-3xl"
@@ -158,16 +158,6 @@ export default function Header() {
                       }`}
                     >
                       About
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/projects"
-                      className={`hover:text-[#54ac9b] transition-colors duration-200 ${
-                        isScrolled ? "text-xs" : "text-sm"
-                      }`}
-                    >
-                      Projects
                     </a>
                   </li>
                   <li>
