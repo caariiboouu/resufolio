@@ -1,0 +1,24 @@
+# Cloudflare Pages response headers.
+# Format: a path pattern (with * splats) followed by indented "Name: value"
+# lines. When several patterns match a request, their headers are combined.
+# https://developers.cloudflare.com/pages/configuration/headers/
+
+# Security headers for every response.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Browser caching.
+# Without rules here, Pages sends "max-age=0, must-revalidate": browsers
+# re-check every file on every visit (cheap 304s, but a round trip each).
+# None of these filenames carry a content hash, so a long max-age means
+# returning visitors keep the OLD file until it expires.
+#
+# TODO: add Cache-Control rules for the asset groups below.
+#   /videos/*                         ~35MB, almost never change
+#   /jc.png, /favicon.ico             change rarely
+#   /styles.css                       changes whenever you restyle
+#   /resume-joel-cuthriell.pdf        changes when your job or skills change
+#   /portfolio-joel-cuthriell.pdf
